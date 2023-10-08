@@ -7,4 +7,6 @@ int Sine(int angle);
 void Dampen(int *value,int amt);
 void Clamp(int *value,int amt);
 
+byte AngleFrom(int fromx,int fromy,int tox,int toy);
+
 #endif

@@ -241,7 +241,57 @@
 #define MONS_MINIWACKO	209
 #define MONS_JACKFROST	210
 
-#define NUM_MONSTERS  211    // Can grow as needed
+//kid mystic
+#define MONS_PTERO 211
+#define MONS_EYEGUY 212
+#define MONS_OCTOPUS  213
+#define MONS_OCTOPUS2 214
+#define MONS_INCABOT  215
+#define MONS_INCAGEN  216
+#define MONS_TRAPAZOID 217
+#define MONS_TRAPAZOID2 218
+#define MONS_INCAGOLD 219
+#define MONS_INCAGOLD2 220
+#define MONS_SLUG   221
+#define MONS_SNAIL	 222
+#define MONS_SNAIL2 223	// in shell
+#define MONS_PEEPER   224
+#define MONS_LOOKEYLOO 225
+#define MONS_PINKEYE 226
+#define MONS_CRAZYBUSH 227
+#define MONS_PEEPBOMB 228
+#define MONS_GOAT1	 229	// rammy
+#define MONS_GOAT1B	  230	// rammy stunned/vulnerable
+#define MONS_GOAT2  231	// hoppy
+#define MONS_GOAT2B	  232	// hoppy airborne/invincible
+#define MONS_GOAT3	 233	// gruffy
+#define MONS_STICKSHROOM 234
+#define MONS_STICKSPIDER 235
+#define MONS_STICKCORPSE 236
+#define MONS_STICKBAT	 237
+#define MONS_TOWER    238
+#define MONS_GOLEM  239
+#define MONS_BOBBY 240
+#define MONS_INCABOSS  241
+#define MONS_INCATONGUE 242
+#define MONS_OCTOBOSS  243
+#define MONS_OCTOTENT  244
+#define MONS_OCTOTENT2  245
+#define MONS_MICRO 246
+
+//sleepless hollow
+#define MONS_FROG	  247
+#define MONS_FROG2	  248
+#define MONS_MADCOW	  249	
+#define MONS_MADCOW2  250	
+#define MONS_PUMPKINFLY 251
+#define MONS_PUMPKINFLY2 252
+#define MONS_PATCH5		253	
+#define MONS_PATCH6		254	
+#define MONS_STICKTREE	  255
+#define MONS_DARKNESS	256
+
+#define NUM_MONSTERS  257    // Can grow as needed
 #define NUM_PROFILE_MONSTERS 211    // Do not change without redoing the profile format
 
 // fake monster codes
@@ -315,7 +365,12 @@
 #define MT_UNDERSEA (1<<25)
 #define MT_FLYING	(1<<26)
 #define MT_BITS		(1<<27)
-#define NUM_MONSTHEMES	(28)
+
+#define MT_MYSTIC   (1<<28)
+#define MT_SLEEPLESS (1<<29)
+#define NUM_CUSTOM_THEMES 2 // used in scanner.cpp to not mess with bestiary
+
+#define NUM_MONSTHEMES	(30)
 
 typedef void (*Monster_AIFunc)(Guy *,Map *,world_t *,Guy *);
 
@@ -539,5 +594,44 @@ void AI_Microzoid(Guy *me,Map *map,world_t *world,Guy *goodguy);
 void AI_HotShroom(Guy *me,Map *map,world_t *world,Guy *goodguy);
 void AI_MiniWacko(Guy *me,Map *map,world_t *world,Guy *goodguy);
 void AI_JackFrost(Guy *me,Map *map,world_t *world,Guy *goodguy);
+
+//kid mystic
+void AI_Ptero(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Eyeguy(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Octopus(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Incabot(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Incagen(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Trapazoid(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Incagold(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Slug(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Snail(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Peeper(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Lookeyloo(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Pinkeye(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_CrazyBush(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_PeepBomb(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Rammy(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Hoppy(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Gruffy(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_StickShroom(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_StickSpider(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_StickCorpse(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_StickBat(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Tower(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Golem(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_BobbyKhan(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Incaboss(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_OctoBoss(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_OctoTentacle(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Microfish(Guy *me,Map *map,world_t *world,Guy *goodguy);
+
+//sleepless hollow
+void AI_Frog(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_MadCow(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_MadCow2(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_PumpkinFly(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Tree(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Darkness(Guy *me,Map *map,world_t *world,Guy *goodguy);
+
 
 #endif

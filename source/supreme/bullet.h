@@ -69,6 +69,16 @@ enum : byte
 	BLT_FREEZE2, // a freeze bullet that drops like acid bullets and splats
 	BLT_LUNA, // lunachick's bullets
 	BLT_LUNA2, // lunachick's bullets with wall-bounce power
+	
+	BLT_ICEBEAM,
+	BLT_ICEBEAM2, // dud ice beam, for when it hits walls
+	BLT_DEATHBEAM, // clone of icebeam, but deadly to player
+	BLT_DEATHBEAM2, // the dud version for when it hits walls
+	BLT_SLIME,
+	BLT_BIGYELLOW, // big yellow bullet (same as grenade, but not lobbed or explosive)
+	BLT_YELWAVE,	// wavey thing
+	BLT_FLAME3,
+	BLT_BADSITFLAME,
 };
 
 // the special hammer flags for different powerups

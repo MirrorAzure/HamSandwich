@@ -130,6 +130,9 @@ void SetMonsterBright(byte fx,int x,int y,int type,int bright);
 byte CheckMonsterColor(int x,int y,int type,byte color);
 Guy *GetGuyOfAIType(int type);
 
+byte PeepAtGuy(int x,int y,Map *map,byte face);
+byte AttackCheck2(int xx,int yy,int xx2,int yy2,Guy *him);
+
 void FindMonsterBrain(int myx,int myy);
 void FindMonsterCandle(int myx,int myy);
 #endif

@@ -27,6 +27,9 @@ enum : byte
 	PART_LUNA,
 	PART_RADAR, // used for the radars
 	PART_FX, // accelerates upward, shrinks as it dies, for effects
+	PART_YELLOW, 
+	PART_SHORTYELLOW,
+	
 };
 
 class Particle

@@ -103,7 +103,16 @@ static char bulletName[][20]={
 	"Cheese Hammer",
 	"Evil Freeze",
 	"Lunachick Ray",
-	"Bouncy Lunachick"
+	"Bouncy Lunachick",
+	"Ice Beam",
+	"Ice Beam End",
+	"Death Beam",
+	"Death Beam End",
+	"Slime",
+	"Big Yellow Bullet",
+	"Yell Wave",
+	"Floaty Flame",
+	"Evil Sitting Flame",
 };
 
 void PrintFX(word flags)

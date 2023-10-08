@@ -252,9 +252,18 @@ static char bulletName[][20]={
 	"Cheese Hammer",
 	"Evil Freeze",
 	"Lunachick Ray",
-	"Bouncy Lunachick"
+	"Bouncy Lunachick",
+	"Ice Beam",
+	"Ice Beam End",
+	"Death Beam",
+	"Death Beam End",
+	"Slime",
+	"Big Yellow Bullet",
+	"Yell Wave",
+	"Floaty Flame",
+	"Evil Sitting Flame",
 };
-#define MAX_BULLETS (BLT_LUNA2 + 1)
+#define MAX_BULLETS (BLT_BADSITFLAME + 1)
 
 static void SetupTriggerButtons(int t,int y);
 static void SetupEffectButtons(int t,int y);

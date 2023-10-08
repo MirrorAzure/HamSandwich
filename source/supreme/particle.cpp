@@ -165,6 +165,30 @@ void Particle::Update(Map *map)
 		life--;
 		switch(type)
 		{
+			case PART_SHORTYELLOW:
+				v=life*4;
+				if(v>31)
+					v=31;
+				color=160+v;
+				if(life>5)
+					size=2;
+				else if(life<2)
+					size=0;
+				else
+					size=1;
+				break;
+			case PART_YELLOW:
+				v=life;
+				if(v>31-4)
+					v=31-4;
+				color=160+v;
+				if(life>20)
+					size=2;
+				else if(life<10)
+					size=0;
+				else
+					size=1;
+				break;
 			case PART_RADAR:
 				dz+=FIXAMT; // no gravity
 				size=life/3;

@@ -157,4 +157,6 @@ byte ControlCheck(byte c);
 
 void ShouldCheckControls(byte n);
 
+byte FakeGetControls(void);
+
 #endif

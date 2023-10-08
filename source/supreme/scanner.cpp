@@ -302,7 +302,7 @@ void RenderScan(MGLDraw *mgl)
 //-----------------------------------------------
 
 static byte cursor;
-static byte numScanned[NUM_MONSTHEMES],totalToScan[NUM_MONSTHEMES];
+static byte numScanned[NUM_MONSTHEMES-NUM_CUSTOM_THEMES],totalToScan[NUM_MONSTHEMES-NUM_CUSTOM_THEMES];
 static int totalTotal,totalScanned;
 static byte monsList[180],monsListLen,monsListPos,curMons,curTheme;
 static sprite_set_t *bestSpr;
@@ -322,7 +322,7 @@ void InitBestiary(MGLDraw *mgl)
 	for(i=0;i<480;i++)
 		memcpy(&backgd[i*640],&mgl->GetScreen()[i*mgl->GetWidth()],640);
 
-	for(i=0;i<NUM_MONSTHEMES;i++)
+	for(i=0;i<NUM_MONSTHEMES-NUM_CUSTOM_THEMES;i++)
 	{
 		numScanned[i]=0;
 		totalToScan[i]=0;
@@ -341,7 +341,7 @@ void InitBestiary(MGLDraw *mgl)
 				totalScanned++;
 			totalTotal++;
 		}
-		for(j=0;j<NUM_MONSTHEMES;j++)
+		for(j=0;j<NUM_MONSTHEMES-NUM_CUSTOM_THEMES;j++)
 		{
 			if(MonsterTheme(i)&d)
 			{
@@ -490,7 +490,7 @@ byte UpdateBestiary(int *lastTime,MGLDraw *mgl)
 		{
 			cursor--;
 			if(cursor==99)
-				cursor=NUM_MONSTHEMES-4;
+				cursor=NUM_MONSTHEMES-NUM_CUSTOM_THEMES-4;
 		}
 	}
 	if(c&CONTROL_DN)
@@ -498,7 +498,7 @@ byte UpdateBestiary(int *lastTime,MGLDraw *mgl)
 		if(cursor<100)
 		{
 			cursor+=4;
-			if(cursor>=NUM_MONSTHEMES)
+			if(cursor>=NUM_MONSTHEMES-NUM_CUSTOM_THEMES)
 				cursor=100;
 		}
 		else
@@ -553,7 +553,7 @@ void RenderBestiary(MGLDraw *mgl)
 
 	x=21;
 	y=14;
-	for(i=0;i<NUM_MONSTHEMES;i++)
+	for(i=0;i<NUM_MONSTHEMES-NUM_CUSTOM_THEMES;i++)
 	{
 		if(oldmsx!=msx || oldmsy!=msy)
 		{

@@ -32,6 +32,11 @@ void ShouldCheckControls(byte n)
 	newControls=c;
 }
 
+byte FakeGetControls(void)
+{
+	return newControls;
+}
+
 byte ControlCheck(byte c)
 {
 	if(!(oldControls&c) && !(newControls&c))

@@ -3005,8 +3005,8 @@ void AI_CrabPuff(Guy *me,Map *map,world_t *world,Guy *goodguy)
 void AI_Patch(Guy *me,Map *map,world_t *world,Guy *goodguy)
 {
 	Guy *g;
-	byte summonTab[]={MONS_PUMPKIN,MONS_PUMPKIN,MONS_BOOMKIN,MONS_SQUASH};
-	byte timerTab[]={30*5,30,30*5,30*3};
+	byte summonTab[]={MONS_PUMPKIN,MONS_PUMPKIN,MONS_BOOMKIN,MONS_SQUASH,MONS_BEETLE,MONS_FROG2};
+	byte timerTab[]={30*5,30,30*5,30*3,3,30*3};
 
 	if(me->reload)
 		me->reload--;
@@ -3026,7 +3026,17 @@ void AI_Patch(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		}
 		if(me->seq==ANIM_A1 && me->frm==7 && me->reload==0)
 		{
-			g=AddBaby(me->x,me->y+FIXAMT*2,0,summonTab[me->aiType-MONS_PATCH],me);
+			switch(me->type){
+				case MONS_PATCH5:
+					g=AddBaby(me->x,me->y+FIXAMT*2,0,summonTab[4],me);
+					break;
+				case MONS_PATCH6:
+					g=AddBaby(me->x,me->y+FIXAMT*2,0,summonTab[5],me);
+					break;
+				default:
+					g=AddBaby(me->x,me->y+FIXAMT*2,0,summonTab[me->aiType-MONS_PATCH],me);
+					break;
+			}
 			if(g)
 			{
 				g->mind=1;
@@ -3035,7 +3045,17 @@ void AI_Patch(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			}
 			if(g && (!g->CanWalk(g->x,g->y,map,world)))
 				RemoveGuy(g);
-			me->reload=timerTab[me->aiType-MONS_PATCH];
+			switch(me->type){
+				case MONS_PATCH5:
+					me->reload=timerTab[4];
+					break;
+				case MONS_PATCH6:
+					me->reload=timerTab[5];
+					break;
+				default:
+					me->reload=timerTab[me->aiType-MONS_PATCH];
+					break;
+			}
 		}
 		return;
 	}

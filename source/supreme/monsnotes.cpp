@@ -1448,6 +1448,138 @@ char monsNotes[NUM_MONSTERS][512]={
 	"He's nipping at your nose!  He does that by firing freeze bolts at random.  For a mini-boss, this guy is pretty harmless. "
 	"But if you want to make him tough, put him in fairly tight quarters with Bouapha and some other enemies!  That makes his "
 	"ice shots hard to avoid, and greatly improves his odds of getting a swipe at you on his highly predictable journey.",
+	//Pterodactyl
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Eye Guy
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Octon
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Submerged Octon
+	"",
+	//Blockhead
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Blockhead Kiln
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Trapazoid
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Vulnerable Trapazoid
+	"",
+	//Golden balbes H
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Golden balbes V
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Slimy Slug
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Sniper Snail
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Sneaky Snail
+	"",
+	//Oculoid
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//The Lookey-Loo
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Pinkeye
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Crazy Bush
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Peeping Bomb
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Rammy
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Vulnerable Rammy
+	"",
+	//Hoppy
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Invincible Hoppy
+	"",
+	//Gruffy
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Happy Stick Shroom
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Happy Stick Spider
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Happy Stick Corpse
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Happy Stick Bat
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Tower Guardian
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Grumpy Golem
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Bobby Khan
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Blocko The Great
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Blocko Tongue
+	"",
+	//Optimum Octon
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Octentacle
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Octentacle
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Microfish
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Froggy
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Toadie
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Mad Cow
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Extremely Mad Cow
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Flying Pumpkin
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Simulated Head
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Beetle Nest
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Toad Hole
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Happy Stick Tree
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//The Darkness
+	"+ + + Supreme with Everything mod + +  "
+	"",
 };
 
 char *MonsterNotes(dword type)

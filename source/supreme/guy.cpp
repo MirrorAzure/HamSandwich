@@ -549,7 +549,8 @@ void Guy::Update(Map *map,world_t *world)
 			aiType==MONS_SNOWBALL2 || aiType==MONS_ROLLER3 || aiType==MONS_ROLLER4 || aiType==MONS_DARKVAMP ||
 			aiType==MONS_FRIENDLY2 || aiType==MONS_CRAZYPANTS || aiType==MONS_AUTOZOID || aiType==MONS_YUGO ||
 			aiType==MONS_PATTY || aiType==MONS_PATROLLR || aiType==MONS_PATROLUD || aiType==MONS_DPATROLLR || aiType==MONS_DPATROLUD ||
-			aiType==MONS_MINIWACKO || aiType==MONS_JACKFROST)
+			aiType==MONS_MINIWACKO || aiType==MONS_JACKFROST || aiType==MONS_INCAGOLD || aiType==MONS_INCAGOLD2 || aiType==MONS_SLUG ||
+			type==MONS_GOAT1 || type==MONS_GOAT1B || type==MONS_INCABOSS || type==MONS_OCTOBOSS || aiType==MONS_MADCOW)
 			mind1=1;	// tell it that it hit a wall
 		b=1;
 	}
@@ -568,7 +569,8 @@ void Guy::Update(Map *map,world_t *world)
 			aiType==MONS_SNOWBALL2 || aiType==MONS_ROLLER3 || aiType==MONS_ROLLER4 || aiType==MONS_DARKVAMP ||
 			aiType==MONS_FRIENDLY2 || aiType==MONS_CRAZYPANTS || aiType==MONS_AUTOZOID || aiType==MONS_YUGO ||
 			aiType==MONS_PATTY || aiType==MONS_PATROLLR || aiType==MONS_PATROLUD || aiType==MONS_DPATROLLR || aiType==MONS_DPATROLUD ||
-			aiType==MONS_MINIWACKO || aiType==MONS_JACKFROST)
+			aiType==MONS_MINIWACKO || aiType==MONS_JACKFROST || aiType==MONS_INCAGOLD || aiType==MONS_INCAGOLD2 || aiType==MONS_SLUG ||
+			type==MONS_GOAT1 || type==MONS_GOAT1B || type==MONS_INCABOSS || type==MONS_OCTOBOSS || aiType==MONS_MADCOW)
 			mind1+=2;	// tell it that it hit a wall
 		b=1;
 	}
@@ -1479,6 +1481,35 @@ Guy *AddGuy(int x,int y,int z,int type,byte friendly)
 				guys[i]->mind2=15;
 			if(type==MONS_GENERATOR4)
 				guys[i]->mind2=30;
+			
+			if(type==MONS_OCTOBOSS)
+			{
+				g=AddGuy(x-FIXAMT*140,y-FIXAMT*100,0,MONS_OCTOTENT,friendly);
+				if(g)
+					g->parent=guys[i];
+				g=AddGuy(x-FIXAMT*180,y-FIXAMT*30,0,MONS_OCTOTENT,friendly);
+				if(g)
+					g->parent=guys[i];
+				g=AddGuy(x-FIXAMT*180,y+FIXAMT*30,0,MONS_OCTOTENT,friendly);
+				if(g)
+					g->parent=guys[i];
+				g=AddGuy(x-FIXAMT*140,y+FIXAMT*100,0,MONS_OCTOTENT,friendly);
+				if(g)
+					g->parent=guys[i];
+
+				g=AddGuy(x+FIXAMT*140,y-FIXAMT*100,0,MONS_OCTOTENT2,friendly);
+				if(g)
+					g->parent=guys[i];
+				g=AddGuy(x+FIXAMT*180,y-FIXAMT*30,0,MONS_OCTOTENT2,friendly);
+				if(g)
+					g->parent=guys[i];
+				g=AddGuy(x+FIXAMT*180,y+FIXAMT*30,0,MONS_OCTOTENT2,friendly);
+				if(g)
+					g->parent=guys[i];
+				g=AddGuy(x+FIXAMT*140,y+FIXAMT*100,0,MONS_OCTOTENT2,friendly);
+				if(g)
+					g->parent=guys[i];
+			}
 
 			if(type==MONS_MATHEAD)	// Matilda, need to add all the parts
 			{
@@ -3836,4 +3867,63 @@ byte BadguyRegions(int x,int y,int x2,int y2,int tx,int ty)
 		}
 	}
 	return 1;
+}
+
+byte PeepAtGuy(int x,int y,Map *map,byte face)
+{
+	int i;
+	int checkx,checky,mapx,mapy;
+
+	checkx=x;
+	checky=y;
+
+	if(goodguy==NULL)
+		return 0;
+
+	for(i=0;i<64;i++)
+	{
+	 	//AddParticle(checkx,checky,0,0,0,0,10,PART_SLIME,1);
+
+		if(abs(checkx-goodguy->x)/FIXAMT+abs(checky-goodguy->y)/FIXAMT<(16+i))
+		{
+			mapx=x/(TILE_WIDTH*FIXAMT);
+			mapy=y/(TILE_HEIGHT*FIXAMT);
+			if(map->FindGuy(mapx,mapy,20,goodguy))
+				return 1;
+			else
+				return 0;
+		}
+
+		checkx+=Cosine(face)*5;
+		checky+=Sine(face)*5;
+
+		mapx=checkx/(TILE_WIDTH*FIXAMT);
+		mapy=checky/(TILE_HEIGHT*FIXAMT);
+
+		if(mapx<0 || mapy<0 || mapx>=map->width || mapy>=map->height)
+			return 0;	// went off the map
+
+		if(map->map[mapx+mapy*map->width].wall)
+			return 0;	// hit a wall
+	}
+
+	return 0;
+}
+
+byte AttackCheck2(int xx,int yy,int xx2,int yy2,Guy *him)
+{
+	int x2,y2;
+
+	if(!him)
+		return 0;
+
+	x2=him->x>>FIXSHIFT;
+	y2=him->y>>FIXSHIFT;
+
+	//DrawDebugBox(xx,yy,xx+size*2,yy+size*2);
+	if((x2+him->rectx2)>=xx && (y2+him->recty2)>=yy && (x2+him->rectx)<=(xx2) &&
+		(y2+him->recty)<=(yy2))
+		return 1;
+
+	return 0;
 }

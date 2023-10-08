@@ -52,3 +52,17 @@ void Clamp(int *value,int amt)
 	if(*value<-amt)
 		*value=-amt;
 }
+
+byte AngleFrom(int fromx,int fromy,int tox,int toy)
+{
+	float ang;
+
+	ang=(float)atan2(-(fromy-toy),-(fromx-tox));
+	ang=(ang*256.0f)/(3.14159f*2.0f);
+	while(ang<0)
+		ang+=256;
+	while(ang>=256)
+		ang-=256;
+
+	return (byte)ang;
+}

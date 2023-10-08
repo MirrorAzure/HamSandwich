@@ -11,7 +11,7 @@
  -MT_BOSS	 -MT_MINIBOSS	 -MT_WACKY		-MT_PUMPKIN	 -MT_THINGY		-MT_VEGGIE -MT_ARCTIC
  -MT_ZOID	 -MT_DESERT		 -MT_CRAZIES	-MT_VEHICLE	 -MT_GENERATE	-MT_TRAP   -MT_ALIEN
  -MT_ANIMAL	 -MT_HUMAN		 -MT_URBAN		-MT_AQUATIC	 -MT_UNDERSEA
- -MT_FLYING  -MT_HIGHTECH	 -MT_BITS
+ -MT_FLYING  -MT_HIGHTECH	 -MT_BITS		-MT_MYSTIC	 -MT_SLEEPLESS
 */
 extern monsterType_t monsType[NUM_MONSTERS]; // see monsterlist.cpp
 
@@ -637,6 +637,53 @@ void FlailLock(Guy *me)
 	}
 }
 
+void WanderAI(Guy *me,int wanderRate,int wanderTime,int unWanderRate,Map *map,world_t *world,Guy *goodguy,int speed)
+{
+	if(me->action==ACTION_BUSY)
+		return;
+
+	if(me->mind==0)		// when mind=0, singlemindedly lumber towards Bouapha
+	{
+		FaceGoodguy(me,goodguy);
+
+		me->dx=(Cosine(me->facing*32)*speed)/FIXAMT;
+		me->dy=(Sine(me->facing*32)*speed)/FIXAMT;
+		if(me->seq!=ANIM_MOVE)
+		{
+			me->seq=ANIM_MOVE;
+			me->frm=0;
+			me->frmTimer=0;
+			me->frmAdvance=128;
+		}
+		if(Random(wanderRate)==0)
+		{
+			me->mind=1;		// occasionally wander
+			me->mind1=1;
+		}
+	}
+	else if(me->mind==1)	// random wandering
+	{
+		if(!(me->mind1--))	// time to get a new direction
+		{
+			if((goodguy) && Random(unWanderRate)==0)
+				me->mind=0;	// get back on track
+			else
+				me->facing=(byte)Random(8);
+			me->mind1=(byte)Random(wanderTime)+1;
+		}
+
+		me->dx=(Cosine(me->facing*32)*speed)/FIXAMT;
+		me->dy=(Sine(me->facing*32)*speed)/FIXAMT;
+		if(me->seq!=ANIM_MOVE)
+		{
+			me->seq=ANIM_MOVE;
+			me->frm=0;
+			me->frmTimer=0;
+			me->frmAdvance=128;
+		}
+	}
+}
+
 // here be the AIs for each monster type
 //--------------------------------------------------------------------------------------
 
@@ -644,3 +691,4 @@ void FlailLock(Guy *me)
 #include "monsterai2.inl"
 #include "monsterai3.inl"
 #include "monsterai4.inl"
+#include "monsterai5.inl"
