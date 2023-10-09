@@ -113,6 +113,8 @@ static char bulletName[][20]={
 	"Yell Wave",
 	"Floaty Flame",
 	"Evil Sitting Flame",
+	"Black Hole Shot",
+	"Black Hole",
 };
 
 void PrintFX(word flags)

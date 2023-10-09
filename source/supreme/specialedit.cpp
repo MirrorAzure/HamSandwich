@@ -262,8 +262,10 @@ static char bulletName[][20]={
 	"Yell Wave",
 	"Floaty Flame",
 	"Evil Sitting Flame",
+	"Black Hole Shot",
+	"Black Hole",
 };
-#define MAX_BULLETS (BLT_BADSITFLAME + 1)
+#define MAX_BULLETS (BLT_BLACKHOLE + 1)
 
 static void SetupTriggerButtons(int t,int y);
 static void SetupEffectButtons(int t,int y);

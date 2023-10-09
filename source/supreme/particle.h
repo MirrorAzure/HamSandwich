@@ -29,7 +29,7 @@ enum : byte
 	PART_FX, // accelerates upward, shrinks as it dies, for effects
 	PART_YELLOW, 
 	PART_SHORTYELLOW,
-	
+	PART_SUCK,
 };
 
 class Particle
@@ -90,6 +90,7 @@ void TeamChangeRing(byte color,int x,int y,int z,byte num,byte force);
 
 void SmokeTile(int x,int y);
 void JackFrostWeather(int x,int y);
+void SuckParticle(int x,int y,int z);
 
 int CountParticles();
 

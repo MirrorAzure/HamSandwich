@@ -1580,6 +1580,81 @@ char monsNotes[NUM_MONSTERS][512]={
 	//The Darkness
 	"+ + + Supreme with Everything mod + +  "
 	"",
+	//Spark
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Lightswitch
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Blaster
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Charge Coil
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//The Grue
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Sir Spookley Hauntmore
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Spookley
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Speedy Hernandez
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Iron Skull
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Big Head Todd
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Big Head Maude
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Big Head Rod
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Big Head Bod
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Glass Jaw
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Rafe Lector
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Lady Von Spatula
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Royal Guard
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Scaredy Bat
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Headless Horseradish
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Sparky
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Bobber
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Swampdog
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Bog Beast
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Shambling Thing
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Marsh Mutt
+	"+ + + Supreme with Everything mod + +  "
+	"",
 };
 
 char *MonsterNotes(dword type)

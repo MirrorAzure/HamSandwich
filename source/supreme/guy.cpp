@@ -550,7 +550,9 @@ void Guy::Update(Map *map,world_t *world)
 			aiType==MONS_FRIENDLY2 || aiType==MONS_CRAZYPANTS || aiType==MONS_AUTOZOID || aiType==MONS_YUGO ||
 			aiType==MONS_PATTY || aiType==MONS_PATROLLR || aiType==MONS_PATROLUD || aiType==MONS_DPATROLLR || aiType==MONS_DPATROLUD ||
 			aiType==MONS_MINIWACKO || aiType==MONS_JACKFROST || aiType==MONS_INCAGOLD || aiType==MONS_INCAGOLD2 || aiType==MONS_SLUG ||
-			type==MONS_GOAT1 || type==MONS_GOAT1B || type==MONS_INCABOSS || type==MONS_OCTOBOSS || aiType==MONS_MADCOW)
+			type==MONS_GOAT1 || type==MONS_GOAT1B || type==MONS_INCABOSS || type==MONS_OCTOBOSS || aiType==MONS_MADCOW ||
+			aiType==MONS_POLTERGUY || aiType==MONS_POLTERGUY2 || aiType==MONS_SPEEDY || aiType==MONS_BIGHEAD2 ||
+			aiType==MONS_RADISH || aiType==MONS_SPARKY)
 			mind1=1;	// tell it that it hit a wall
 		b=1;
 	}
@@ -570,7 +572,9 @@ void Guy::Update(Map *map,world_t *world)
 			aiType==MONS_FRIENDLY2 || aiType==MONS_CRAZYPANTS || aiType==MONS_AUTOZOID || aiType==MONS_YUGO ||
 			aiType==MONS_PATTY || aiType==MONS_PATROLLR || aiType==MONS_PATROLUD || aiType==MONS_DPATROLLR || aiType==MONS_DPATROLUD ||
 			aiType==MONS_MINIWACKO || aiType==MONS_JACKFROST || aiType==MONS_INCAGOLD || aiType==MONS_INCAGOLD2 || aiType==MONS_SLUG ||
-			type==MONS_GOAT1 || type==MONS_GOAT1B || type==MONS_INCABOSS || type==MONS_OCTOBOSS || aiType==MONS_MADCOW)
+			type==MONS_GOAT1 || type==MONS_GOAT1B || type==MONS_INCABOSS || type==MONS_OCTOBOSS || aiType==MONS_MADCOW ||
+			aiType==MONS_POLTERGUY || aiType==MONS_POLTERGUY2 || aiType==MONS_SPEEDY || aiType==MONS_BIGHEAD2 ||
+			aiType==MONS_RADISH || aiType==MONS_SPARKY)
 			mind1+=2;	// tell it that it hit a wall
 		b=1;
 	}
@@ -922,6 +926,19 @@ void Guy::GetShot(int dx,int dy,byte damage,Map *map,world_t *world)
 	if(aiType==MONS_BOUAPHA && frozen)
 		frozen/=2;
 
+	if(type==MONS_LIGHTSWITCH)
+	{
+		if(GetBulletAttackType()==BLT_BLACKHOLE)
+			return;	// don't wake it
+		if(seq!=ANIM_ATTACK)
+		{
+			seq=ANIM_ATTACK;
+			frm=0;
+			frmAdvance=64;
+			frmTimer=0;
+		}
+		return;	// no harm done
+	}
 	if(profile.difficulty==0 && damage>0)
 	{
 		if(friendly)
@@ -1465,6 +1482,19 @@ Guy *AddGuy(int x,int y,int z,int type,byte friendly)
 			guys[i]->aiType=guys[i]->type;
 			guys[i]->brtChange=GetMonsterType(guys[i]->type)->brtChg;
 			guys[i]->customSpr=nullptr;
+
+			if(type==MONS_POLTERGUY || type==MONS_POLTERGUY2)
+				guys[i]->mind3=255;
+
+			if(type==MONS_BIGHEAD || type==MONS_BIGHEAD2 || type==MONS_BIGHEAD3)
+			{
+				guys[i]->z=FIXAMT*40;
+				g=AddGuy(guys[i]->x,guys[i]->y-1,0,MONS_BIGBODY,0);
+				if(g)
+				{
+					g->parent=guys[i];
+				}
+			}
 
 			if(type==MONS_ISOZOID && editing!=1)
 			{
@@ -3801,6 +3831,8 @@ byte Guy::IsAwake(void)
 		case MONS_WEATHERMAN:
 		case MONS_PUNKBUNNY:
 		case MONS_JALAPENO:
+		case MONS_BIGHEAD:
+		case MONS_SPATULA:
 			return (mind!=0);
 			break;
 		case MONS_LOONYGUN:
@@ -3926,4 +3958,93 @@ byte AttackCheck2(int xx,int yy,int xx2,int yy2,Guy *him)
 		return 1;
 
 	return 0;
+}
+
+void SuckIn(int x,int y, byte friendly)
+{
+	int i,suck;
+	byte a;
+
+	x/=FIXAMT;
+	y/=FIXAMT;
+
+	for(i=0;i<maxGuys;i++)
+	{
+		if(guys[i]->type && guys[i]->friendly!=friendly && guys[i]->hp && !(MonsterFlags(guys[i]->type,0)&MF_NOMOVE))
+		{
+			suck=(guys[i]->x/FIXAMT-x)*(guys[i]->x/FIXAMT-x)+(guys[i]->y/FIXAMT-y)*(guys[i]->y/FIXAMT-y);
+			if(suck<50000)	// 300? pixels max
+			{
+				suck=50000-suck;
+				suck/=2600;	// now suck is 0-20
+				a=AngleFrom(guys[i]->x/FIXAMT,guys[i]->y/FIXAMT,x,y);
+				guys[i]->x+=Cosine(a)*suck;
+				if(!guys[i]->CanWalk(guys[i]->x,guys[i]->y,curMap,&curWorld))
+					guys[i]->x-=Cosine(a)*suck;
+				guys[i]->y+=Sine(a)*suck;
+				if(!guys[i]->CanWalk(guys[i]->x,guys[i]->y,curMap,&curWorld))
+					guys[i]->y-=Sine(a)*suck;
+			}
+		}
+	}
+}
+
+void SpreadCharge(Guy *me)
+{
+	int i;
+
+	for(i=0;i<maxGuys;i++)
+	{
+		if(guys[i]->type==MONS_LIGHTSLIDE && guys[i]!=me)
+		{
+			if((guys[i]->mapx==me->mapx && (guys[i]->mapy==me->mapy-1 || guys[i]->mapy==me->mapy+1)) ||
+				(guys[i]->mapy==me->mapy && (guys[i]->mapx==me->mapx-1 || guys[i]->mapx==me->mapx+1)))
+			{
+				if(Random(10)==0)
+					LightningBolt(guys[i]->x-10*FIXAMT+Random(20*FIXAMT+1),guys[i]->y-FIXAMT*30-10*FIXAMT+Random(20*FIXAMT+1),me->x,me->y-FIXAMT*30);
+				if(guys[i]->mind1<105)
+					guys[i]->mind1+=2;
+			}
+		}
+	}
+}
+
+byte ArrangeBats(byte facing)
+{
+	int i,tx,ty;
+	byte ang[8];
+	byte minions,spot;
+
+	minions=CountMonsters(MONS_BATGUARD);
+
+	for(i=0;i<minions;i++)
+	{
+		ang[i]=facing+(256/minions)*i;
+	}
+	spot=0;
+	for(i=0;i<maxGuys;i++)
+	{
+		if(guys[i]->type==MONS_BATGUARD)
+		{
+			guys[i]->mind=TurnToward(guys[i]->mind,ang[spot],4);
+			guys[i]->facing=guys[i]->mind/32;
+			tx=guys[i]->parent->x+Cosine(guys[i]->mind)*50;
+			ty=guys[i]->parent->y+Sine(guys[i]->mind)*50;
+			if(guys[i]->x<tx)
+				guys[i]->dx+=FIXAMT/2;
+			if(guys[i]->x>tx)
+				guys[i]->dx-=FIXAMT/2;
+			if(guys[i]->y<ty)
+				guys[i]->dy+=FIXAMT/2;
+			if(guys[i]->y>ty)
+				guys[i]->dy-=FIXAMT/2;
+			Dampen(&guys[i]->dx,FIXAMT/8);
+			Dampen(&guys[i]->dy,FIXAMT/8);
+			guys[i]->x=tx;
+			guys[i]->y=ty;
+			spot++;
+		}
+	}
+
+	return minions;
 }

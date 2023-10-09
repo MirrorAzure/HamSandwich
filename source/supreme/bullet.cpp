@@ -209,6 +209,8 @@ void BulletHitWallX(bullet_t *me,Map *map,world_t *world)
 				BulletRanOut(me,map,world);
 			break;
 		case BLT_GRENADE:
+		case BLT_HOLESHOT:
+		case BLT_BLACKHOLE:
 			me->x-=me->dx;
 			break;
 		case BLT_LASER:	// reflects off walls
@@ -537,6 +539,8 @@ void BulletHitFloor(bullet_t *me,Map *map,world_t *world)
 		case BLT_TORPEDO:
 		case BLT_PAPER:
 		case BLT_FREEZE:
+		case BLT_HOLESHOT:
+		case BLT_BLACKHOLE:
 			me->z=0;
 			break;
 		case BLT_SPEAR:
@@ -637,7 +641,15 @@ void BulletRanOut(bullet_t *me,Map *map,world_t *world)
 		case BLT_REFLECT:
 		case BLT_BUBBLEPOP:
 		case BLT_SCANLOCK:
+		case BLT_BLACKHOLE:
 			me->type=0;
+			break;
+		case BLT_HOLESHOT:
+			me->type=BLT_BLACKHOLE;
+			me->dx=0;
+			me->dy=0;
+			me->timer=30*2;//+player.weaponLvl[WPN_PORTAL-1]*10;
+			me->anim=0;
 			break;
 		case BLT_SPEAR:
 		case BLT_BADSPEAR:
@@ -761,6 +773,12 @@ void HitBadguys(bullet_t *me,Map *map,world_t *world)
 	attackType=me->type;
 	switch(me->type)
 	{
+		case BLT_BLACKHOLE:
+			if(FindVictims2(me->x>>FIXSHIFT,me->y>>FIXSHIFT,32,0,0,1,map,world,me->friendly))
+			{
+
+			}
+			break;
 		case BLT_BADSITFLAME:
 			//BurnHay(me->x,me->y);
 			if(FindVictims2(me->x>>FIXSHIFT,me->y>>FIXSHIFT,12,me->dx,me->dy,1,map,world,me->friendly))
@@ -1251,6 +1269,18 @@ void UpdateBullet(bullet_t *me,Map *map,world_t *world)
 	// special things like animation
 	switch(me->type)
 	{
+		case BLT_HOLESHOT:
+			me->anim=1-me->anim;
+			me->dx=(me->dx*19)/20;
+			me->dy=(me->dy*19)/20;
+			break;
+		case BLT_BLACKHOLE:
+			SuckParticle(me->x,me->y,FIXAMT*20);
+			map->BrightTorch(mapx,mapy,-10,2);
+			SuckIn(me->x,me->y,me->friendly);
+			if(Random(2)==0)
+				HitBadguys(me,map,world);
+			break;
 		case BLT_BADSITFLAME:
 			if(me->timer&1)	// every other frame
 			{
@@ -2036,6 +2066,7 @@ void RenderBullet(bullet_t *me)
 			SprDraw(me->x>>FIXSHIFT,me->y>>FIXSHIFT,0,255,me->bright,curSpr,
 					DISPLAY_DRAWME|DISPLAY_SHADOW);
 			break;
+		case BLT_HOLESHOT:
 		case BLT_GRENADE:
 			curSpr=bulletSpr->GetSprite(me->anim+SPR_GRENADE);
 			SprDraw(me->x>>FIXSHIFT,me->y>>FIXSHIFT,me->z>>FIXSHIFT,255,me->bright,curSpr,
@@ -2239,6 +2270,14 @@ void FireMe(bullet_t *me,int x,int y,byte facing,byte type,byte friendly)
 
 	switch(me->type)
 	{
+		case BLT_HOLESHOT:
+			me->z=FIXAMT*20;
+			me->dx=Cosine(facing)*8;
+			me->dy=Sine(facing)*8;
+			me->dz=0;
+			me->anim=0;
+			me->timer=60;
+			break;
 		case BLT_BADSITFLAME:
 			me->anim=0;
 			me->timer=30+Random(30*15);
@@ -3302,6 +3341,8 @@ static const byte bulletFacingType[] = {
 	7,		// BLT_YELWAVE  63	// wavey thing
 	255,    // BLT_FLAME3	64	// floaty flame, drifts up
 	255,	// BLT_BADSITFLAME 65
+	255,	// BLT_HOLESHOT 66	// black hole shot flying
+	0,		// BLT_BLACKHOLE 67	// black hole existing
 };
 
 byte BulletFacingType(byte type)

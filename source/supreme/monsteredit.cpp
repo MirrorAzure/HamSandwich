@@ -27,7 +27,7 @@ static dword themes[]={MT_GOOD,MT_EVIL,MT_SPOOKY,MT_ZOMBIE,MT_VAMPIRE,MT_SPIDER,
 					   MT_ZOID,MT_BOSS,MT_MINIBOSS,MT_WACKY,MT_PUMPKIN,MT_THINGY,MT_VEGGIE,
 					   MT_ARCTIC,MT_DESERT,MT_VEHICLE,MT_GENERATE,MT_TRAP,MT_ALIEN,
 					   MT_HIGHTECH,MT_ANIMAL,MT_HUMAN,MT_URBAN,MT_AQUATIC,MT_UNDERSEA,MT_FLYING,
-					   MT_BITS, MT_MYSTIC, MT_SLEEPLESS};
+					   MT_BITS, MT_MYSTIC, MT_SLEEPLESS, MT_LOONY};
 
 static std::vector<dword> monsList;
 static word monsInList,monsStart,monsShown;
@@ -189,6 +189,7 @@ static void MonsterEditSetupButtons(void)
 	MakeButton(BTN_RADIO,ID_PICKTHEME+27,0,2+158*3,2+18*6,156,16,"Body Parts",PickThemeClick);
 	MakeButton(BTN_RADIO,ID_PICKTHEME+28,0,2+158*1,2+18*7,156,16,"Kid Mystic",PickThemeClick);
 	MakeButton(BTN_RADIO,ID_PICKTHEME+29,0,2+158*1,2+18*8,156,16,"Sleepless Hollow",PickThemeClick);
+	MakeButton(BTN_RADIO,ID_PICKTHEME+30,0,2+158*1,2+18*9,156,16,"Loonyland",PickThemeClick);
 
 	// delete, move, and exit
 	MakeButton(BTN_NORMAL,ID_EXIT,0,480,460,158,14,"Exit Monster List",ExitClick);

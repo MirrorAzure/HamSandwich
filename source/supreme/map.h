@@ -119,7 +119,6 @@ class Map
 		byte LOS(int x,int y,int radius,int value,byte (*DoIt)(int,int,int,int,int,Map *));
 		byte TightLOS(int x,int y,int radius,int value,byte (*DoIt)(int,int,int,int,int,Map *));
 		byte TightestLOS(int x,int y,int radius,int value,byte (*DoIt)(int,int,int,int,int,Map *));
-
 		int  ItemCount(byte itm);
 		int  ItemCountInRect(byte itm,int x,int y,int x2,int y2);
 

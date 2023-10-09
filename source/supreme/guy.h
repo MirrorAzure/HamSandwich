@@ -131,6 +131,10 @@ byte CheckMonsterColor(int x,int y,int type,byte color);
 Guy *GetGuyOfAIType(int type);
 
 byte PeepAtGuy(int x,int y,Map *map,byte face);
+void SuckIn(int x,int y,byte friendly);
+void SpreadCharge(Guy *me);
+byte ArrangeBats(byte facing);
+byte Walkable(Guy *me,int x,int y,Map *map,world_t *world);
 byte AttackCheck2(int xx,int yy,int xx2,int yy2,Guy *him);
 
 void FindMonsterBrain(int myx,int myy);

@@ -3397,4 +3397,320 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{254,255},	// attack
 				{254,255},	// die
 			}},
+		{"Spark",0,7,7,AI_Spark,
+		 11,2,6,300,"!66",0,MF_GHOST|MF_ONEFACE|MF_NOHIT|MF_FREEWALK|MF_ENEMYWALK|MF_INVINCIBLE|MF_NOMOVE|MF_WALLWALK|MF_FLYING|MF_WATERWALK,
+		 MT_EVIL|MT_TRAP|MT_SLEEPLESS,
+			{
+				{0,255},	// idle
+				{0,255},	// move
+				{0,255},	// attack
+				{0,255},	// die
+			}},
+		{"Lightswitch",255,255,0,AI_LightSwitch,
+		 10,8,3000,1,"graphics/sleepless/lghtball.jsp",0,MF_NOMOVE|MF_ONEFACE,
+		 MT_EVIL|MT_TRAP|MT_SLEEPLESS,
+			{
+				{7,255},	// idle
+				{7,255},	// move
+				{7,6,5,4,3,2,1,0,0,0,0,255},	// attack (shove)
+				{0,255},	// die
+			}},
+		{"Blaster",5,4,0,AI_LightBlaster,
+		 10,8,60,1,"graphics/sleepless/lghtball.jsp",0,MF_NOMOVE|MF_ONEFACE,
+		 MT_EVIL|MT_TRAP|MT_SLEEPLESS,
+			{
+				{7,255},	// idle
+				{7,255},	// move
+				{7,6,5,4,3,2,1,0,255},	// attack
+				{0,255},	// die
+			}},
+		{"Charge Coil",5,6,3,AI_LightSlide,
+		 10,8,3000,1,"graphics/sleepless/lghtball.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_INVINCIBLE,
+		 MT_TRAP|MT_SLEEPLESS,
+			{
+				{5,255},	// idle
+				{5,255},	// move
+				{5,4,3,2,1,0,0,0,0,0,0,0,255},	// attack (charge up)
+				{0,255},	// die
+			}},
+		{"The Grue",6,0,-13,AI_Grue,
+		 30,30,500,1500,"graphics/mamaspdr.jsp",0,MF_NOMOVE|MF_ENEMYWALK,
+		 MT_EVIL|MT_BOSS|MT_SPIDER|MT_ANIMAL|MT_SLEEPLESS,
+			{
+				{0,255},	// idle
+				{1,2,3,2,1,0,4,5,6,5,4,0,255},	// move
+				{7,8,9,10,11,12,12,13,13,255},	// spit (attack)
+				{19,20,21,22,23,24,25,25,25,26,27,28,29,255},	// die
+				{14,15,16,17,18,255},	// bite (A1)
+				{7,8,9,10,11,12,12,13,13,255},	// spit (attack)
+				{7,8,9,10,11,12,12,13,13,255},	// spit (attack)
+				{0,255},
+				{0,255},
+			}},
+		{"Sir Spookley Hauntmore",255,255,0,AI_Spook,
+		 30,9,300,1,"graphics/sleepless/bigghost.jsp",0,MF_ONEFACE|MF_FLYING|MF_FREEWALK|MF_ENEMYWALK,
+		 MT_EVIL|MT_BOSS|MT_SPOOKY|MT_SLEEPLESS,
+			{
+				{0,255},	// idle
+				{0,255},	// move
+				{1,2,3,2,1,255},	// attack
+				{4,4,5,5,6,6,7,7,8,8,255},	// die
+				{1,2,3,3,3,2,1,2,3,2,1,0,0,0,0,1,2,3,2,1,255},	// A1=sneeze
+			}},
+		{"Spookley",255,255,0,AI_Spook,
+		 30,9,300,1,"graphics/sleepless/bigghost.jsp",0,MF_ONEFACE|MF_FLYING|MF_GHOST|MF_FREEWALK|MF_ENEMYWALK|MF_NOSHADOW|MF_NOHIT,
+		 MT_EVIL|MT_BOSS|MT_SPOOKY|MT_BITS|MT_SLEEPLESS,
+			{
+				{0,255},	// idle
+				{0,255},	// move
+				{1,2,3,2,1,255},	// attack
+				{4,4,5,5,6,6,7,7,8,8,255},	// die
+				{1,2,3,3,3,2,1,2,3,2,1,0,0,0,0,1,2,3,2,1,255},	// A1=sneeze
+			}},
+		{"Speedy Hernandez",3,5,0,AI_Speedy,
+		 12,55,250,100,"graphics/wolfman.jsp",0,MF_FREEWALK|MF_ENEMYWALK|MF_NOMOVE,
+		 MT_EVIL|MT_BOSS|MT_SLEEPLESS,
+			{
+				{0,255},	// idle
+				{1,2,3,2,1,0,4,5,6,5,4,0,255},	// move
+				{30,31,32,32,32,33,34,35,36,37,38,39,40,41,42,43,255},	// attack (pounce)
+				{44,45,46,47,48,49,50,51,51,51,52,53,54,254,54,254,54,254,54,255},		// die
+				{7,8,9,9,8,7,255},	// spit projectile = A1
+				{10,11,12,12,12,13,14,15,16,17,17,18,19,255},	// charging slash = A2
+				{20,21,22,23,24,25,26,26,26,26,26,26,26,26,27,28,29,255},		// howl = A3
+				{30,31,32,32,32,33,34,35,36,37,38,39,40,41,42,43,255},	// attack (pounce)
+				{30,31,32,32,32,33,34,35,36,37,38,39,40,41,42,43,255},	// attack (pounce)
+			}},
+		{"Iron Skull",4,0,-8,AI_IronSkull,
+		 50,8,20000,1500,"graphics/lich.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_FLYING|MF_ENEMYWALK,
+		 MT_EVIL|MT_SPOOKY|MT_BOSS|MT_SLEEPLESS,
+			{
+				{0,255},	// idle
+				{0,255},	// move
+				{1,2,3,4,4,3,2,1,255},	// attack=open mouth
+				{0,5,6,7,8,255},	// die
+				{1,2,3,4,4,3,2,1,255},	// attack=open mouth
+				{0,255},
+				{0,255},
+				{0,255},
+				{0,255},
+			}},
+		{"Big Head Todd",4,5,0,AI_BigHead,
+		 50,8,300,1500,"graphics/lich.jsp",0,MF_NOMOVE|MF_ONEFACE,
+		 MT_EVIL|MT_SPOOKY|MT_MINIBOSS|MT_SLEEPLESS,
+			{
+				{0,255},	// idle
+				{0,255},	// move
+				{1,2,3,4,4,3,2,1,255},	// attack=open mouth
+				{0,5,6,7,8,255},	// die
+				{1,2,3,4,4,3,2,1,255},	// attack=open mouth
+				{0,255},
+				{0,255},
+				{0,255},
+				{0,255},
+			}},
+		{"Big Head Maude",4,1,0,AI_BigHead,
+		 50,8,300,1500,"graphics/lich.jsp",0,MF_NOMOVE|MF_ONEFACE,
+		 MT_EVIL|MT_SPOOKY|MT_MINIBOSS|MT_SLEEPLESS,
+			{
+				{0,255},	// idle
+				{0,255},	// move
+				{1,2,3,4,4,3,2,1,255},	// attack=open mouth
+				{0,5,6,7,8,255},	// die
+				{1,2,3,4,4,3,2,1,255},	// attack=open mouth
+				{0,255},
+				{0,255},
+				{0,255},
+				{0,255},
+			}},
+		{"Big Head Rod",255,255,0,AI_BigHead2,
+		 50,8,300,1500,"graphics/lich.jsp",0,MF_NOMOVE|MF_ONEFACE,
+		 MT_EVIL|MT_SPOOKY|MT_MINIBOSS|MT_SLEEPLESS,
+			{
+				{0,255},	// idle
+				{0,255},	// move
+				{1,2,3,4,4,3,2,1,255},	// attack=open mouth
+				{0,5,6,7,8,255},	// die
+				{1,2,3,4,4,3,2,1,255},	// attack=open mouth
+				{0,255},
+				{0,255},
+				{0,255},
+				{0,255},
+			}},
+		{"Big Head Bod",255,255,0,AI_BigHeadBod,
+		 8,32,6,50,"!2",0,MF_NOHIT|MF_ENEMYWALK|MF_FREEWALK|MF_NOMOVE,
+		 MT_BITS|MT_SLEEPLESS,
+			{
+				{0,255},	// idle
+				{1,2,3,2,1,0,4,5,6,5,4,0,255},	// move
+				{12,13,14,15,16,17,18,19,255},	// attack
+				{7,8,9,10,11,11,11,11,254,11,254,11,254,11,254,11,254,11,254,11,254,11,255},		// die
+				{20,21,22,23,24,25,255},	// chomp/spit projectile
+				{26,27,27,27,26,255},	// point at bouapha
+				{11,10,9,8,7,255},	// resurrect=A3
+				{28,29,30,31,30,29,28,255},	// leap skyward
+			}},
+		{"Glass Jaw",0,7,0,AI_Bonehead,
+		 8,32,10,50,"graphics/sleepless/bonehead.jsp",0,0,
+		 MT_EVIL|MT_SPOOKY|MT_SLEEPLESS,
+			{
+				{0,255},	// idle
+				{1,2,3,2,1,0,4,5,6,5,4,0,255},	// move
+				{12,13,14,15,16,17,18,19,255},	// attack
+				{7,8,9,10,11,11,11,11,254,11,254,11,254,11,254,11,254,11,254,11,254,11,255},		// die
+				{20,21,22,23,24,25,255},	// chomp/spit projectile
+				{26,27,27,27,26,255},	// point at bouapha
+				{11,10,9,8,7,255},	// resurrect=A3
+				{28,29,30,31,30,29,28,255},	// leap skyward
+			}},
+		{"Rafe Lector",255,255,0,AI_Rafe,
+		 50,47,200,1000,"graphics/knight.jsp",0,MF_ONEFACE|MF_NOMOVE|MF_ENEMYWALK,
+		 MT_EVIL|MT_BOSS|MT_SLEEPLESS,
+			{
+				{14,255},	// idle
+				{15,16,17,18,19,20,21,22,14,255},	// move
+				{26,27,28,29,30,31,32,33,255},	// attack
+				{34,35,36,37,38,39,40,41,42,43,44,45,46,255},	// die
+				{0,1,2,3,4,5,6,7,8,9,10,11,12,13,255}, // A1 = arrive
+				{23,24,25,25,25,25,25,25,25,24,23,255}, // A2 = block
+				{26,27,28,29,30,31,32,33,255},	// attack
+				{26,27,28,29,30,31,32,33,255},	// attack
+				{26,27,28,29,30,31,32,33,255},	// attack
+			}},
+		{"Lady Von Spatula",6,3,-2,AI_Spatula,
+		 25,28,300,1000,"graphics/countess.jsp",0,MF_ONEFACE|MF_NOMOVE,
+		 MT_EVIL|MT_BOSS|MT_SPOOKY|MT_SLEEPLESS,
+			{
+				{0,1,2,3,4,5,6,7,8,9,255},	// idle
+				{0,1,2,3,4,5,6,7,8,9,255},	// move
+				{13,14,15,16,17,18,18,18,18,18,19,255},	// attack
+				{20,21,22,22,22,22,23,24,25,26,27,255},	// die
+				{10,11,12,12,12,12,11,10,255},	// A1=summon boneheads
+				{3,3,3,255},	// A2=charge up to rush
+				{13,14,15,16,17,18,18,18,18,18,19,255},	// attack
+				{13,14,15,16,17,18,18,18,18,18,19,255},	// attack
+				{13,14,15,16,17,18,18,18,18,18,19,255},	// attack
+			}},
+		{"Royal Guard",2,6,-4,AI_BatGuard,
+		 8,27,50,25,"!3",0,MF_FLYING|MF_NOMOVE|MF_ENEMYWALK|MF_FREEWALK|MF_WALLWALK,
+		 MT_EVIL|MT_ANIMAL|MT_FLYING|MT_BITS|MT_SLEEPLESS,
+			{
+				{0,255},	// idle
+				{1,2,3,2,1,0,4,5,6,5,4,0,255},	// move
+				{7,8,9,8,7,255},	// attack
+				{17,18,19,20,21,22,23,24,25,26,255},		// die
+				{10,11,12,12,12,12,12,11,10,255},	// diving attack
+				{13,14,15,15,16,255},	// bounce off during dive
+				{7,8,9,8,7,255},	// attack
+				{0,255},
+				{0,255},
+			}},
+		{"Scaredy Bat",2,5,0,AI_ScaredyBat,
+		 8,27,20,25,"graphics/bat.jsp",0,MF_FLYING,
+		 MT_FLYING|MT_ANIMAL|MT_SLEEPLESS,
+			{
+				{0,255},	// idle
+				{1,2,3,2,1,0,4,5,6,5,4,0,255},	// move
+				{7,8,9,8,7,255},	// attack
+				{17,18,19,20,21,22,23,24,25,26,255},		// die
+				{10,11,12,12,12,12,12,11,10,255},	// diving attack
+				{13,14,15,15,16,255},	// bounce off during dive
+				{7,8,9,8,7,255},	// attack
+				{0,255},
+				{0,255},
+			}},
+		{"Headless Horseradish",255,255,0,AI_Horseradish,
+		 11,10,25000,100,"graphics/sleepless/radish.jsp",0,MF_NOMOVE|MF_ENEMYWALK|MF_FREEWALK,
+		 MT_EVIL|MT_BOSS|MT_SLEEPLESS,
+			{
+				{0,255},	// idle
+				{1,2,1,0,3,4,3,0,255},	// move
+				{5,6,7,8,9,255},	// attack=shoot spines
+				{0,0,0,0,255},	// die
+			}},
+		{"Sparky",3,7,2,AI_Sparky,
+		 12,55,100,100,"graphics/wolfman.jsp",0,MF_FREEWALK|MF_ENEMYWALK|MF_NOMOVE,
+		 MT_EVIL|MT_MINIBOSS|MT_SLEEPLESS,
+			{
+				{0,255},	// idle
+				{1,2,3,2,1,0,4,5,6,5,4,0,255},	// move
+				{30,31,32,32,32,33,34,35,36,37,38,39,40,41,42,43,255},	// attack (pounce)
+				{44,45,46,47,48,49,50,51,51,51,52,53,54,254,54,254,54,254,54,255},		// die
+				{7,8,9,9,8,7,255},	// spit projectile = A1
+				{10,11,12,12,12,13,14,15,16,17,17,18,19,255},	// charging slash = A2
+				{20,21,22,23,24,25,26,26,26,26,26,26,26,26,27,28,29,255},		// howl = A3
+				{30,31,32,32,32,33,34,35,36,37,38,39,40,41,42,43,255},	// attack (pounce)
+				{30,31,32,32,32,33,34,35,36,37,38,39,40,41,42,43,255},	// attack (pounce)
+			}},
+		{"Bobber",0,4,10,AI_Bobber,
+		 18,2,30,300,"!66",0,MF_ONEFACE|MF_NOMOVE|MF_NOHIT|MF_WALLWALK|MF_ENEMYWALK|MF_FREEWALK,
+		 MT_BITS|MT_SLEEPLESS,
+			{
+				{0,255},	// idle
+				{0,255},	// move
+				{0,255},	// attack
+				{0,255},		// die
+				{0,255},	// attack
+				{0,255},	// attack
+				{0,255},	// attack
+				{0,255},	// attack
+				{0,255},	// attack
+			}},
+    	{"Swampdog",255,255,0,AI_Swampdog,
+		 18,43,20,0,"graphics/loonyland/swampdog.jsp",0,0,
+         MT_LOONY,
+			{
+				{11,255},	// idle
+				{12,13,14,13,12,11,15,16,17,16,15,255},	// move
+				{20,21,22,23,23,22,21,20,255},	// attack (eye jab)
+				{33,34,35,36,37,38,39,40,41,42,255},		// die
+				{18,19,19,19,255},	// perk up = A1
+				{1,2,3,4,5,6,7,8,9,10,0,255},	// charge = A2
+				{24,25,26,27,28,29,30,31,32,255},		// eyebonk/shoot = A3
+				{19,18,18,255},	// get bored = A4
+				{0,0,0,0,255},	// hyper idle = A5
+			}},
+    	{"Bog Beast",5,1,-3,AI_Swampdog,
+		 12,43,40,0,"!278",0,0,
+         MT_LOONY,
+			{
+				{11,255},	// idle
+				{12,13,14,13,12,11,15,16,17,16,15,255},	// move
+				{20,21,22,23,23,22,21,20,255},	// attack (eye jab)
+				{33,34,35,36,37,38,39,40,41,42,255},		// die
+				{18,19,19,19,255},	// perk up = A1
+				{1,2,3,4,5,6,7,8,9,10,0,255},	// charge = A2
+				{24,25,26,27,28,29,30,31,32,255},		// eyebonk/shoot = A3
+				{19,18,18,255},	// get bored = A4
+				{0,0,0,0,255},	// hyper idle = A5
+			}},
+    	{"Shambling Thing",5,3,0,AI_Swampdog,
+		 12,43,70,0,"!278",0,0,
+         MT_LOONY,
+			{
+				{11,255},	// idle
+				{12,13,14,13,12,11,15,16,17,16,15,255},	// move
+				{20,21,22,23,23,22,21,20,255},	// attack (eye jab)
+				{33,34,35,36,37,38,39,40,41,42,255},		// die
+				{18,19,19,19,255},	// perk up = A1
+				{1,2,3,4,5,6,7,8,9,10,0,255},	// charge = A2
+				{24,25,26,27,28,29,30,31,32,255},		// eyebonk/shoot = A3
+				{19,18,18,255},	// get bored = A4
+				{0,0,0,0,255},	// hyper idle = A5
+			}},
+    	{"Marsh Mutt",5,6,3,AI_Swampdog,
+		 12,43,150,0,"!278",0,0,
+         MT_LOONY,
+			{
+				{11,255},	// idle
+				{12,13,14,13,12,11,15,16,17,16,15,255},	// move
+				{20,21,22,23,23,22,21,20,255},	// attack (eye jab)
+				{33,34,35,36,37,38,39,40,41,42,255},		// die
+				{18,19,19,19,255},	// perk up = A1
+				{1,2,3,4,5,6,7,8,9,10,0,255},	// charge = A2
+				{24,25,26,27,28,29,30,31,32,255},		// eyebonk/shoot = A3
+				{19,18,18,255},	// get bored = A4
+				{0,0,0,0,255},	// hyper idle = A5
+			}},
+
 	};

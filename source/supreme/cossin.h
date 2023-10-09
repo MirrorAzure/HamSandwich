@@ -8,5 +8,6 @@ void Dampen(int *value,int amt);
 void Clamp(int *value,int amt);
 
 byte AngleFrom(int fromx,int fromy,int tox,int toy);
+byte TurnToward(byte faceNow,byte newFace,byte spd);
 
 #endif

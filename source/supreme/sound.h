@@ -390,6 +390,7 @@
 #define SND_JACKATTACK	329
 #define SND_JACKDIE		330
 
+//kid mystic
 #define SND_EYEGUYSHT	331
 #define SND_EYEGUYOUCH  332
 #define SND_EYEGUYDIE	333
@@ -432,7 +433,20 @@
 #define SND_INCADIE2	370
 #define SND_INCATONGUE	371
 
-#define NUM_ORIG_SOUNDS	372
+//sleepless hollow
+#define SND_SPOOKOUCH	372
+#define SND_SPOOKDIE	373
+#define SND_SPOOKSHIFT	374
+
+//loonyland
+#define SND_SWAMPOUCH	375
+#define SND_SWAMPDIE	376
+#define SND_SWAMPALERT	377
+#define SND_SWAMPJAB	378
+#define SND_SWAMPCHARGE	379
+#define SND_SWAMPSHOOT	380
+
+#define NUM_ORIG_SOUNDS	381
 
 #define MAX_SOUNDS		512		// absolute maximum
 #define MAX_CUSTOM_SOUNDS 64
