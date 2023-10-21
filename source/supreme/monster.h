@@ -295,8 +295,8 @@
 #define MONS_BLASTER	259
 #define MONS_LIGHTSLIDE	260
 #define MONS_GRUE		261
-#define MONS_POLTERGUY 	262
-#define MONS_POLTERGUY2 263
+#define MONS_HAUNTMORE 	262
+#define MONS_SPOOKLEY 	263
 #define MONS_SPEEDY		264
 #define MONS_SKULL	  	265
 #define MONS_BIGHEAD  	266
@@ -310,15 +310,89 @@
 #define MONS_SCAREDYBAT 274
 #define MONS_RADISH	  	275
 #define MONS_SPARKY	  	276
-#define MONS_BOBBER	  	277
+#define MONS_FIREBUG	277
 
 //loonyland
 #define MONS_SWAMPDOG  	278
 #define MONS_SWAMPDOG2 	279
 #define MONS_SWAMPDOG3 	280
 #define MONS_SWAMPDOG4	281
+#define MONS_BONEHEAD2 282
+#define MONS_BONEHEAD3 283
+#define MONS_BONEHEAD4 284
+#define MONS_BONEHEAD5 285
+#define MONS_BONEHEAD6 286
+#define MONS_FROG3	   287
+#define MONS_FROG4	   288
+#define MONS_FROG5	   289
+#define MONS_ZOMBIE2   290
+#define MONS_ZOMBIE3   291
+#define MONS_ZOMBIE4   292
+#define MONS_ZOMBIE5   293
+#define MONS_BAT2	   294
+#define MONS_BAT3	   295
+#define MONS_BAT4	   296
+#define MONS_BAT5	   297
+#define MONS_MUMMY	   298
+#define MONS_MUMMY2	   299
+#define MONS_MUMMY3	   300
+#define MONS_MUMMY4	   301
+#define MONS_MUMMY5	   302
+#define MONS_EVILTREE  303
+#define MONS_EVILTREE2 304
+#define MONS_EVILTREE3 305
+#define MONS_GHOST2	   306
+#define MONS_GHOST3	   307
+#define MONS_GHOST4	   308
+#define MONS_WOLFMAN   309
+#define MONS_WOLFMAN2  310
+#define MONS_WOLFMAN3  311
+#define MONS_STICKWITCH 312
+#define MONS_LARRY	   313
+#define MONS_HUMANLARRY 314	// larry in human form
+#define MONS_HARRY		315
+#define MONS_BHOMATIC	316	// Boneheadomatic
+#define MONS_RBOMATIC	317
+#define MONS_GGOMATIC	318
+#define MONS_NSOMATIC	319
+#define MONS_VAMPIRE2   320
+#define MONS_VAMPIRE3   321
+#define MONS_VAMPIRE4   322
+#define MONS_VAMPIRE5   323
+#define MONS_FRANKENJ	324	// Frankenjulie
+#define MONS_HAND		325	// Frankenjulie's hand
+#define MONS_MINIFRANK	326
+#define MONS_BONKULA	327	// evil Bonkula
+#define MONS_MECHABONK	328
+#define MONS_EVILIZER	329
+#define MONS_EVILPUMP	330
+#define MONS_WINDELDER	331	// wind elder vampire
+#define MONS_EARTHELDER	332	// earth elder vampire
+#define MONS_WATERELDER	333	// water elder vampire
+#define MONS_FIREELDER	334	// fire elder vampire
+#define MONS_SUMMONELDER 335
+#define MONS_BUBBLE		336	// bubble for water elder to shoot
+#define MONS_VILLAGER   337
+#define MONS_VILLAGER2  338
+#define MONS_VILLAGER3  339
+#define MONS_VILLAGER4  340
+#define MONS_VILLAGER5  341
+#define MONS_VILLAGER6  342
+#define MONS_BIGGHOST	343	// polterguy!
+#define MONS_JUNKBARREL	344	// polterguy's junk
+#define MONS_JUNKCHAIR	345	// polterguy's junk
+#define MONS_JUNKTABLE	346	// polterguy's junk
+#define MONS_GHASTLY	347
 
-#define NUM_MONSTERS  282    // Can grow as needed
+#define MONS_FIREBAT  	348	// used
+#define MONS_TURRETR	349	// used
+#define MONS_TURRETD	350	// used
+#define MONS_TURRETL	351	// used
+#define MONS_TURRETU	352	// used
+#define MONS_MEGABURNER 353	// used
+
+
+#define NUM_MONSTERS    354   // Can grow as needed
 #define NUM_PROFILE_MONSTERS 211    // Do not change without redoing the profile format
 
 // fake monster codes
@@ -683,5 +757,40 @@ void AI_Bobber(Guy *me,Map *map,world_t *world,Guy *goodguy);
 
 //loonyland
 void AI_Swampdog(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_LL_Bonehead(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_FireFrog(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_PoisonFrog(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Toad(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_LL_Zombie(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_LL_Bat(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Mummy(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_EvilTree(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_LL_Ghost(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Wolfman(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_StickWitch(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Larry(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_HumanLarry(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Harry(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Boneheadomatic(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_LL_Vampire(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Frankenjulie(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Hand(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_MiniFrankenjulie(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Bonkula(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_MechaBonkula(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Evilizer(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_EvilPump(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_WindElder(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_EarthElder(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_WaterElder(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Bubble(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_FireElder(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_SummonElder(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Villager(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Polterguy(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Junk(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Ghastly(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_LaserTurret(Guy *me,Map *map,world_t *world,Guy *goodguy);
+
 
 #endif

@@ -77,11 +77,24 @@ enum : byte
 	BLT_SLIME,
 	BLT_BIGYELLOW, // big yellow bullet (same as grenade, but not lobbed or explosive)
 	BLT_YELWAVE,	// wavey thing
-	
+
 	BLT_FLAME3,
 	BLT_BADSITFLAME,
 	BLT_HOLESHOT,
 	BLT_BLACKHOLE,
+	BLT_LASER2,
+    BLT_IGNITE,	// flamebringer shot that ignites the target hit
+
+	BLT_GASBLAST,
+	BLT_FLAMEWALL,
+	BLT_BIGSHOT,
+	BLT_EARTHSPIKE,
+	BLT_MEGABOOM,
+	BLT_WIND,
+	BLT_CLAW,
+	BLT_SWAMPGAS,
+	BLT_ICESHARD,
+	BLT_EVILFACE,
 };
 
 // the special hammer flags for different powerups

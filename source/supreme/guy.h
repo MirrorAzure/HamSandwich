@@ -63,6 +63,7 @@ class Guy
 		word ID;	// just a copy of the guy's number
 		byte item;	// what item you're carrying
 		byte frozen;
+		word ignited;
 
 		int aiType;
 		byte fromColor,toColor;
@@ -111,6 +112,7 @@ byte SwapMe(int x,int y,byte size,Map *map);
 int CountMonsters(int type);
 int CountMonstersInRect(int type,int x,int y,int x2,int y2);
 Guy *GetGuyOfType(int type);
+Guy *GetChildren(Guy *g);
 void RemoveGuy(Guy *g);
 void Telefrag(Guy *g);
 byte FreezeGuy(Guy *me);
@@ -129,11 +131,17 @@ void SetMonsterColor(byte fx,int x,int y,int type,int colCode);
 void SetMonsterBright(byte fx,int x,int y,int type,int bright);
 byte CheckMonsterColor(int x,int y,int type,byte color);
 Guy *GetGuyOfAIType(int type);
+bool AddMonsterOffscreen(Map *map,world_t *world,int type,byte friendly);
+int CountChildren(Guy *g);
+void LaunchJunk(Map *map,Guy *me);
+void Sneeze(void);
 
 byte PeepAtGuy(int x,int y,Map *map,byte face);
 void SuckIn(int x,int y,byte friendly);
 void SpreadCharge(Guy *me);
-byte ArrangeBats(byte facing);
+byte ArrangeBats(byte facing, Guy *g);
+void RaiseSkellies(void);
+byte DyingSkellies(void);
 byte Walkable(Guy *me,int x,int y,Map *map,world_t *world);
 byte AttackCheck2(int xx,int yy,int xx2,int yy2,Guy *him);
 

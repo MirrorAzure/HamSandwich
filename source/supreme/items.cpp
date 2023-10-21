@@ -711,14 +711,46 @@ item_t baseItems[]={
 		IF_PICKUP,
 		IT_PICKUP|IT_WEAPON|IT_POWERUP,
 		ITR_GET,IE_POWERUP,PU_CHEESE,"Supreme Squeezy Cheese!",SND_WEAPON},
-	{"New Item",0,0,0,0,0,0,0,0,0,ITR_NONE,IE_NONE,0,"",0},	// unused2
-	{"New Item",0,0,0,0,0,0,0,0,0,ITR_NONE,IE_NONE,0,"",0},	// unused3
-	{"New Item",0,0,0,0,0,0,0,0,0,ITR_NONE,IE_NONE,0,"",0},	// unused4
-	{"New Item",0,0,0,0,0,0,0,0,0,ITR_NONE,IE_NONE,0,"",0},	// unused5
-	{"New Item",0,0,0,0,0,0,0,0,0,ITR_NONE,IE_NONE,0,"",0},	// unused6
-	{"New Item",0,0,0,0,0,0,0,0,0,ITR_NONE,IE_NONE,0,"",0},	// unused7
-	{"New Item",0,0,0,0,0,0,0,0,0,ITR_NONE,IE_NONE,0,"",0},	// unused8
-	{"New Item",0,0,0,0,0,0,0,0,0,ITR_NONE,IE_NONE,0,"",0},	// unused9
+	{"Small Barrel",0,0,143,0,0,0,
+	0,
+	IF_SOLID|IF_SHADOW,
+	IT_OBSTACLE|IT_CRATE,
+	ITR_NONE,IE_NONE,0,"",0},	// unused2
+	{"Small Barrel 2",0,0,144,0,0,0,
+	0,
+	IF_SOLID|IF_SHADOW,
+	IT_OBSTACLE|IT_CRATE,
+	ITR_NONE,IE_NONE,0,"",0},	// unused3
+	{"Small Table",0,0,145,0,0,0,
+	0,
+	IF_SOLID|IF_SHADOW,
+	IT_OBSTACLE|IT_CHAIR,
+	ITR_NONE,IE_NONE,0,"",0},	// unused4
+	{"Small Chair",0,0,146,0,0,0,
+	0,
+	IF_SOLID|IF_SHADOW,
+	IT_OBSTACLE|IT_CHAIR,
+	ITR_NONE,IE_NONE,0,"",0},	// unused5
+	{"Small Chair 2",0,0,147,0,0,0,
+	0,
+	IF_SOLID|IF_SHADOW,
+	IT_OBSTACLE|IT_CHAIR,
+	ITR_NONE,IE_NONE,0,"",0},	// unused6
+	{"Small Chair 3",0,0,148,0,0,0,
+	0,
+	IF_SOLID|IF_SHADOW,
+	IT_OBSTACLE|IT_CHAIR,
+	ITR_NONE,IE_NONE,0,"",0},	// unused7
+	{"Small Chair 4",0,0,149,0,0,0,
+	0,
+	IF_SOLID|IF_SHADOW,
+	IT_OBSTACLE|IT_CHAIR,
+	ITR_NONE,IE_NONE,0,"",0},	// unused8
+	{"Small Chair 5",0,0,150,0,0,0,
+	0,
+	IF_SOLID|IF_SHADOW,
+	IT_OBSTACLE|IT_CHAIR,
+	ITR_NONE,IE_NONE,0,"",0},	// unused9
 	{"New Item",0,0,0,0,0,0,0,0,0,ITR_NONE,IE_NONE,0,"",0},	// unused10
 	{"New Item",0,0,0,0,0,0,0,0,0,ITR_NONE,IE_NONE,0,"",0},	// unused11
 	{"New Item",0,0,0,0,0,0,0,0,0,ITR_NONE,IE_NONE,0,"",0},	// unused12

@@ -115,6 +115,18 @@ static char bulletName[][20]={
 	"Evil Sitting Flame",
 	"Black Hole Shot",
 	"Black Hole",
+	"Turret Laser",
+	"Ignite",
+	"Poison Gas",
+	"Flame Wall",
+	"Big Shot",
+	"Earth Spike",
+	"Mega Boom",
+	"Wind",
+	"Claw",
+	"Swamp Gas",
+	"Ice Shard",
+	"Evil Face",
 };
 
 void PrintFX(word flags)

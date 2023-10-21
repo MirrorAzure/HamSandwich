@@ -165,6 +165,23 @@ void Particle::Update(Map *map)
 		life--;
 		switch(type)
 		{
+			case PART_FIRE:
+				dz+=FIXAMT+Random(FIXAMT/4);
+				Dampen(&dx,FIXAMT/8);
+				Dampen(&dy,FIXAMT/8);
+				dx=dx-FIXAMT/8+Random(FIXAMT/4);
+				dy=dy-FIXAMT/8+Random(FIXAMT/4);
+				if(size>0)
+					size--;
+				else
+					life=0;
+				if(life>40)
+					color=191;
+				else if(life>20)
+					color=160+(life-20);
+				else
+					color=128+life;
+				break;
 			case PART_SUCK:
 				if(x<tx)
 				{
@@ -802,6 +819,12 @@ void RenderParticles(void)
 						particleList[i]->z>>FIXSHIFT,
 						255,particleList[i]->life*4-8,
 						GetMonsterSprite(MONS_COUNTESS,ANIM_IDLE,0,0),DISPLAY_DRAWME|DISPLAY_GLOW);
+			else if(particleList[i]->type==PART_FIRE)// || particleList[i]->type==PART_COLDFIRE)
+			{
+					ParticleDraw(particleList[i]->x>>FIXSHIFT,particleList[i]->y>>FIXSHIFT,
+							 particleList[i]->z>>FIXSHIFT,particleList[i]->color,particleList[i]->size/4,
+							 DISPLAY_DRAWME|DISPLAY_CIRCLEPART|DISPLAY_GLOW);
+			}
 			else
 				ParticleDraw(particleList[i]->x>>FIXSHIFT,particleList[i]->y>>FIXSHIFT,
 							 particleList[i]->z>>FIXSHIFT,particleList[i]->color,particleList[i]->size,

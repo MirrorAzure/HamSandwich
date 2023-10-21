@@ -445,8 +445,74 @@
 #define SND_SWAMPJAB	378
 #define SND_SWAMPCHARGE	379
 #define SND_SWAMPSHOOT	380
+#define SND_SKELGAS		381	// gangrene gas attack
+#define SND_SKELSUMMON  382	// numbskull summoning
+#define SND_SKELBLAST	383	// numbskull flamewall attack
+#define SND_FROGOUCH	384
+#define SND_FROGDIE		385
+#define SND_FROGLICK	386
+#define SND_ZOMBIESTOMP 387
+#define SND_BIGBOOM		388
+#define SND_BATSHOOT	389
+#define SND_MUMMYSMACK	390
+#define SND_MUMMYSUMMON 391
+#define SND_MUMMYSHOOT	392
+#define SND_TREEOUCH	393
+#define SND_TREEDIE		394
+#define SND_TREEFROG	395
+#define SND_GHOSTSPIN	396
+#define SND_GHOSTPUNCH	397
+#define SND_WOLFSPIT	398
+#define SND_STEAM		399
+#define SND_FRANKOUCH	400
+#define SND_FRANKDIE	401
+#define SND_FRANKHEAD	402
+#define SND_FRANKARMS	403
+#define SND_FRANKMISSILE 404
+#define SND_WITCHHI		405
+#define SND_STICKOUCH	406
+#define SND_STICKDIE	407
+#define SND_STICKATTACK	408
+#define SND_CATKICK		409
+#define SND_LARRYDARTS	410
+#define SND_LARRYPOUNCE 411
+#define SND_LARRYNORMAL 412
+#define SND_LARRYHOWL	413
+#define SND_VILLDIE1	414
+#define SND_LARRYOUCH 	415
+#define SND_LIGHTSMACK	416
+#define SND_VAMPSHOOT	417
+#define SND_VAMPSUMMON	418
+#define SND_VAMPSHOVE	419
+#define SND_FRANKOUCH2	420
+#define SND_GRENADE		421	// orb grenade being launched
+#define SND_PUMPKINOUCH	422
+#define SND_BONKOUCH	423
+#define SND_BONKDIE		424
+#define SND_BONKSWING	425
+#define SND_BONKHIT		426
+#define SND_BONKHURRY	427
+#define SND_BONKHURRY2	428
+#define SND_ELDEROUCH	429
+#define SND_ELDERDIE	430
+#define SND_ELDERSHOOT	431
+#define SND_ELDERCHARGE 432
+#define SND_ELDERSUMMON 433
+#define SND_METALSMACK	434
+#define SND_EVILIZER	435	// the evilizer running
+#define SND_VILLAGERSCRATCH 436
+#define SND_VILLAGERYAWN	437	// female
+#define SND_VILLAGERHELLO	438	// male
+#define SND_VILLAGERHELLO2	439	// female
+#define SND_VILLAGERHELLO3	440	// other male
+#define SND_VILLDIE2	441	// female villager die
+#define SND_POLTERSNEEZE 442
+#define SND_POLTERGET	443	// activating a chair/barrel/etc
 
-#define NUM_ORIG_SOUNDS	381
+#define SND_PTEROSHOOT  444
+#define SND_PTERODIE    445
+
+#define NUM_ORIG_SOUNDS	446
 
 #define MAX_SOUNDS		512		// absolute maximum
 #define MAX_CUSTOM_SOUNDS 64

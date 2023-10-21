@@ -12,7 +12,13 @@ void AI_Bonehead(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		if(me->hp>0)
 			MakeSound(SND_SKELOUCH,me->x,me->y,SND_CUTOFF,1200);
 		else
-			MakeSound(SND_SKELDIE,me->x,me->y,SND_CUTOFF,1200);
+			{
+				MakeSound(SND_SKELDIE,me->x,me->y,SND_CUTOFF,1200);
+				if(me->aiType==MONS_GLASSJAW)
+				{
+					MakeSound(SND_GLASSBREAK,me->x,me->y,SND_CUTOFF,1200);
+				}
+			}
 	}
 
 	if(me->action==ACTION_BUSY)
@@ -139,6 +145,9 @@ void AI_Bat(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	if(me->reload)
 		me->reload--;
 
+	if(me->aiType==MONS_FIREBAT)
+		map->DimTorch(me->mapx,me->mapy,6);
+
 	if(me->ouch==4)
 	{
 		if(me->hp==0)
@@ -154,6 +163,11 @@ void AI_Bat(Guy *me,Map *map,world_t *world,Guy *goodguy)
 				goodguy->GetShot(Cosine(me->facing*32)*4,Sine(me->facing*32)*4,2,map,world);
 			me->reload=2;
 
+		}
+		if(me->seq==ANIM_A1 && me->aiType==MONS_FIREBAT && Random(4)==0)
+		{
+			FireExactBullet(me->x,me->y,me->z,Random(FIXAMT),Random(FIXAMT),FIXAMT,0,90+Random(60),0,BLT_BADSITFLAME,me->friendly);
+			MakeSound(SND_FLAMEGO,me->x,me->y,SND_CUTOFF,1100);
 		}
 		if(me->seq==ANIM_A1 && me->frm>1 && goodguy && me->hp>0)
 		{
@@ -171,6 +185,9 @@ void AI_Bat(Guy *me,Map *map,world_t *world,Guy *goodguy)
 				me->dy=-me->dy/4;
 			}
 		}
+		if(me->seq==ANIM_DIE && me->frmTimer<128 && me->aiType==MONS_FIREBAT)
+			FireExactBullet(me->x,me->y,me->z,Random(FIXAMT),Random(FIXAMT),FIXAMT,0,30*8+Random(30*4),0,BLT_BADSITFLAME,me->friendly);
+
 		return;	// can't do nothin' right now
 	}
 
@@ -339,7 +356,10 @@ void AI_BigSpider(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			MakeSound(SND_SPD2SPIT,me->x,me->y,SND_CUTOFF,1200);
 			x=me->x+Cosine(me->facing*32)*8;
 			y=me->y+Sine(me->facing*32)*8;
-			FireBullet(x,y,me->facing*32,BLT_ACID,me->friendly);
+			if(me->aiType==MONS_FIREBUG)
+				FireBullet(x,y,me->facing*32-10+Random(21),BLT_ENERGY,me->friendly);
+			else
+				FireBullet(x,y,me->facing*32,BLT_ACID,me->friendly);
 			me->reload=40;
 		}
 		return;	// can't do nothin' right now
@@ -362,7 +382,8 @@ void AI_BigSpider(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			return;
 		}
 	}
-
+	if(me->aiType==MONS_FIREBUG && Random(20)==0 && RangeToTarget(me,goodguy)<FIXAMT*500)
+		FireExactBullet(me->x,me->y,FIXAMT*5,Random(FIXAMT),Random(FIXAMT),0,0,24-Random(4),Random(8),BLT_FLAME2,me->friendly);
 	if(me->mind)
 		me->mind--;
 	if(!me->mind)	// time to get a new direction

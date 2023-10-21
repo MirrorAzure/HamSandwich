@@ -701,36 +701,76 @@ void AI_Burner(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	}
 	else
 	{
+		if(me->reload)
+			me->reload--;
+		
 		if(me->mind1)
 		{
 			me->mind1--;
-			switch(me->mind2)
+			if(me->aiType==MONS_BURNER)
 			{
-				case 0:
-					if(me->mapx<map->width-1 && !map->map[me->mapx+1+me->mapy*map->width].wall)
-						FireBullet(me->x+FIXAMT*TILE_WIDTH/2,me->y,0,BLT_FLAME2,me->friendly);
-					break;
-				case 1:
-					if(me->mapy<map->height-1 && !map->map[me->mapx+0+(me->mapy+1)*map->width].wall)
-						FireBullet(me->x,me->y+FIXAMT*TILE_HEIGHT/2,2,BLT_FLAME2,me->friendly);
-					break;
-				case 2:
-					if(me->mapx>0 && !map->map[me->mapx-1+(me->mapy+0)*map->width].wall)
-						FireBullet(me->x-FIXAMT*TILE_WIDTH/2,me->y,4,BLT_FLAME2,me->friendly);
-					break;
-				case 3:
-					if(me->mapy>0 && !map->map[me->mapx+(me->mapy-1)*map->width].wall)
-						FireBullet(me->x,me->y-FIXAMT*TILE_HEIGHT/2,6,BLT_FLAME2,me->friendly);
-					break;
+				switch(me->mind2)
+				{
+					case 0:
+						if(me->mapx<map->width-1 && !map->map[me->mapx+1+me->mapy*map->width].wall)
+							FireBullet(me->x+FIXAMT*TILE_WIDTH/2,me->y,0,BLT_FLAME2,me->friendly);
+						break;
+					case 1:
+						if(me->mapy<map->height-1 && !map->map[me->mapx+0+(me->mapy+1)*map->width].wall)
+							FireBullet(me->x,me->y+FIXAMT*TILE_HEIGHT/2,2,BLT_FLAME2,me->friendly);
+						break;
+					case 2:
+						if(me->mapx>0 && !map->map[me->mapx-1+(me->mapy+0)*map->width].wall)
+							FireBullet(me->x-FIXAMT*TILE_WIDTH/2,me->y,4,BLT_FLAME2,me->friendly);
+						break;
+					case 3:
+						if(me->mapy>0 && !map->map[me->mapx+(me->mapy-1)*map->width].wall)
+							FireBullet(me->x,me->y-FIXAMT*TILE_HEIGHT/2,6,BLT_FLAME2,me->friendly);
+						break;
+				}
+			}
+			else
+			{
+				if((me->reload==0) && (me->mind1&1) && RangeToTarget(me,goodguy)<500*FIXAMT)
+					switch(me->mind2)
+					{
+						case 0:
+							if(me->mapx<map->width-1 && !map->map[me->mapx+1+me->mapy*map->width].wall)
+							{
+								FireBullet(me->x+FIXAMT*TILE_WIDTH/2,me->y-FIXAMT*20,0,BLT_FLAME2,me->friendly);
+								FireBullet(me->x+FIXAMT*TILE_WIDTH/2,me->y,0,BLT_FLAME2,me->friendly);
+								FireBullet(me->x+FIXAMT*TILE_WIDTH/2,me->y+FIXAMT*20,0,BLT_FLAME2,me->friendly);
+							}
+							break;
+						case 1:
+							if(me->mapx>0 && !map->map[me->mapx-1+(me->mapy+0)*map->width].wall)
+							{
+								FireBullet(me->x-FIXAMT*TILE_WIDTH/2,me->y-FIXAMT*20,4,BLT_FLAME2,me->friendly);
+								FireBullet(me->x-FIXAMT*TILE_WIDTH/2,me->y,4,BLT_FLAME2,me->friendly);
+								FireBullet(me->x-FIXAMT*TILE_WIDTH/2,me->y+FIXAMT*20,4,BLT_FLAME2,me->friendly);
+							}
+							break;
+					}
 			}
 		}
 		else
 		{
-			me->mind2++;
-			if(me->mind2>3)
-				me->mind2=0;
-			me->mind=0;
-			me->reload=15;
+			if(me->aiType==MONS_BURNER)
+			{
+				me->mind2++;
+				if(me->mind2>3)
+					me->mind2=0;
+				me->mind=0;
+				me->reload=15;
+			}
+			else
+			{
+				me->mind2++;
+				if(me->mind2>1)
+					me->mind2=0;
+				me->mind1=20;
+				me->reload=10;
+			}
 		}
 	}
 }

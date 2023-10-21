@@ -371,6 +371,10 @@ void Guy::SeqFinished(void)
 		}
 
 		type=MONS_NONE;
+		if(ignited)
+		{
+			FireExactBullet(x,y,0,0,0,0,0,ignited,0,BLT_BADSITFLAME,1);
+		}
 	}
 	seq=ANIM_IDLE;
 	frm=0;
@@ -531,6 +535,31 @@ void Guy::Update(Map *map,world_t *world)
 		poison--;
 	}
 
+	if(ignited)
+	{
+		ignited--;
+		if(ouch<3)
+			ouch=3;	// stay red
+
+		if(ignited&1)	// every other frame
+		{
+			map->DimTorch((x/TILE_WIDTH)>>FIXSHIFT,(y/TILE_HEIGHT)>>FIXSHIFT,10);
+			if(Random(5)==0)
+				BlowSmoke(x,y,z-FIXAMT*20,FIXAMT);
+			if(Random(7)==0)
+				FireBullet(x,y,0,BLT_FLAME3,1);
+		}
+		map->BrightTorch((x/TILE_WIDTH)>>FIXSHIFT,
+						 (y/TILE_HEIGHT)>>FIXSHIFT,8,4);
+
+		if((ignited%(15))==0)
+		{
+			GetShot(0,0,1,map,world);
+			// if(WorthXP(type))
+			// 	PlayerGetWeaponXP(WPN_FLAME,1);
+		}
+	}
+
 	oldx=x;
 	oldy=y;
 
@@ -551,8 +580,9 @@ void Guy::Update(Map *map,world_t *world)
 			aiType==MONS_PATTY || aiType==MONS_PATROLLR || aiType==MONS_PATROLUD || aiType==MONS_DPATROLLR || aiType==MONS_DPATROLUD ||
 			aiType==MONS_MINIWACKO || aiType==MONS_JACKFROST || aiType==MONS_INCAGOLD || aiType==MONS_INCAGOLD2 || aiType==MONS_SLUG ||
 			type==MONS_GOAT1 || type==MONS_GOAT1B || type==MONS_INCABOSS || type==MONS_OCTOBOSS || aiType==MONS_MADCOW ||
-			aiType==MONS_POLTERGUY || aiType==MONS_POLTERGUY2 || aiType==MONS_SPEEDY || aiType==MONS_BIGHEAD2 ||
-			aiType==MONS_RADISH || aiType==MONS_SPARKY)
+			aiType==MONS_HAUNTMORE || aiType==MONS_SPOOKLEY || aiType==MONS_SPEEDY || aiType==MONS_BIGHEAD2 ||
+			aiType==MONS_RADISH || aiType==MONS_SPARKY || type==MONS_LARRY || type==MONS_HUMANLARRY || type==MONS_BUBBLE ||
+			aiType==MONS_BIGGHOST || aiType==MONS_GHASTLY)
 			mind1=1;	// tell it that it hit a wall
 		b=1;
 	}
@@ -573,8 +603,9 @@ void Guy::Update(Map *map,world_t *world)
 			aiType==MONS_PATTY || aiType==MONS_PATROLLR || aiType==MONS_PATROLUD || aiType==MONS_DPATROLLR || aiType==MONS_DPATROLUD ||
 			aiType==MONS_MINIWACKO || aiType==MONS_JACKFROST || aiType==MONS_INCAGOLD || aiType==MONS_INCAGOLD2 || aiType==MONS_SLUG ||
 			type==MONS_GOAT1 || type==MONS_GOAT1B || type==MONS_INCABOSS || type==MONS_OCTOBOSS || aiType==MONS_MADCOW ||
-			aiType==MONS_POLTERGUY || aiType==MONS_POLTERGUY2 || aiType==MONS_SPEEDY || aiType==MONS_BIGHEAD2 ||
-			aiType==MONS_RADISH || aiType==MONS_SPARKY)
+			aiType==MONS_HAUNTMORE || aiType==MONS_SPOOKLEY || aiType==MONS_SPEEDY || aiType==MONS_BIGHEAD2 ||
+			aiType==MONS_RADISH || aiType==MONS_SPARKY || type==MONS_LARRY || type==MONS_HUMANLARRY || type==MONS_BUBBLE ||
+			aiType==MONS_BIGGHOST || aiType==MONS_GHASTLY)
 			mind1+=2;	// tell it that it hit a wall
 		b=1;
 	}
@@ -1421,7 +1452,7 @@ Guy *AddGuy(int x,int y,int z,int type,byte friendly)
 			if(friendly==1 || (friendly==2 && (type==MONS_BOUAPHA || type==MONS_FRIENDLY || type==MONS_GOODTURRET ||
 				type==MONS_WIZARD || type==MONS_GOODROBOT || type==MONS_GOODROBOT2 ||
 				type==MONS_FRIENDLY2 || type==MONS_FOLLOWBUNNY || type==MONS_MINECART || type==MONS_RAFT ||
-				type==MONS_YUGO || type==MONS_PUNKBUNNY)))
+				type==MONS_YUGO || type==MONS_PUNKBUNNY || type==MONS_PTERO)))
 			{
 				guys[i]->friendly=1;
 				j=LockOnEvil(x>>FIXSHIFT,y>>FIXSHIFT);
@@ -1447,6 +1478,7 @@ Guy *AddGuy(int x,int y,int z,int type,byte friendly)
 				else
 					guys[i]->target=goodguy;
 			}
+			guys[i]->ignited=0;
 			guys[i]->mindControl=0;
 			guys[i]->poison=0;
 			guys[i]->type=type;
@@ -1483,7 +1515,7 @@ Guy *AddGuy(int x,int y,int z,int type,byte friendly)
 			guys[i]->brtChange=GetMonsterType(guys[i]->type)->brtChg;
 			guys[i]->customSpr=nullptr;
 
-			if(type==MONS_POLTERGUY || type==MONS_POLTERGUY2)
+			if(type==MONS_HAUNTMORE || type==MONS_SPOOKLEY)
 				guys[i]->mind3=255;
 
 			if(type==MONS_BIGHEAD || type==MONS_BIGHEAD2 || type==MONS_BIGHEAD3)
@@ -2136,6 +2168,17 @@ Guy *GetGuyOfAIType(int type)
 	return NULL;
 }
 
+Guy *GetChildren(Guy *g)
+{
+	int i;
+
+	for(i=0;i<maxGuys;i++)
+		if(guys[i]->parent==g && guys[i]->hp>0)
+			return guys[i];
+
+	return NULL;
+}
+
 byte MonsterExists(int type)
 {
 	int i;
@@ -2397,6 +2440,33 @@ void AddNinja(Map *map,world_t *world,byte friendly)
 				return;
 		}
 	}
+}
+
+bool AddMonsterOffscreen(Map *map,world_t *world,int type,byte friendly)
+{
+	int x,y,i;
+	int cx,cy;
+	Guy *g;
+
+	GetCamera(&cx,&cy);
+	// 30 tries to end up in a legal spot
+	for(i=0;i<30;i++)
+	{
+		x=Random(map->width)*TILE_WIDTH+TILE_WIDTH/2;
+		y=Random(map->height)*TILE_HEIGHT+TILE_HEIGHT/2;
+		// make sure it's offscreen
+		if(x<cx-340 || x>cx+340 || y<cy-260 || y>cy+260)
+		{
+			g=AddGuy(x*FIXAMT,y*FIXAMT,0,type,friendly);
+			if(g && (!g->CanWalk(g->x,g->y,map,world)))
+			{
+				RemoveGuy(g);
+			}
+			else
+				return true;
+		}
+	}
+	return false;
 }
 
 byte ControlMind2(Guy *me)
@@ -3526,6 +3596,17 @@ byte SwapMe(int x,int y,byte size,Map *map)
 	return 0;
 }
 
+int CountChildren(Guy *g)
+{
+	int i,cnt;
+
+	cnt=0;
+	for(i=0;i<maxGuys;i++)
+		if(guys[i]->parent==g)
+			cnt++;
+	return cnt;
+}
+
 int CountMonsters(int type)
 {
 	int i,cnt;
@@ -4009,13 +4090,13 @@ void SpreadCharge(Guy *me)
 	}
 }
 
-byte ArrangeBats(byte facing)
+byte ArrangeBats(byte facing, Guy *g)
 {
 	int i,tx,ty;
 	byte ang[8];
 	byte minions,spot;
 
-	minions=CountMonsters(MONS_BATGUARD);
+	minions=CountChildren(g);
 
 	for(i=0;i<minions;i++)
 	{
@@ -4024,7 +4105,7 @@ byte ArrangeBats(byte facing)
 	spot=0;
 	for(i=0;i<maxGuys;i++)
 	{
-		if(guys[i]->type==MONS_BATGUARD)
+		if(guys[i]->parent==g)
 		{
 			guys[i]->mind=TurnToward(guys[i]->mind,ang[spot],4);
 			guys[i]->facing=guys[i]->mind/32;
@@ -4047,4 +4128,105 @@ byte ArrangeBats(byte facing)
 	}
 
 	return minions;
+}
+
+byte DyingSkellies(void)
+{
+	int i;
+
+	for(i=0;i<maxGuys;i++)
+		if(guys[i] && (guys[i]->type==MONS_BONEHEAD || guys[i]->type==MONS_BONEHEAD2 || guys[i]->type==MONS_BONEHEAD3 || guys[i]->type==MONS_BONEHEAD4)
+			&& guys[i]->hp==0 && guys[i]->seq==ANIM_DIE)
+			return 1;
+	return 0;
+}
+
+void RaiseSkellies(void)
+{
+	int i;
+
+	for(i=0;i<maxGuys;i++)
+		if(guys[i] && (guys[i]->type==MONS_BONEHEAD || guys[i]->type==MONS_BONEHEAD2 || guys[i]->type==MONS_BONEHEAD3 || guys[i]->type==MONS_BONEHEAD4)
+			&& guys[i]->hp==0 && guys[i]->seq==ANIM_DIE)
+		{
+			// come to life
+			guys[i]->seq=ANIM_A3;
+			guys[i]->frm=0;
+			guys[i]->frmTimer=0;
+			guys[i]->frmAdvance=128;
+			guys[i]->hp=MonsterHP(guys[i]->type);
+			guys[i]->ouch=0;
+			guys[i]->mind=0;
+			guys[i]->mind1=0;
+			guys[i]->mind2=0;
+			guys[i]->mind3=0;
+			guys[i]->reload=0;
+			guys[i]->parent=NULL;
+			guys[i]->CalculateRect();
+			//guys[i]->tag=255;
+		}
+}
+
+void LaunchJunk(Map *map,Guy *me)
+{
+	int i,t,x,y;
+	Guy *g;
+
+	t=0;
+	while(t++<256)	// 256 tries to find something throwable
+	{
+		i=Random(map->width*map->height);
+		if(map->map[i].item==ITM_SMALLBARREL || map->map[i].item==ITM_SMALLBARREL2)
+		{
+			map->map[i].item=ITM_NONE;
+			y=i/map->width;
+			x=i-y*map->width;
+			x=((x*TILE_WIDTH)+TILE_WIDTH/2)<<FIXSHIFT;
+			y=((y*TILE_HEIGHT)+TILE_HEIGHT/2)<<FIXSHIFT;
+			g=AddGuy(x,y,2*FIXAMT,MONS_JUNKBARREL,me->friendly);
+			if(g)
+				g->parent=me;
+			break;
+		}
+		if(map->map[i].item>=ITM_SMALLCHAIR && map->map[i].item<=ITM_SMALLCHAIR5)
+		{
+			map->map[i].item=ITM_NONE;
+			y=i/map->width;
+			x=i-y*map->width;
+			x=((x*TILE_WIDTH)+TILE_WIDTH/2)<<FIXSHIFT;
+			y=((y*TILE_HEIGHT)+TILE_HEIGHT/2)<<FIXSHIFT;
+			g=AddGuy(x,y,2*FIXAMT,MONS_JUNKCHAIR,me->friendly);
+			if(g)
+				g->parent=me;
+			break;
+		}
+		if(map->map[i].item==ITM_SMALLTABLE)
+		{
+			map->map[i].item=ITM_NONE;
+			y=i/map->width;
+			x=i-y*map->width;
+			x=((x*TILE_WIDTH)+TILE_WIDTH/2)<<FIXSHIFT;
+			y=((y*TILE_HEIGHT)+TILE_HEIGHT/2)<<FIXSHIFT;
+			g=AddGuy(x,y,2*FIXAMT,MONS_JUNKTABLE,me->friendly);
+			if(g)
+				g->parent=me;
+			break;
+		}
+	}
+}
+
+void Sneeze(void)
+{
+	int i;
+
+	for(i=0;i<maxGuys;i++)
+	{
+		if(guys[i]->type>=MONS_JUNKBARREL && guys[i]->type<=MONS_JUNKTABLE)
+		{
+			guys[i]->mind=1;
+			guys[i]->mind1=50;
+			guys[i]->dx=guys[i]->dx*2;
+			guys[i]->dy=guys[i]->dy*2;
+		}
+	}
 }

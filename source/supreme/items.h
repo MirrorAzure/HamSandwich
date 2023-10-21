@@ -144,15 +144,15 @@
 #define ITM_STOPWATCH	131
 #define ITM_STRTLIGHT	132
 #define ITM_SUPREME		133
-// unused items
-#define ITM_UNUSED2		134
-#define ITM_UNUSED3		135
-#define ITM_UNUSED4		136
-#define ITM_UNUSED5		137
-#define ITM_UNUSED6		138
-#define ITM_UNUSED7		139
-#define ITM_UNUSED8		140
-#define ITM_UNUSED9		141
+// unused items (Not anymore :P)
+#define ITM_SMALLBARREL		134
+#define ITM_SMALLBARREL2	135
+#define ITM_SMALLTABLE		136
+#define ITM_SMALLCHAIR		137
+#define ITM_SMALLCHAIR2		138
+#define ITM_SMALLCHAIR3		139
+#define ITM_SMALLCHAIR4		140
+#define ITM_SMALLCHAIR5		141
 #define ITM_UNUSED10	142
 #define ITM_UNUSED11	143
 #define ITM_UNUSED12	144

@@ -1640,7 +1640,7 @@ char monsNotes[NUM_MONSTERS][512]={
 	//Sparky
 	"+ + + Supreme with Everything mod + +  "
 	"",
-	//Bobber
+	//Fire Bug
 	"+ + + Supreme with Everything mod + +  "
 	"",
 	//Swampdog
@@ -1653,6 +1653,222 @@ char monsNotes[NUM_MONSTERS][512]={
 	"+ + + Supreme with Everything mod + +  "
 	"",
 	//Marsh Mutt
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Bonehead
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Redbone
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Gangrene
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Numbskull
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Agent Skully
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Croaker
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Frogurt
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Toad
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Zombie
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Bombie
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Zombie Lord
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Bombie Lord
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Dingbat
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Gargoyle
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Vamp Bat
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Gasbat
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Rag Man
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Mummy
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Pharaoh Faucet
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Grand Pharaoh
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//King Toot
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Terror Tree
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Swamp Stump
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Torture Tree
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Ghost
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Shade
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Banshee
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Dogboy
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Wolfman
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Dire Wolf
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Happy Stick Witch
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Larry
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Larry
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Harry
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Bonehead-O-Matic
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Redbone-O-Matic
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Gangrene-O-Matic
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Numbskull-O-Matic
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Vamp Jr.
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Bloodsucker
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Draculite
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Vamp Lord
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Frankenjulie
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Frankenhand
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Mini-Frankenjulie
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Count Bonkula
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Mecha-Bonkula
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//The Evilizer
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Steam Pump
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Gusty The Elder
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Stoney The Elder
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Drippy The Elder
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Toasty The Elder
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Summony The Elder
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Bubble
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Villager M
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Villager M
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Villager M
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Villager F
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Villager F
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Villager F
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//PolterGuy
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Junk Barrel
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Junk Chair
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Junk Table
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Ghastly Stench
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Firebat
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Laser R
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Laser D
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Laser L
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Laser U
+	"+ + + Supreme with Everything mod + +  "
+	"",
+	//Megaburner
 	"+ + + Supreme with Everything mod + +  "
 	"",
 };

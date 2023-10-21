@@ -30,6 +30,7 @@ enum : byte
 	PART_YELLOW, 
 	PART_SHORTYELLOW,
 	PART_SUCK,
+	PART_FIRE,
 };
 
 class Particle
