@@ -2936,7 +2936,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{6,7,8,9,10,11,12,13,14,15,16,255},	// attack=swipe pitchfork
 			}},
 		{"Pterodactyl",255,255,0,AI_Ptero,	
-		 10,11,15,5,"graphics/mystic/ptero.jsp",0,MF_FLYING,//|MF_ENEMYWALK,//|MF_FREEWALK,
+		 10,11,15,5,"mystic/graphics/ptero.jsp",0,MF_FLYING,//|MF_ENEMYWALK,//|MF_FREEWALK,
 		 MT_GOOD|MT_ANIMAL|MT_FLYING|MT_MYSTIC,
 			{
 				{0,1,2,6,3,4,5,4,3,6,2,1,255},	// idle
@@ -2945,7 +2945,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,0,0,255},	// die
 			}},
 		{"Eye Guy",255,255,0,AI_Eyeguy,	// Eye Guy
-		 14,17,20,75,"graphics/mystic/eyeguy.jsp",0,0,
+		 14,17,20,75,"mystic/graphics/eyeguy.jsp",0,0,
 		 MT_EVIL|MT_MYSTIC,
 			{
 				{0,0,255},	// idle
@@ -2954,7 +2954,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{13,14,15,16,255},	// die
 			}},
 		{"Octon",255,255,0,AI_Octopus,
-		 19,21,20,40,"graphics/mystic/octopus.jsp",0,MF_AQUATIC|MF_WATERWALK,
+		 19,21,20,40,"mystic/graphics/octopus.jsp",0,MF_AQUATIC|MF_WATERWALK,
 		 MT_EVIL|MT_AQUATIC|MT_ANIMAL|MT_MYSTIC,
 			{
 				{5,6,7,6,255},	// idle
@@ -2966,7 +2966,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 
 			}},
 		{"Octon",255,255,0,AI_Octopus,
-		 19,21,20,40,"graphics/mystic/octopus.jsp",0,MF_AQUATIC|MF_WATERWALK|MF_INVINCIBLE|MF_NOHIT,
+		 19,21,20,40,"mystic/graphics/octopus.jsp",0,MF_AQUATIC|MF_WATERWALK|MF_INVINCIBLE|MF_NOHIT,
 		 MT_NONE,
 			{
 				{5,6,7,6,255},	// idle
@@ -2978,7 +2978,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 
 			}},
 		{"Blockhead",255,255,0,AI_Incabot,
-		 12,23,5,2,"graphics/mystic/incabot.jsp",0,MF_NOMOVE,
+		 12,23,5,2,"mystic/graphics/incabot.jsp",0,MF_NOMOVE,
 		 MT_EVIL|MT_HIGHTECH|MT_MYSTIC,
 			{
 				{0,255},	// idle
@@ -2987,7 +2987,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{16,17,18,19,20,21,22,255},	// die
 			}},
 		{"Blockhead Kiln",255,255,0,AI_Incagen,
-		 40,16,100,100,"graphics/mystic/incagen.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_ENEMYWALK,
+		 40,16,100,100,"mystic/graphics/incagen.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_ENEMYWALK,
 		 MT_EVIL|MT_GENERATE|MT_HIGHTECH|MT_MYSTIC,
 			{
 				{0,255},	// idle
@@ -2996,7 +2996,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,0,0,255},	// die=explode
 			}},
 		{"Trapazoid",255,255,0,AI_Trapazoid,
-		 14,10,30,70,"graphics/mystic/trapazoid.jsp",0,MF_NOMOVE|MF_NOSHADOW,
+		 14,10,30,70,"mystic/graphics/trapazoid.jsp",0,MF_NOMOVE|MF_NOSHADOW,
 		 MT_EVIL|MT_TRAP|MT_ZOID|MT_MYSTIC,
 			{
 				{0,255},	// idle
@@ -3005,7 +3005,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{6,5,4,3,2,1,0,255},	// die (turn into dud trapazoid)
 			}},
 		{"Trapazoid",255,255,0,AI_Trapazoid,
-		 14,10,30,70,"graphics/mystic/trapazoid.jsp",0,MF_NOHIT|MF_NOMOVE|MF_NOSHADOW|MF_ENEMYWALK|MF_FREEWALK|MF_INVINCIBLE,
+		 14,10,30,70,"mystic/graphics/trapazoid.jsp",0,MF_NOHIT|MF_NOMOVE|MF_NOSHADOW|MF_ENEMYWALK|MF_FREEWALK|MF_INVINCIBLE,
 		 MT_NONE,
 			{
 				{0,255},	// idle
@@ -3014,7 +3014,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,255},	// die (turn into dud trapazoid)
 			}},
 		{"Megablockhead H",255,255,0,AI_Incagold,
-		 11,16,20,75,"graphics/mystic/incagold.jsp",0,MF_NOMOVE|MF_INVINCIBLE,
+		 11,16,20,75,"mystic/graphics/incagold.jsp",0,MF_NOMOVE|MF_INVINCIBLE,
 		 MT_EVIL|MT_TRAP|MT_MYSTIC,
 			{
 				{0,255},	// idle
@@ -3023,7 +3023,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,255},	// die=doesn't!
 			}},
 		{"Megablockhead V",255,255,0,AI_Incagold,
-		 11,16,20,75,"graphics/mystic/incagold.jsp",0,MF_NOMOVE|MF_INVINCIBLE,
+		 11,16,20,75,"mystic/graphics/incagold.jsp",0,MF_NOMOVE|MF_INVINCIBLE,
 		 MT_EVIL|MT_TRAP|MT_MYSTIC,
 			{
 				{0,255},	// idle
@@ -3032,7 +3032,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,255},	// die=doesn't!
 			}},
 		{"Slimy Slug",255,255,0,AI_Slug,
-		 12,19,30,50,"graphics/mystic/slug.jsp",0,0,
+		 12,19,30,50,"mystic/graphics/slug.jsp",0,0,
 		 MT_ANIMAL|MT_EVIL|MT_MYSTIC,
 			{
 				{0,255},	// idle
@@ -3041,7 +3041,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{5,6,7,8,9,10,11,12,13,14,15,16,17,18,255},	// die
 			}},
 		{"Sniper Snail",255,255,0,AI_Snail,
-		 12,19,45,60,"graphics/mystic/snail.jsp",0,0,
+		 12,19,45,60,"mystic/graphics/snail.jsp",0,0,
 		 MT_ANIMAL|MT_EVIL|MT_MYSTIC,
 			{
 				{0,255},	// idle
@@ -3052,7 +3052,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{13,12,11,10,9,8,7,6,5,255},	// A2=get out of shell
 			}},
 		{"Sneaky Snail",255,255,0,AI_Snail,	// in his shell
-		 12,19,45,60,"graphics/mystic/snail.jsp",0,MF_INVINCIBLE,
+		 12,19,45,60,"mystic/graphics/snail.jsp",0,MF_INVINCIBLE,
 		 MT_NONE,
 			{
 				{14,255},	// idle
@@ -3063,7 +3063,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{13,12,11,10,9,8,7,6,5,255},	// A2=get out of shell
 			}},
 		{"Oculoid",255,255,0,AI_Peeper,
-		 26,8,40,150,"graphics/mystic/peeper.jsp",0,MF_FLYING|MF_NOMOVE,
+		 26,8,40,150,"mystic/graphics/peeper.jsp",0,MF_FLYING|MF_NOMOVE,
 		 MT_EVIL|MT_MYSTIC,
 			{
 				{4,4,255},	// idle
@@ -3074,7 +3074,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,0,1,1,2,2,3,3,255},	// A2 = wake up
 			}},
 		{"The Lookey-Loo",255,255,0,AI_Lookeyloo,
-		 64,7,1000,2000,"graphics/mystic/lookyloo.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_SPRITEBOX,
+		 64,7,1000,2000,"mystic/graphics/lookyloo.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_SPRITEBOX,
 		 MT_EVIL|MT_BOSS|MT_MYSTIC,
 			{
 				{0,255},	// idle
@@ -3083,7 +3083,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{1,3,5,6,6,6,6,255},	// die
 			}},
 		{"Pinkeye",255,255,0,AI_Pinkeye,
-		 11,13,20,1,"graphics/mystic/pinkeye.jsp",0,MF_NOMOVE,
+		 11,13,20,1,"mystic/graphics/pinkeye.jsp",0,MF_NOMOVE,
 		 MT_EVIL|MT_MYSTIC,
 			{
 				{0,255},	// idle
@@ -3092,7 +3092,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{9,10,11,12,12,11,10,9,9,255},	// die & resurrect (freezes on frm 3 until ready)
 			}},
 		{"Crazy Bush",255,255,0,AI_CrazyBush,
-		 10,8,1,5,"graphics/mystic/crazybush.jsp",0,0,
+		 10,8,1,5,"mystic/graphics/crazybush.jsp",0,0,
 		 MT_EVIL|MT_VEGGIE|MT_MYSTIC,
 			{
 				{0,255},	// idle
@@ -3101,7 +3101,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{5,6,7,255},	// die
 			}},
 		{"Peeping Bomb",255,255,0,AI_PeepBomb,
-		 13,41,20,50,"graphics/mystic/peepbomb.jsp",0,MF_FLYING|MF_ONEFACE|MF_FACECMD,
+		 13,41,20,50,"mystic/graphics/peepbomb.jsp",0,MF_FLYING|MF_ONEFACE|MF_FACECMD,
 		 MT_EVIL|MT_MYSTIC,
 			{
 				{0,0,0,0,255},	// idle
@@ -3110,7 +3110,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{32,33,34,35,36,37,38,39,40,255},	// die=explode
 			}},
 		{"Rammy Gruff",255,255,0,AI_Rammy,
-		 20,52,100,300,"graphics/mystic/goat.jsp",0,MF_NOMOVE|MF_INVINCIBLE,
+		 20,52,100,300,"mystic/graphics/goat.jsp",0,MF_NOMOVE|MF_INVINCIBLE,
 		 MT_EVIL|MT_MINIBOSS|MT_ANIMAL|MT_MYSTIC,
 			{
 				{0,255},	// idle
@@ -3119,7 +3119,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,255},	// die
 			}},
 		{"Rammy Gruff",255,255,0,AI_Rammy,	// vulnerable
-		 20,52,100,300,"graphics/mystic/goat.jsp",0,MF_NOMOVE,
+		 20,52,100,300,"mystic/graphics/goat.jsp",0,MF_NOMOVE,
 		 MT_NONE,
 			{
 				{0,255},	// idle
@@ -3129,7 +3129,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{13,14,15,16,17,18,19,20,21,22,23,15,16,17,18,19,20,21,22,23,15,14,13,255},	// A1=be stunned
 			}},
 		{"Surefoot Gruff",255,255,0,AI_Hoppy,	// vulnerable, on the ground
-		 20,52,200,300,"graphics/mystic/goat.jsp",0,MF_NOMOVE,
+		 20,52,200,300,"mystic/graphics/goat.jsp",0,MF_NOMOVE,
 		 MT_EVIL|MT_MINIBOSS|MT_ANIMAL|MT_MYSTIC,
 			{
 				{0,255},	// idle
@@ -3139,7 +3139,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{27,28,29,29,29,29,29,29,29,30,31,32,255},	// A1=squish onto the ground after a hop
 			}},
 		{"Surefoot Gruff",255,255,0,AI_Hoppy,	// airborne, nohit
-		 20,52,200,300,"graphics/mystic/goat.jsp",0,MF_NOMOVE|MF_NOHIT,
+		 20,52,200,300,"mystic/graphics/goat.jsp",0,MF_NOMOVE|MF_NOHIT,
 		 MT_NONE,
 			{
 				{26,255},	// idle
@@ -3149,7 +3149,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{27,28,29,29,29,29,29,29,29,30,31,32,255},	// A1=squish onto the ground after a hop
 			}},
 		{"Disgruntled Gruff",255,255,0,AI_Gruffy,
-		 20,52,300,300,"graphics/mystic/goat.jsp",0,MF_NOMOVE,
+		 20,52,300,300,"mystic/graphics/goat.jsp",0,MF_NOMOVE,
 		 MT_EVIL|MT_MINIBOSS|MT_ANIMAL|MT_MYSTIC,
 			{
 				{0,255},	// idle
@@ -3158,7 +3158,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,255},	// die
 			}},
 		{"Happy Stick Shroom",255,255,0,AI_StickShroom,
-		 9,6,15,50,"graphics/mystic/stkshr.jsp",0,MF_ONEFACE,
+		 9,6,15,50,"mystic/graphics/stkshr.jsp",0,MF_ONEFACE,
 		 MT_EVIL|MT_WACKY|MT_VEGGIE|MT_MYSTIC,
 			{
 				{0,1,255},	// idle
@@ -3167,7 +3167,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{3,3,4,4,5,5,255},	// die
 			}},
 		{"Happy Stick Spider",255,255,0,AI_StickSpider,
-		 9,6,25,70,"graphics/mystic/stkspd.jsp",0,MF_ONEFACE,
+		 9,6,25,70,"mystic/graphics/stkspd.jsp",0,MF_ONEFACE,
 		 MT_EVIL|MT_WACKY|MT_SPOOKY|MT_ANIMAL|MT_MYSTIC,
 			{
 				{0,1,255},	// idle
@@ -3176,7 +3176,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{3,4,3,4,3,4,254,3,254,4,254,3,254,254,4,254,254,3,255},	// die
 			}},
 		{"Happy Stick Corpse",255,255,0,AI_StickCorpse,
-		 11,10,40,100,"graphics/mystic/stkskl.jsp",0,MF_ONEFACE,
+		 11,10,40,100,"mystic/graphics/stkskl.jsp",0,MF_ONEFACE,
 		 MT_EVIL|MT_WACKY|MT_SPOOKY|MT_MYSTIC,
 			{
 				{0,255},	// idle
@@ -3185,7 +3185,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{4,5,6,7,8,9,255},	// die
 			}},
 		{"Happy Stick Bat",255,255,0,AI_StickBat,
-		 11,6,20,60,"graphics/mystic/stkbat.jsp",0,MF_ONEFACE|MF_FLYING,
+		 11,6,20,60,"mystic/graphics/stkbat.jsp",0,MF_ONEFACE|MF_FLYING,
 		 MT_EVIL|MT_WACKY|MT_ANIMAL|MT_SPOOKY|MT_FLYING|MT_MYSTIC,
 			{
 				{0,1,255},	// idle
@@ -3194,7 +3194,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{3,3,4,4,5,5,255},	// die
 			}},
 		{"Tower Guardian",255,255,0,AI_Tower,
-		 60,17,500,500,"graphics/mystic/tower.jsp",0,MF_NOMOVE,
+		 60,17,500,500,"mystic/graphics/tower.jsp",0,MF_NOMOVE,
 		 MT_EVIL|MT_MINIBOSS|MT_MYSTIC,
 			{
 				{0,0,0,255},	// idle
@@ -3204,7 +3204,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{1,2,2,2,2,2,2,1,255},	// A1
 			}},
 		{"Grumpy Golem",255,255,0,AI_Golem,
-		 32,26,100,0,"graphics/mystic/golem.jsp",0,MF_NOMOVE,//|MF_FREEWALK,
+		 32,26,100,0,"mystic/graphics/golem.jsp",0,MF_NOMOVE,//|MF_FREEWALK,
 		 MT_EVIL|MT_MYSTIC,
 			{
 				{0,255},	// idle
@@ -3214,7 +3214,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{22,23,24,25,255},	// form out of nothing (A1)
 			}},
 		{"Bobby Khan",255,255,0,AI_BobbyKhan,
-		 48,46,2000,5000,"graphics/mystic/bobby.jsp",0,MF_NOMOVE|MF_ONEFACE,
+		 48,46,2000,5000,"mystic/graphics/bobby.jsp",0,MF_NOMOVE|MF_ONEFACE,
 		 MT_EVIL|MT_BOSS|MT_MYSTIC,
 			{
 				{0,0,255},	// idle
@@ -3227,7 +3227,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{45,45,45,17,17,255},	// A4=blocked a shot
 			}},
 		{"Blocko The Great",255,255,0,AI_Incaboss,
-		 65,20,150,500,"graphics/mystic/incaboss.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_ENEMYWALK|MF_INVINCIBLE,
+		 65,20,150,500,"mystic/graphics/incaboss.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_ENEMYWALK|MF_INVINCIBLE,
 		 MT_EVIL|MT_BOSS|MT_MYSTIC,
 			{
 				{0,255},	// idle
@@ -3238,7 +3238,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{13,13,13,14,14,14,15,15,15,15,15,15,15,15,15,15,15,15,14,13,255},	// A2=eyebeam
 			}},
 		{"Blocko The Great",255,255,0,AI_Incaboss,
-		 65,20,150,500,"graphics/mystic/incaboss.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_ENEMYWALK,
+		 65,20,150,500,"mystic/graphics/incaboss.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_ENEMYWALK,
 		 MT_NONE,
 			{
 				{0,255},	// idle
@@ -3249,7 +3249,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{13,13,13,14,14,14,15,15,15,15,15,15,15,15,15,15,15,15,14,13,255},	// A2=eyebeam
 			}},
 		{"Optimum Octon",255,255,0,AI_OctoBoss,
-		 90,15,200,300,"graphics/mystic/octoboss.jsp",0,MF_ONEFACE|MF_NOMOVE|MF_AQUATIC|MF_WATERWALK|MF_ENEMYWALK,
+		 90,15,200,300,"mystic/graphics/octoboss.jsp",0,MF_ONEFACE|MF_NOMOVE|MF_AQUATIC|MF_WATERWALK|MF_ENEMYWALK,
 		 MT_EVIL|MT_BOSS|MT_AQUATIC|MT_MYSTIC,
 			{
 				{0,255},	// idle
@@ -3258,7 +3258,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{1,2,3,4,5,6,7,8,9,255},	// die
 			}},
 		{"Octentacle",255,255,0,AI_OctoTentacle,
-		 20,11,20,50,"graphics/mystic/octotent.jsp",0,MF_NOMOVE|MF_AQUATIC|MF_WATERWALK|MF_ENEMYWALK,
+		 20,11,20,50,"mystic/graphics/octotent.jsp",0,MF_NOMOVE|MF_AQUATIC|MF_WATERWALK|MF_ENEMYWALK,
 		 MT_BITS|MT_MYSTIC,
 			{
 				{1,255},	// idle
@@ -3267,7 +3267,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{6,5,4,3,2,1,0,255},	// die
 			}},
 		{"Octentacle",255,255,0,AI_OctoTentacle,	// for the right side
-		 20,11,20,50,"graphics/mystic/octotent.jsp",0,MF_NOMOVE|MF_AQUATIC|MF_WATERWALK|MF_ENEMYWALK,
+		 20,11,20,50,"mystic/graphics/octotent.jsp",0,MF_NOMOVE|MF_AQUATIC|MF_WATERWALK|MF_ENEMYWALK,
 		 MT_BITS|MT_MYSTIC,
 			{
 				{1,255},	// idle
@@ -3276,7 +3276,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{6,5,4,3,2,1,0,255},	// die
 			}},
 		{"Microfish",255,255,0,AI_Microfish,
-		 1,1,1,1,"graphics/mystic/micro.jsp",0,MF_AQUATIC|MF_NOSHADOW|MF_WATERWALK,
+		 1,1,1,1,"mystic/graphics/micro.jsp",0,MF_AQUATIC|MF_NOSHADOW|MF_WATERWALK,
 		 MT_EVIL|MT_AQUATIC|MT_WACKY|MT_MYSTIC,
 			{
 				{0,255},	// idle
@@ -3285,7 +3285,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,255},	// die
 			}},
 		{"Froggy",255,255,0,AI_Frog,
-		 6,22,4,100,"graphics/sleepless/frog.jsp",0,0,
+		 6,22,4,100,"sleepless/graphics/frog.jsp",0,0,
 		 MT_EVIL|MT_ANIMAL|MT_SLEEPLESS,
 			{
 				{0,255},	// idle
@@ -3294,7 +3294,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{17,18,19,20,21,255},		// die
 			}},
 		{"Toadie",1,2,0,AI_Frog,
-		 6,22,8,100,"graphics/sleepless/frog.jsp",0,0,
+		 6,22,8,100,"sleepless/graphics/frog.jsp",0,0,
 		 MT_EVIL|MT_ANIMAL|MT_SLEEPLESS,
 			{
 				{0,255},	// idle
@@ -3303,7 +3303,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{17,18,19,20,21,255},		// die
 			}},
 		{"Mad Cow",255,255,0,AI_MadCow,
-		 22,15,20,250,"graphics/sleepless/cow.jsp",0,MF_NOMOVE,
+		 22,15,20,250,"sleepless/graphics/cow.jsp",0,MF_NOMOVE,
 		 MT_EVIL|MT_ANIMAL|MT_SLEEPLESS,
 			{
 				{0,255},	// idle
@@ -3313,7 +3313,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{5,5,6,6,6,5,5,255},	// attack
 			}},
 		{"Extremely Mad Cow",2,4,0,AI_MadCow2,
-		 32,15,1000,250,"graphics/sleepless/cow.jsp",0,MF_NOMOVE,
+		 32,15,1000,250,"sleepless/graphics/cow.jsp",0,MF_NOMOVE,
 		 MT_EVIL|MT_ANIMAL|MT_SLEEPLESS,
 			{
 				{0,255},	// idle
@@ -3379,7 +3379,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{1,2,0,2,0,1,2,1,0,1,0,2,1,2,1,0,2,1,2,255},	// attack
 			}},
 		{"Happy Stick Tree",255,255,0,AI_Tree,
-		 20,5,100,5000,"graphics/sleepless/tree.jsp",0,MF_NOMOVE|MF_ONEFACE,
+		 20,5,100,5000,"sleepless/graphics/tree.jsp",0,MF_NOMOVE|MF_ONEFACE,
 		 MT_EVIL|MT_MINIBOSS|MT_WACKY|MT_VEGGIE|MT_SLEEPLESS,
 			{
 				{0,255},	// idle
@@ -3407,7 +3407,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,255},	// die
 			}},
 		{"Lightswitch",255,255,0,AI_LightSwitch,
-		 10,8,3000,1,"graphics/sleepless/lghtball.jsp",0,MF_NOMOVE|MF_ONEFACE,
+		 10,8,3000,1,"sleepless/graphics/lghtball.jsp",0,MF_NOMOVE|MF_ONEFACE,
 		 MT_EVIL|MT_TRAP|MT_SLEEPLESS,
 			{
 				{7,255},	// idle
@@ -3416,7 +3416,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,255},	// die
 			}},
 		{"Blaster",5,4,0,AI_LightBlaster,
-		 10,8,60,1,"graphics/sleepless/lghtball.jsp",0,MF_NOMOVE|MF_ONEFACE,
+		 10,8,60,1,"sleepless/graphics/lghtball.jsp",0,MF_NOMOVE|MF_ONEFACE,
 		 MT_EVIL|MT_TRAP|MT_SLEEPLESS,
 			{
 				{7,255},	// idle
@@ -3425,7 +3425,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,255},	// die
 			}},
 		{"Charge Coil",5,6,3,AI_LightSlide,
-		 10,8,3000,1,"graphics/sleepless/lghtball.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_INVINCIBLE,
+		 10,8,3000,1,"sleepless/graphics/lghtball.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_INVINCIBLE,
 		 MT_TRAP|MT_SLEEPLESS,
 			{
 				{5,255},	// idle
@@ -3448,7 +3448,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,255},
 			}},
 		{"Sir Spookley Hauntmore",255,255,0,AI_Spook,
-		 30,9,300,1,"graphics/sleepless/bigghost.jsp",0,MF_ONEFACE|MF_FLYING|MF_FREEWALK|MF_ENEMYWALK,
+		 30,9,300,1,"sleepless/graphics/bigghost.jsp",0,MF_ONEFACE|MF_FLYING|MF_FREEWALK|MF_ENEMYWALK,
 		 MT_EVIL|MT_BOSS|MT_SPOOKY|MT_SLEEPLESS,
 			{
 				{0,255},	// idle
@@ -3458,7 +3458,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{1,2,3,3,3,2,1,2,3,2,1,0,0,0,0,1,2,3,2,1,255},	// A1=sneeze
 			}},
 		{"Spookley",255,255,0,AI_Spook,
-		 30,9,300,1,"graphics/sleepless/bigghost.jsp",0,MF_ONEFACE|MF_FLYING|MF_GHOST|MF_FREEWALK|MF_ENEMYWALK|MF_NOSHADOW|MF_NOHIT,
+		 30,9,300,1,"sleepless/graphics/bigghost.jsp",0,MF_ONEFACE|MF_FLYING|MF_GHOST|MF_FREEWALK|MF_ENEMYWALK|MF_NOSHADOW|MF_NOHIT,
 		 MT_BITS|MT_SLEEPLESS,
 			{
 				{0,255},	// idle
@@ -3551,7 +3551,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{28,29,30,31,30,29,28,255},	// leap skyward
 			}},
 		{"Glass Jaw",0,7,0,AI_Bonehead,
-		 8,32,10,50,"graphics/sleepless/bonehead.jsp",0,0,
+		 8,32,10,50,"sleepless/graphics/bonehead.jsp",0,0,
 		 MT_EVIL|MT_SPOOKY|MT_SLEEPLESS,
 			{
 				{0,255},	// idle
@@ -3620,7 +3620,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,255},
 			}},
 		{"Headless Horseradish",255,255,0,AI_Horseradish,
-		 11,10,25000,100,"graphics/sleepless/radish.jsp",0,MF_NOMOVE|MF_ENEMYWALK|MF_FREEWALK,
+		 11,10,25000,100,"sleepless/graphics/radish.jsp",0,MF_NOMOVE|MF_ENEMYWALK|MF_FREEWALK,
 		 MT_EVIL|MT_BOSS|MT_SLEEPLESS,
 			{
 				{0,255},	// idle
@@ -3657,7 +3657,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,255},
 			}},
     	{"Swampdog",255,255,0,AI_Swampdog,
-		 18,43,20,0,"graphics/loonyland/swampdog.jsp",0,0,
+		 18,43,20,0,"loonyland/graphics/swampdog.jsp",0,0,
          MT_EVIL|MT_LOONY,
 			{
 				{11,255},	// idle
@@ -3778,7 +3778,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{28,29,30,31,30,29,28,255},	// leap skyward
 			}},
     	{"Croaker",1,6,-3,AI_PoisonFrog,
-		 6,22,6,0,"graphics/sleepless/frog.jsp",0,0,
+		 6,22,6,0,"sleepless/graphics/frog.jsp",0,0,
          MT_EVIL|MT_ANIMAL|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -3787,7 +3787,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{17,18,19,20,21,255},		// die
 			}},
     	{"Frogurt",1,5,2,AI_FireFrog,
-		 6,22,1,0,"graphics/sleepless/frog.jsp",0,0,
+		 6,22,1,0,"sleepless/graphics/frog.jsp",0,0,
          MT_EVIL|MT_ANIMAL|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -3796,7 +3796,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{17,18,19,20,21,255},		// die
 			}},
     	{"Toad",1,4,2,AI_Toad,
-		 6,22,1,0,"graphics/sleepless/frog.jsp",0,0,
+		 6,22,1,0,"sleepless/graphics/frog.jsp",0,0,
          MT_EVIL|MT_ANIMAL|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -3805,7 +3805,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{17,18,19,20,21,255},		// die
 			}},
     	{"Zombie",255,255,0,AI_LL_Zombie,
-		 12,42,20,0,"graphics/loonyland/zombie.jsp",0,0,
+		 12,42,20,0,"loonyland/graphics/zombie.jsp",0,0,
          MT_EVIL|MT_SPOOKY|MT_ZOMBIE|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -3815,7 +3815,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{7,8,9,10,11,12,13,14,255},	// A1 = stomp ground
 			}},
     	{"Bombie",0,4,0,AI_LL_Zombie,
-		 12,42,10,0,"graphics/loonyland/zombie.jsp",0,0,
+		 12,42,10,0,"loonyland/graphics/zombie.jsp",0,0,
          MT_EVIL|MT_SPOOKY|MT_ZOMBIE|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -3825,7 +3825,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{7,8,9,10,11,12,13,14,255},	// A1 = stomp ground
 			}},
     	{"Zombie Lord",0,6,2,AI_LL_Zombie,
-		 12,42,100,0,"graphics/loonyland/zombie.jsp",0,0,
+		 12,42,100,0,"loonyland/graphics/zombie.jsp",0,0,
          MT_EVIL|MT_SPOOKY|MT_ZOMBIE|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -3835,7 +3835,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{7,8,9,10,11,12,13,14,255},	// A1 = stomp ground
 			}},
     	{"Bombie Lord",0,4,7,AI_LL_Zombie,
-		 12,42,100,0,"graphics/loonyland/zombie.jsp",0,0,
+		 12,42,100,0,"loonyland/graphics/zombie.jsp",0,0,
          MT_EVIL|MT_SPOOKY|MT_ZOMBIE|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -3845,7 +3845,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{7,8,9,10,11,12,13,14,255},	// A1 = stomp ground
 			}},
     	{"Dingbat",255,255,0,AI_LL_Bat,
-		 8,33,5,0,"graphics/loonyland/bat.jsp",0,MF_FLYING,
+		 8,33,5,0,"loonyland/graphics/bat.jsp",0,MF_FLYING,
          MT_EVIL|MT_SPOOKY|MT_ANIMAL|MT_FLYING|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -3857,7 +3857,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{7,8,9,10,9,8,7,255},		// shoot = A3
 			}},
     	{"Gargoyle",2,0,0,AI_LL_Bat,
-		 8,33,50,0,"graphics/loonyland/bat.jsp",0,MF_FLYING,
+		 8,33,50,0,"loonyland/graphics/bat.jsp",0,MF_FLYING,
          MT_EVIL|MT_SPOOKY|MT_ANIMAL|MT_FLYING|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -3869,7 +3869,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{7,8,9,10,9,8,7,255},		// shoot = A3
 			}},
     	{"Vamp Bat",2,4,-6,AI_LL_Bat,
-		 8,33,10,0,"graphics/loonyland/bat.jsp",0,MF_FLYING,
+		 8,33,10,0,"loonyland/graphics/bat.jsp",0,MF_FLYING,
          MT_EVIL|MT_SPOOKY|MT_ANIMAL|MT_FLYING|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -3881,7 +3881,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{7,8,9,10,9,8,7,255},		// shoot = A3
 			}},
     	{"Gasbat",2,1,4,AI_LL_Bat,
-		 8,33,30,0,"graphics/loonyland/bat.jsp",0,MF_FLYING,
+		 8,33,30,0,"loonyland/graphics/bat.jsp",0,MF_FLYING,
          MT_EVIL|MT_SPOOKY|MT_ANIMAL|MT_FLYING|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -3893,7 +3893,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{7,8,9,10,9,8,7,255},		// shoot = A3
 			}},
     	{"Rag Man",255,255,0,AI_Mummy,
-		 11,28,10,0,"graphics/loonyland/mummy.jsp",0,0,
+		 11,28,10,0,"loonyland/graphics/mummy.jsp",0,0,
          MT_EVIL|MT_SPOOKY|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -3905,7 +3905,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{27,26,25,24,23,22,21,20,19,255},	// A3 = resurrect
 			}},
     	{"Mummy",6,1,0,AI_Mummy,
-		 11,28,30,0,"graphics/loonyland/mummy.jsp",0,0,
+		 11,28,30,0,"loonyland/graphics/mummy.jsp",0,0,
          MT_EVIL|MT_SPOOKY|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -3917,7 +3917,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{27,26,25,24,23,22,21,20,19,255},	// A3 = resurrect
 			}},
     	{"Pharaoh Faucet",0,2,0,AI_Mummy,
-		 11,28,60,0,"graphics/loonyland/mummy.jsp",0,0,
+		 11,28,60,0,"loonyland/graphics/mummy.jsp",0,0,
          MT_EVIL|MT_SPOOKY|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -3928,7 +3928,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{7,8,9,9,9,9,9,8,7,255},	// A2 = magic hands
 			}},
     	{"Grand Pharaoh",0,7,3,AI_Mummy,
-		 11,28,150,0,"graphics/loonyland/mummy.jsp",0,0,
+		 11,28,150,0,"loonyland/graphics/mummy.jsp",0,0,
          MT_EVIL|MT_SPOOKY|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -3939,7 +3939,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{7,8,9,9,9,9,9,8,7,255},	// A2 = magic hands
 			}},
     	{"King Toot",0,6,0,AI_Mummy,
-		 11,28,300,0,"graphics/loonyland/mummy.jsp",0,0,
+		 11,28,300,0,"loonyland/graphics/mummy.jsp",0,0,
          MT_EVIL|MT_SPOOKY|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -3950,7 +3950,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{7,8,9,9,9,9,9,8,7,255},	// A2 = magic hands
 			}},
     	{"Terror Tree",255,255,0,AI_EvilTree,
-		 32,24,10,0,"graphics/loonyland/eviltree.jsp",0,MF_NOMOVE|MF_ONEFACE,
+		 32,24,10,0,"loonyland/graphics/eviltree.jsp",0,MF_NOMOVE|MF_ONEFACE,
          MT_EVIL|MT_TRAP|MT_LOONY,
 			{
 				{4,5,6,7,8,9,10,11,12,13,255},	// idle
@@ -3959,7 +3959,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{14,15,16,17,18,19,20,21,22,23,255},		// die
 			}},
     	{"Swamp Stump",4,1,0,AI_EvilTree,
-		 32,24,5000,0,"graphics/loonyland/eviltree.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_INVINCIBLE,
+		 32,24,5000,0,"loonyland/graphics/eviltree.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_INVINCIBLE,
          MT_EVIL|MT_TRAP|MT_LOONY,
 			{
 				{4,5,6,7,8,9,10,11,12,13,255},	// idle
@@ -3968,7 +3968,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{14,15,16,17,18,19,20,21,22,23,255},		// die
 			}},
     	{"Torture Tree",4,5,0,AI_EvilTree,
-		 32,24,100,0,"graphics/loonyland/eviltree.jsp",0,MF_NOMOVE|MF_ONEFACE,
+		 32,24,100,0,"loonyland/graphics/eviltree.jsp",0,MF_NOMOVE|MF_ONEFACE,
          MT_EVIL|MT_TRAP|MT_LOONY,
 			{
 				{4,5,6,7,8,9,10,11,12,13,255},	// idle
@@ -3977,7 +3977,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{14,15,16,17,18,19,20,21,22,23,255},		// die
 			}},
     	{"Ghost",255,255,0,AI_LL_Ghost,
-		 14,23,15,0,"graphics/loonyland/ghost.jsp",0,MF_FLYING|MF_GHOST|MF_WALLWALK|MF_FREEWALK|MF_ENEMYWALK|MF_NOSHADOW,
+		 14,23,15,0,"loonyland/graphics/ghost.jsp",0,MF_FLYING|MF_GHOST|MF_WALLWALK|MF_FREEWALK|MF_ENEMYWALK|MF_NOSHADOW,
          MT_EVIL|MT_SPOOKY|MT_FLYING|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -3989,7 +3989,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{1,2,3,3,2,3,2,3,3,3,2,2,1,1,255},		// scream = A3
 			}},
     	{"Shade",255,255,-12,AI_LL_Ghost,
-		 14,23,40,0,"graphics/loonyland/ghost.jsp",0,MF_FLYING|MF_GHOST|MF_WALLWALK|MF_FREEWALK|MF_ENEMYWALK|MF_NOSHADOW,
+		 14,23,40,0,"loonyland/graphics/ghost.jsp",0,MF_FLYING|MF_GHOST|MF_WALLWALK|MF_FREEWALK|MF_ENEMYWALK|MF_NOSHADOW,
          MT_EVIL|MT_SPOOKY|MT_FLYING|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4001,7 +4001,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{1,2,3,3,2,3,2,3,3,3,2,2,1,1,255},		// scream = A3
 			}},
     	{"Banshee",255,255,10,AI_LL_Ghost,
-		 14,23,80,0,"graphics/loonyland/ghost.jsp",0,MF_FLYING|MF_GHOST|MF_WALLWALK|MF_FREEWALK|MF_ENEMYWALK|MF_NOSHADOW,
+		 14,23,80,0,"loonyland/graphics/ghost.jsp",0,MF_FLYING|MF_GHOST|MF_WALLWALK|MF_FREEWALK|MF_ENEMYWALK|MF_NOSHADOW,
          MT_EVIL|MT_SPOOKY|MT_FLYING|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4049,7 +4049,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{20,21,22,23,24,25,26,26,26,26,26,26,26,26,27,28,29,255},		// howl = A3
 			}},
     	{"Happy Stick Witch",255,255,0,AI_StickWitch,
-		 12,20,500,0,"graphics/loonyland/stikwtch.jsp",0,MF_ONEFACE,
+		 12,20,500,0,"loonyland/graphics/stikwtch.jsp",0,MF_ONEFACE,
          MT_EVIL|MT_HUMAN|MT_WACKY|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4060,7 +4060,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{1,0,2,0,1,0,2,0,1,0,2,0,1,0,2,0,4,0,3,3,3,255},	// appear=A2
 			}},
 		{"Larry",255,255,0,AI_Larry,
-		 25,38,150,0,"graphics/loonyland/larry.jsp",0,MF_NOMOVE,//|MF_INVINCIBLE,
+		 25,38,150,0,"loonyland/graphics/larry.jsp",0,MF_NOMOVE,//|MF_INVINCIBLE,
          MT_EVIL|MT_BOSS|MT_ANIMAL|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4072,7 +4072,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,255},	// blank = A3
 			}},
     	{"Larry",4,1,0,AI_HumanLarry,
-		 25,14,150,0,"graphics/loonyland/village.jsp",0,0,
+		 25,14,150,0,"loonyland/graphics/village.jsp",0,0,
          MT_HUMAN|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4081,7 +4081,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,255},		// die
 			}},
     	{"Harry",5,2,0,AI_Harry,
-		 25,38,300,0,"graphics/loonyland/larry.jsp",0,MF_NOMOVE,
+		 25,38,300,0,"loonyland/graphics/larry.jsp",0,MF_NOMOVE,
          MT_EVIL|MT_BOSS|MT_ANIMAL|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4093,7 +4093,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,255},	// blank = A3
 			}},
     	{"Bonehead-O-Matic",255,255,0,AI_Boneheadomatic,
-		 32,47,100,0,"graphics/loonyland/bhomatic.jsp",0,MF_NOMOVE|MF_ONEFACE,
+		 32,47,100,0,"loonyland/graphics/bhomatic.jsp",0,MF_NOMOVE|MF_ONEFACE,
          MT_EVIL|MT_TRAP|MT_GENERATE|MT_LOONY,
 			{
 				{0,1,255},	// idle
@@ -4103,7 +4103,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{25,26,27,28,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,255},	// A1=finish creating
 			}},
     	{"Redbone-O-Matic",0,4,0,AI_Boneheadomatic,
-		 32,47,150,0,"graphics/loonyland/bhomatic.jsp",0,MF_NOMOVE|MF_ONEFACE,
+		 32,47,150,0,"loonyland/graphics/bhomatic.jsp",0,MF_NOMOVE|MF_ONEFACE,
          MT_EVIL|MT_TRAP|MT_GENERATE|MT_LOONY,
 			{
 				{0,1,255},	// idle
@@ -4113,7 +4113,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{25,26,27,28,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,255},	// A1=finish creating
 			}},
     	{"Gangrene-O-Matic",0,1,2,AI_Boneheadomatic,
-		 32,47,200,0,"graphics/loonyland/bhomatic.jsp",0,MF_NOMOVE|MF_ONEFACE,
+		 32,47,200,0,"loonyland/graphics/bhomatic.jsp",0,MF_NOMOVE|MF_ONEFACE,
          MT_EVIL|MT_TRAP|MT_GENERATE|MT_LOONY,
 			{
 				{0,1,255},	// idle
@@ -4123,7 +4123,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{25,26,27,28,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,255},	// A1=finish creating
 			}},
     	{"Numbskull-O-Matic",0,5,2,AI_Boneheadomatic,
-		 32,47,400,0,"graphics/loonyland/bhomatic.jsp",0,MF_NOMOVE|MF_ONEFACE,
+		 32,47,400,0,"loonyland/graphics/bhomatic.jsp",0,MF_NOMOVE|MF_ONEFACE,
          MT_EVIL|MT_TRAP|MT_GENERATE|MT_LOONY,
 			{
 				{0,1,255},	// idle
@@ -4133,7 +4133,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{25,26,27,28,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,255},	// A1=finish creating
 			}},
     	{"Vamp Jr.",255,255,0,AI_LL_Vampire,
-		 13,20,20,0,"graphics/loonyland/vampire.jsp",0,0,
+		 13,20,20,0,"loonyland/graphics/vampire.jsp",0,0,
          MT_EVIL|MT_VAMPIRE|MT_SPOOKY|MT_LOONY,
 			{
 				{0,1,2,1,255},	// idle
@@ -4144,7 +4144,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{13,14,15,15,14,13,255},	// point = A2
 			}},
     	{"Bloodsucker",6,4,3,AI_LL_Vampire,
-		 13,20,30,0,"graphics/loonyland/vampire.jsp",0,0,
+		 13,20,30,0,"loonyland/graphics/vampire.jsp",0,0,
          MT_EVIL|MT_VAMPIRE|MT_SPOOKY|MT_LOONY,
 			{
 				{0,1,2,1,255},	// idle
@@ -4155,7 +4155,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{13,14,15,15,14,13,255},	// point = A2
 			}},
     	{"Draculite",0,1,-4,AI_LL_Vampire,
-		 13,20,50,0,"graphics/loonyland/vampire.jsp",0,0,
+		 13,20,50,0,"loonyland/graphics/vampire.jsp",0,0,
          MT_EVIL|MT_VAMPIRE|MT_SPOOKY|MT_LOONY,
 			{
 				{0,1,2,1,255},	// idle
@@ -4166,7 +4166,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{13,14,15,15,14,13,255},	// point = A2
 			}},
     	{"Vamp Lord",0,6,-3,AI_LL_Vampire,
-		 13,20,150,0,"graphics/loonyland/vampire.jsp",0,0,
+		 13,20,150,0,"loonyland/graphics/vampire.jsp",0,0,
          MT_EVIL|MT_VAMPIRE|MT_SPOOKY|MT_LOONY,
 			{
 				{0,1,2,1,255},	// idle
@@ -4177,7 +4177,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{13,14,15,15,14,13,255},	// point = A2
 			}},
     	{"Frankenjulie",255,255,0,AI_Frankenjulie,
-		 80,39,600,0,"graphics/loonyland/frankenj.jsp",0,MF_NOMOVE|MF_ONEFACE,
+		 80,39,600,0,"loonyland/graphics/frankenj.jsp",0,MF_NOMOVE|MF_ONEFACE,
          MT_EVIL|MT_BOSS|MT_SPOOKY|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4190,7 +4190,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{35,36,37,38,38,38,38,37,36,35,34,255},	// A4=missile launch
 			}},
     	{"Frankenhand",255,255,0,AI_Hand,
-		 44,40,50,0,"graphics/loonyland/hand.jsp",0,0,
+		 44,40,50,0,"loonyland/graphics/hand.jsp",0,0,
          MT_EVIL|MT_SPOOKY|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4199,7 +4199,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,255},	// die
 			}},
     	{"Mini-Frankenjulie",255,255,0,AI_MiniFrankenjulie,
-		 40,39,400,0,"graphics/loonyland/franksml.jsp",0,MF_ONEFACE,
+		 40,39,400,0,"loonyland/graphics/franksml.jsp",0,MF_ONEFACE,
          MT_EVIL|MT_MINIBOSS|MT_SPOOKY|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4212,7 +4212,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{35,36,37,38,38,38,38,37,36,35,34,255},	// A4=missile launch
 			}},
     	{"Count Bonkula",255,255,0,AI_Bonkula,
-		 8,28,100,0,"graphics/loonyland/bossvamp.jsp",0,MF_WALLWALK|MF_NOMOVE|MF_FLYING,//|MF_INVINCIBLE,
+		 8,28,100,0,"loonyland/graphics/bossvamp.jsp",0,MF_WALLWALK|MF_NOMOVE|MF_FLYING,//|MF_INVINCIBLE,
          MT_EVIL|MT_VAMPIRE|MT_BOSS|MT_SPOOKY|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4222,7 +4222,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,255},	// A1=spin around
 			}},
     	{"Mecha-Bonkula",5,0,4,AI_MechaBonkula,
-		 8,28,700,0,"graphics/loonyland/bossvamp.jsp",0,MF_WALLWALK|MF_NOMOVE|MF_FLYING,
+		 8,28,700,0,"loonyland/graphics/bossvamp.jsp",0,MF_WALLWALK|MF_NOMOVE|MF_FLYING,
          MT_EVIL|MT_VAMPIRE|MT_BOSS|MT_SPOOKY|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4232,7 +4232,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,255},	// A1=spin around
 			}},
     	{"The Evilizer",255,255,0,AI_Evilizer,
-		 140,32,2000,0,"graphics/loonyland/evilizer.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_FACECMD,//|MF_INVINCIBLE,
+		 140,32,2000,0,"loonyland/graphics/evilizer.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_FACECMD,//|MF_INVINCIBLE,
          MT_EVIL|MT_BOSS|MT_LOONY,
 			{
 				{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,255},	// idle
@@ -4241,7 +4241,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,0,0,0,0,0,0,255},	// die
 			}},
     	{"Steam Pump",255,255,0,AI_EvilPump,
-		 30,13,500,0,"graphics/loonyland/evilpump.jsp",0,MF_NOMOVE,
+		 30,13,500,0,"loonyland/graphics/evilpump.jsp",0,MF_NOMOVE,
          MT_EVIL|MT_BITS|MT_LOONY,
 			{
 				{0,1,2,3,4,5,6,7,8,7,6,5,4,3,2,1,255},	// idle
@@ -4250,7 +4250,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{9,10,11,12,11,10,9,10,12,9,12,9,12,9,255},	// die
 			}},
     	{"Gusty The Elder",3,7,3,AI_WindElder,	// Elder Wind Vampire
-		 20,13,200,0,"graphics/loonyland/elder.jsp",0,0,
+		 20,13,200,0,"loonyland/graphics/elder.jsp",0,0,
          MT_EVIL|MT_VAMPIRE|MT_BOSS|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4261,7 +4261,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{10,11,12,12,12,11,10,255},	// point = A2
 			}},
     	{"Stoney The Elder",3,2,0,AI_EarthElder,	// Elder Earth Vampire
-		 20,13,400,0,"graphics/loonyland/elder.jsp",0,0,
+		 20,13,400,0,"loonyland/graphics/elder.jsp",0,0,
          MT_EVIL|MT_VAMPIRE|MT_BOSS|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4272,7 +4272,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{10,11,12,12,12,12,12,12,12,12,11,10,255},	// point = A2
 			}},
     	{"Drippy The Elder",255,255,0,AI_WaterElder,	// Elder Water Vampire
-		 20,13,400,0,"graphics/loonyland/elder.jsp",0,MF_GLOW|MF_ENEMYWALK,
+		 20,13,400,0,"loonyland/graphics/elder.jsp",0,MF_GLOW|MF_ENEMYWALK,
          MT_EVIL|MT_VAMPIRE|MT_BOSS|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4283,7 +4283,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{10,11,12,12,12,11,10,255},	// point = A2
 			}},
     	{"Toasty The Elder",3,4,0,AI_FireElder,
-		 20,13,400,0,"graphics/loonyland/elder.jsp",0,0,
+		 20,13,400,0,"loonyland/graphics/elder.jsp",0,0,
          MT_EVIL|MT_VAMPIRE|MT_BOSS|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4294,7 +4294,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{10,11,12,12,12,12,12,12,12,12,12,12,12,12,12,11,10,255},	// point = A2
 			}},
     	{"Summony The Elder",3,1,-5,AI_SummonElder,
-		 20,13,800,0,"graphics/loonyland/elder.jsp",0,0,
+		 20,13,800,0,"loonyland/graphics/elder.jsp",0,0,
          MT_EVIL|MT_VAMPIRE|MT_BOSS|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4306,7 +4306,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 			}},
 
     	{"Bubble",255,255,0,AI_Bubble,	// bubble for water elder to shoot
-		 13,5,10,0,"graphics/loonyland/bubble.jsp",0,MF_GLOW|MF_ONEFACE|MF_ENEMYWALK|MF_INVINCIBLE,
+		 13,5,10,0,"loonyland/graphics/bubble.jsp",0,MF_GLOW|MF_ONEFACE|MF_ENEMYWALK|MF_INVINCIBLE,
          MT_BITS|MT_LOONY,
 			{
 				{0,1,2,1,0,3,4,3,255},	// idle
@@ -4315,7 +4315,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,0,255},		// die
 			}},
     	{"Villager",255,255,0,AI_Villager,
-		 12,14,1000,0,"graphics/loonyland/village.jsp",0,MF_INVINCIBLE,
+		 12,14,1000,0,"loonyland/graphics/village.jsp",0,MF_INVINCIBLE,
          MT_GOOD|MT_HUMAN|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4325,7 +4325,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{7,8,9,10,11,12,13,12,11,10,11,12,13,12,11,10,9,8,7,255},	// A1 = scratch head
 			}},
     	{"Villager",5,2,0,AI_Villager,
-		 12,14,1000,0,"graphics/loonyland/village.jsp",0,MF_INVINCIBLE,
+		 12,14,1000,0,"loonyland/graphics/village.jsp",0,MF_INVINCIBLE,
          MT_GOOD|MT_HUMAN|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4335,7 +4335,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{7,8,9,10,11,12,13,12,11,10,11,12,13,12,11,10,9,8,7,255},	// A1 = scratch head
 			}},
     	{"Villager",4,1,0,AI_Villager,
-		 12,14,1000,0,"graphics/loonyland/village.jsp",0,MF_INVINCIBLE,
+		 12,14,1000,0,"loonyland/graphics/village.jsp",0,MF_INVINCIBLE,
          MT_GOOD|MT_HUMAN|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4345,7 +4345,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{7,8,9,10,11,12,13,12,11,10,11,12,13,12,11,10,9,8,7,255},	// A1 = scratch head
 			}},
     	{"Villager",255,255,0,AI_Villager,
-		 12,12,1000,0,"graphics/loonyland/village2.jsp",0,MF_INVINCIBLE,
+		 12,12,1000,0,"loonyland/graphics/village2.jsp",0,MF_INVINCIBLE,
          MT_GOOD|MT_HUMAN|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4355,7 +4355,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{7,8,9,10,11,10,9,10,11,10,9,8,7,255},	// A1 = yawn
 			}},
     	{"Villager",4,3,0,AI_Villager,
-		 12,12,1000,0,"graphics/loonyland/village2.jsp",0,MF_INVINCIBLE,
+		 12,12,1000,0,"loonyland/graphics/village2.jsp",0,MF_INVINCIBLE,
          MT_GOOD|MT_HUMAN|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4365,7 +4365,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{7,8,9,10,11,10,9,10,11,10,9,8,7,255},	// A1 = yawn
 			}},
     	{"Villager",4,5,-2,AI_Villager,
-		 12,12,1000,0,"graphics/loonyland/village2.jsp",0,MF_INVINCIBLE,
+		 12,12,1000,0,"loonyland/graphics/village2.jsp",0,MF_INVINCIBLE,
          MT_GOOD|MT_HUMAN|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4375,7 +4375,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{7,8,9,10,11,10,9,10,11,10,9,8,7,255},	// A1 = yawn
 			}},
     	{"PolterGuy",255,255,0,AI_Polterguy,
-		 30,9,300,0,"graphics/sleepless/bigghost.jsp",0,MF_ONEFACE|MF_FLYING|MF_GHOST|MF_FREEWALK|MF_ENEMYWALK|MF_NOSHADOW|MF_NOMOVE,
+		 30,9,300,0,"sleepless/graphics/bigghost.jsp",0,MF_ONEFACE|MF_FLYING|MF_GHOST|MF_FREEWALK|MF_ENEMYWALK|MF_NOSHADOW|MF_NOMOVE,
          MT_EVIL|MT_BOSS|MT_SPOOKY|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4385,7 +4385,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{1,2,3,3,3,2,1,2,3,2,1,0,0,0,0,1,2,3,2,1,255},	// A1=sneeze
 			}},
     	{"Junk",255,255,0,AI_Junk,
-		 11,9,10,0,"graphics/loonyland/junk.jsp",0,MF_ONEFACE|MF_FLYING|MF_FREEWALK|MF_ENEMYWALK,
+		 11,9,10,0,"loonyland/graphics/junk.jsp",0,MF_ONEFACE|MF_FLYING|MF_FREEWALK|MF_ENEMYWALK,
          MT_BITS|MT_LOONY,
 			{
 				{0,1,2,3,4,5,6,7,255},	// idle
@@ -4394,7 +4394,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,255},	// die
 			}},
     	{"Junk",255,255,0,AI_Junk,
-		 11,9,10,0,"graphics/loonyland/junk.jsp",0,MF_ONEFACE|MF_FLYING|MF_FREEWALK|MF_ENEMYWALK,
+		 11,9,10,0,"loonyland/graphics/junk.jsp",0,MF_ONEFACE|MF_FLYING|MF_FREEWALK|MF_ENEMYWALK,
          MT_BITS|MT_LOONY,
 			{
 				{8,9,10,11,12,13,14,15,255},	// idle
@@ -4403,7 +4403,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{8,255},	// die
 			}},
     	{"Junk",255,255,0,AI_Junk,
-		 11,9,10,0,"graphics/loonyland/junk.jsp",0,MF_ONEFACE|MF_FLYING|MF_FREEWALK|MF_ENEMYWALK,
+		 11,9,10,0,"loonyland/graphics/junk.jsp",0,MF_ONEFACE|MF_FLYING|MF_FREEWALK|MF_ENEMYWALK,
          MT_BITS|MT_LOONY,
 			{
 				{16,17,18,19,20,21,22,23,255},	// idle
@@ -4412,7 +4412,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{16,255},	// die
 			}},
     	{"Ghastly Stench",0,1,3,AI_Ghastly,
-		 30,9,300,0,"graphics/sleepless/bigghost.jsp",0,MF_ONEFACE|MF_FLYING|MF_FREEWALK|MF_ENEMYWALK|MF_NOSHADOW|MF_NOMOVE,
+		 30,9,300,0,"sleepless/graphics/bigghost.jsp",0,MF_ONEFACE|MF_FLYING|MF_FREEWALK|MF_ENEMYWALK|MF_NOSHADOW|MF_NOMOVE,
          MT_EVIL|MT_BOSS|MT_SPOOKY|MT_LOONY,
 			{
 				{0,255},	// idle
