@@ -5731,15 +5731,14 @@ void AI_Toad(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	WanderAI(me,64,40,3,map,world,goodguy,4*FIXAMT);
 }
 
-#include "log.h"
+//#include "log.h"
 
 void AI_LL_Zombie(Guy *me,Map *map,world_t *world,Guy *goodguy)
 {
 	byte damageValues[] = {2,3,4,4};
 	int speedValues[] = {2*FIXAMT,4*FIXAMT,1*FIXAMT,2*FIXAMT};
-	int x,y;//,i;
-	bool flag;
-	//Guy *g;
+	int x,y,i;
+	Guy *g;
 
 	BasicAI(me,SND_ZOMBIEOUCH,SND_ZOMBIEDIE,map,world,goodguy);
 
@@ -5777,7 +5776,7 @@ void AI_LL_Zombie(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			if(me->frm==11 && me->reload==0 && (me->aiType==MONS_ZOMBIE3 || me->aiType==MONS_ZOMBIE5))	// bombie
 			{
 				// blow self up
-				FireBullet(me->x,me->y,0,BLT_BOOM,me->friendly);
+				FireBullet(me->x,me->y,0,BLT_MEGABOOM,me->friendly);
 				if(me->aiType==MONS_ZOMBIE3)
 				{
 					me->seq=ANIM_DIE;
@@ -5805,11 +5804,24 @@ void AI_LL_Zombie(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			}
 			else
 			{
-				flag = AddMonsterOffscreen(map,world,MONS_ZOMBIE3,me->friendly);
-				if(!flag)
+				i=0;
+				while(i<20)
 				{
-					// MakeRingParticle(x,y,FIXAMT*40,20,40);
-					FireBullet(x,y,0,BLT_BOOM,me->friendly);
+					x=me->x-48+Random(97)*FIXAMT;
+					y=me->y-48+Random(97)*FIXAMT;
+					g=AddGuy(x,y,FIXAMT*40,MONS_ZOMBIE3,me->friendly);
+					if(g && !g->CanWalk(g->x,g->y,map,world))
+					{
+						g->type=MONS_NONE;
+						i++;
+						continue;
+					}
+					else
+					{
+						// MakeRingParticle(x,y,FIXAMT*40,20,40);
+						FireBullet(x,y,0,BLT_BOOM,me->friendly);
+						break;
+					}
 				}
 				me->reload=5;
 			}
@@ -9023,6 +9035,9 @@ void AI_Junk(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		}
 		return;
 	}
+
+
+
 	if(me->parent==NULL || me->parent->hp==0)
 	{
 		me->hp=0;
