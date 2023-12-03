@@ -7833,6 +7833,7 @@ void AI_Bonkula(Guy *me,Map *map,world_t *world,Guy *goodguy)
 {
 	int x,y;
 	Guy *g;
+	dword d;
 
 	//SetBossHP(me->hp,MonsterHP(me->aiType));
 
@@ -7901,7 +7902,19 @@ void AI_Bonkula(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	// }
 	// 	}
 	// }
-
+	// get burned by the light!
+	if(map->GetTile(me->mapx,me->mapy)->light>0 && me->ouch==0 && me->hp>0)
+	{
+		d=monsType[me->type].flags;
+		monsType[me->type].flags=0;
+		me->GetShot(0,0,map->GetTile(me->mapx,me->mapy)->light,map,world);
+		monsType[me->type].flags=d;
+		BlowSmoke(me->x,me->y,FIXAMT*10,Random(6)*FIXAMT);
+		BlowSmoke(me->x,me->y,FIXAMT*10,Random(6)*FIXAMT);
+		BlowSmoke(me->x,me->y,FIXAMT*10,Random(6)*FIXAMT);
+		BlowSmoke(me->x,me->y,FIXAMT*10,Random(6)*FIXAMT);
+		BlowSmoke(me->x,me->y,FIXAMT*10,Random(6)*FIXAMT);
+	}
 	if(me->action==ACTION_BUSY)
 	{
 		if(me->seq==ANIM_ATTACK && me->frm==8 && me->reload==0)

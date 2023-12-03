@@ -4212,7 +4212,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{35,36,37,38,38,38,38,37,36,35,34,255},	// A4=missile launch
 			}},
     	{"Count Bonkula",255,255,0,AI_Bonkula,
-		 8,28,100,0,"loonyland/graphics/bossvamp.jsp",0,MF_WALLWALK|MF_NOMOVE|MF_FLYING,//|MF_INVINCIBLE,
+		 8,28,300,0,"loonyland/graphics/bossvamp.jsp",0,MF_WALLWALK|MF_NOMOVE|MF_FLYING|MF_INVINCIBLE,
          MT_EVIL|MT_VAMPIRE|MT_BOSS|MT_SPOOKY|MT_LOONY,
 			{
 				{0,255},	// idle
