@@ -37,7 +37,7 @@ class Guy
 		byte lastBumpX,lastBumpY;
 		byte facing;
 
-		byte mind;		// brain variables for AI
+		int mind;		// brain variables for AI
 		byte mind1;
 		byte mind2;
 		byte mind3;

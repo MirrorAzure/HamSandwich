@@ -2936,7 +2936,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{6,7,8,9,10,11,12,13,14,15,16,255},	// attack=swipe pitchfork
 			}},
 		{"Pterodactyl",255,255,0,AI_Ptero,	
-		 10,11,15,5,"mystic/graphics/ptero.jsp",0,MF_FLYING,//|MF_ENEMYWALK,//|MF_FREEWALK,
+		 10,11,15,5,"mystic/graphics/ptero.jsp",0,MF_FLYING|MF_ENEMYWALK|MF_FREEWALK,
 		 MT_GOOD|MT_ANIMAL|MT_FLYING|MT_MYSTIC,
 			{
 				{0,1,2,6,3,4,5,4,3,6,2,1,255},	// idle
@@ -3607,7 +3607,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 			}},
 		{"Scaredy Bat",2,5,0,AI_ScaredyBat,
 		 8,27,20,25,"graphics/bat.jsp",0,MF_FLYING,
-		 MT_FLYING|MT_ANIMAL|MT_SLEEPLESS,
+		 MT_GOOD|MT_FLYING|MT_ANIMAL|MT_SLEEPLESS,
 			{
 				{0,255},	// idle
 				{1,2,3,2,1,0,4,5,6,5,4,0,255},	// move
