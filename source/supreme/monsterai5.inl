@@ -9049,7 +9049,10 @@ void AI_Junk(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		return;
 	}
 
-
+	if(me->parent==NULL)
+	{
+		me->parent=GetGuyOfType(MONS_BIGGHOST);
+	}
 
 	if(me->parent==NULL || me->parent->hp==0)
 	{
