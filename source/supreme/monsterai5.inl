@@ -3906,8 +3906,8 @@ void AI_Spook(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			//me->ignited=0;
 			MakeSound(SND_SPOOKSHIFT,me->x,me->y,SND_CUTOFF,2000);
 			map->BrightTorch(me->mapx,me->mapy,16,6);
-			if(me->mind3>50)
-				me->mind3-=50;
+			if(me->mind3>100)
+				me->mind3-=100;
 			else
 				me->mind3=0;
 		}
