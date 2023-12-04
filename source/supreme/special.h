@@ -146,7 +146,7 @@ typedef struct sEvent_t
 	byte type;
 	int  value;	// guy #, bullet #, var #, item #
 	int  x,y;
-	byte guyType;
+	int guyType;
 	byte guyFriendly;
 	Guy *victim;
 } sEvent_t;
