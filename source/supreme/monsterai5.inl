@@ -7081,8 +7081,7 @@ void AI_HumanLarry(Guy *me,Map *map,world_t *world,Guy *goodguy)
 void AI_Harry(Guy *me,Map *map,world_t *world,Guy *goodguy)
 {
 	int x,y,i,a,b;
-	bool flag;
-	//Guy *g;
+	Guy *g;
 
 	BasicAI(me,SND_WOLFOUCH,SND_WOLFDIE,map,world,goodguy);
 
@@ -7141,8 +7140,10 @@ void AI_Harry(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			b=Random(60)+20;
 			x=me->x+b*Cosine(a);
 			y=me->y+b*Sine(a);
-			flag = AddMonsterOffscreen(map,world,MONS_WOLFMAN3,me->friendly);
-			if(!flag)
+			g=AddGuy(x,y,FIXAMT*40,MONS_WOLFMAN3, me->friendly);
+			if(g && !g->CanWalk(g->x,g->y,map,world))
+				g->type=MONS_NONE;
+			else
 			{
 				// MakeRingParticle(x,y,FIXAMT*40,20,40);
 				FireBullet(x,y,0,BLT_BOOM,me->friendly);
