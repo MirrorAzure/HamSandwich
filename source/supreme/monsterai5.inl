@@ -3813,7 +3813,7 @@ void AI_Grue(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			me->frmAdvance=200;
 			break;
 	}
-/*
+
 	if(!me->ignited)
 	{
 		if(Random(100)==0)
@@ -3821,7 +3821,7 @@ void AI_Grue(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		if(Random(300)==0)
 			AddBaby(me->x+((-8+Random(17))<<FIXSHIFT),me->y+((-8+Random(17))<<FIXSHIFT),0,MONS_BIGSPDR,me);
 	}
-*/
+
 	if(goodguy)
 	{
 
