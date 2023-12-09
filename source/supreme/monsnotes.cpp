@@ -1449,431 +1449,901 @@ char monsNotes[NUM_MONSTERS][512]={
 	"But if you want to make him tough, put him in fairly tight quarters with Bouapha and some other enemies!  That makes his "
 	"ice shots hard to avoid, and greatly improves his odds of getting a swipe at you on his highly predictable journey.",
 	//Pterodactyl
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"The level one summon spell from Kid "
+	"Mystic. They're friendly, but not very "
+	"strong. A small swarm of them can be "
+	"helpful in a pinch, though. (SWE)",
 	//Eye Guy
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"This guy is actually from Eddie Galaxy. "
+	"With all of those eyes you'd think he "
+	"would fire multiple projectiles at you but "
+	"he doesn't. Still not a foe to take lightly. (SWE)",
 	//Octon
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"These guys spend most of their time just "
+	"below the surface of the water. You can "
+	"only damage them when they shoot at you "
+	"so be careful. (SWE)",
 	//Submerged Octon
 	"",
 	//Blockhead
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"These little guys are weak but relentless. "
+	"Not very deadly either on their own but "
+	"quite dangerous in swarms! They'll nip at "
+	"your HP so be sure to keep them at a "
+	"distance. In Kid Mystic all of these golem "
+	"enemies guarded an ancient maze-like "
+	"dungeon that you had to navigate. (SWE)",
 	//Blockhead Kiln
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"A hyperactive factory that constantly "
+	"pushes out Blockheads. Be sure to take "
+	"them out quickly or they'll never stop "
+	"coming! According to Jamul, there's an "
+	"elaborate system of gears modeled "
+	"underneath that animates as it works. "
+	"Unfortunate that you never get to see it. "
+	"(SWE)",
 	//Trapazoid
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"A pun that writes itself. How could there "
+	"NOT be a \"Trapazoid\" somewhere in the "
+	"Hamumuverse? It surprises you by leaping "
+	"out of a sewer and spewing fire at "
+	"you, hence the name. It's a bit like the "
+	"Sneaky Shark in that respect. (SWE)",
 	//Vulnerable Trapazoid
 	"",
-	//Golden balbes H
-	"+ + + Supreme with Everything mod + +  "
-	"",
-	//Golden balbes V
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	//Megablockhead H
+	"These guys are deadly and invincible, so "
+	"watch out! Since they shoot lasers, their "
+	"field of vision is narrower than a Death "
+	"Patrol so keep this in mind. (SWE)",
+	//Megablockhead V
+	"The same thing but walks in a vertical "
+	"pattern. (SWE)",
 	//Slimy Slug
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"They creep around leaving a deadly trail "
+	"of slime in their wake. Their slime "
+	"disappears on its own after awhile, though "
+	"so don't worry. Though if you're facing "
+	"many of them at once you might just have "
+	"to wait awhile. Try placing them in "
+	"smaller areas for more of a challenge. "
+	"(SWE)",
 	//Sniper Snail
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"They only shoot at you if you're far away. "
+	"If you get too close, they shrink into "
+	"their shell and turn invincible! (SWE)",
 	//Sneaky Snail
 	"",
 	//Oculoid
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"These guys are tough! The projectile they "
+	"shoot bounces around so make note of that "
+	"when you design your levels. Narrow "
+	"hallways make these things a beast! These "
+	"things also originate from Eddie Galaxy. "
+	"(SWE)",
 	//The Lookey-Loo
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"This chapter 3 boss isn't as dangerous as "
+	"it appears, though it can only be damaged "
+	"if its main eye is open. In Kid Mystic, he "
+	"was flanked by many Pinkeyes which were "
+	"constantly regenerating as the fight went "
+	"on. (SWE)",
 	//Pinkeye
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"They aren't very strong on their own, but "
+	"they DO come back after a bit so be "
+	"careful. In Kid Mystic, they guarded the "
+	"Lookey-Loo at the end of chapter 3. ",
 	//Crazy Bush
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Like the Blockhead, but even easier to "
+	"kill. Just because these crazy looking "
+	"guys were found in Chapter 1 of Kid Mystic "
+	"doesn't mean you should take them lightly "
+	"though. With a big enough swarm and "
+	"low enough firepower anything can be "
+	"deadly enough. (SWE)",
 	//Peeping Bomb
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Since Kid Mystic didn't have a stealth "
+	"mechanic, you had enemies like this that "
+	"only chase you if they're looking directly "
+	"at you. Be sure to take them out before "
+	"they spot you, they're really fast! "
+	"(SWE)",
 	//Rammy
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"One of the three Gruffs from the end of "
+	"chapter 2. This one in particular charges "
+	"at you relentlessly, and is only "
+	"vulnerable for a short time when he hits "
+	"something. (SWE)",
 	//Vulnerable Rammy
 	"",
 	//Hoppy
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"This one repeatedly jumps up into the air "
+	"causing deadly shockwaves when it lands. "
+	"Naturally, it can only be damaged when "
+	"it's on the ground. Each Gruff isn't too "
+	"difficult on their own, but try fighting "
+	"all three at once! (SWE)",
 	//Invincible Hoppy
 	"",
 	//Gruffy
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"One of the three Goats who block your way "
+	"at the end of Chapter 2. Each of them acts "
+	"in a unique way, with this one "
+	"periodically firing bouncing orbs at you. "
+	"In the original eGames version of Kid Mystic, "
+	"you were faced with Mush the "
+	"Shroom instead. (SWE)",
 	//Happy Stick Shroom
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"These guys are a bit derpy looking, but "
+	"how would YOU draw one? I think it's part "
+	"of the charm! These guys from chapter 1 "
+	"are probably the easiest of the bunch. "
+	"(SWE)",
 	//Happy Stick Spider
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Spews almost as much acid as a Mama "
+	"Spider, and is much faster as well. This "
+	"guy was native to chapter 2. (SWE)",
 	//Happy Stick Corpse
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"According to Jamul, the \"Canadian\" look of "
+	"these guys was unintended, and was just "
+	"the result of trying to draw a stick "
+	"skeleton. Since they're from chapter 3, "
+	"these guys can be quite dangerous! (SWE)",
 	//Happy Stick Bat
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Each chapter of Kid Mystic has a secret "
+	"Happy Stick enemy that can only be found "
+	"under certain conditions. What are these "
+	"conditions? You'll have to play it to find "
+	"out! This little guy from chapter 4 spews "
+	"out deadly flames so be careful! (SWE)",
 	//Tower Guardian
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Another one of my favorites. His attack pattern is "
+	"rather simple: He just jumps to "
+	"create shockwaves, and lobs out grenades "
+	"around the arena. In Kid Mystic, you had "
+	"to fight him four different times in four "
+	"different arenas that forced you to fight "
+	"him in different ways. (SWE)",
 	//Grumpy Golem
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"This angry golem was originally the second "
+	"level summon spell in Kid Mystic. It "
+	"defaults to being an enemy this time "
+	"around though, so keep that in mind. (SWE)",
 	//Bobby Khan
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Who is the mysterious Bobby Khan? You'll "
+	"have to play Kid Mystic to find out! "
+	"Overall, he's a bit tougher than the "
+	"similarly sized Super Duper Zombie. In "
+	"Kid Mystic, you get to search for a "
+	"powerful weapon and unlock a spell in "
+	"order to make his fight much easier, "
+	"but this time you'll have to do it "
+	"the old fashioned way! (SWE)",
 	//Blocko The Great
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"One of the few different minibosses in "
+	"Kid Mystic. This guy is only vulnerable "
+	"when he sticks his tongue out at you. How "
+	"rude! Since he's placed up against a "
+	"wall in the original game, none of "
+	"his attacks shoot backwards. Keep "
+	"this in mind when designing your "
+	"encounters. Fun fact: This is the "
+	"only monster that doesn't vanish when "
+	"you beat him. (SWE)",
 	//Blocko Tongue
 	"",
 	//Optimum Octon
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"This chapter 1 boss originally guarded the "
+	"bridge to chapter 2 in Kid Mystic. The "
+	"eGames featured a simple battle against a "
+	"Mama Spider instead, so I like this much "
+	"better. It only fires downward so keep "
+	"that in mind. Throw in a couple of Octons "
+	"for a truly classic feel. (SWE)",
 	//Octentacle
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"DANGER: Do not use unless you know what "
+	"you are doing! This is the Optimum Octon's "
+	"tentacle! (SWE)",
 	//Octentacle
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"DANGER: Do not use unless you know what "
+	"you are doing! This is the Optimum Octon's "
+	"tentacle! (SWE)",
 	//Microfish
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"My personal favorite. These little guys "
+	"don't do anything and exist solely for a "
+	"gag in the Library level of Kid Mystic. It "
+	"took me years to get it, myself. With the "
+	"fancy features of Supreme, I'm sure they "
+	"could be of some use. (SWE)",
 	//Froggy
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Identical to the ones from Loonyland in "
+	"every way. They're a weak early game enemy "
+	"in both games that's easy to beat and can "
+	"only damage you if you get too close. (SWE)",
 	//Toadie
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"They're slightly more dangerous than "
+	"Ribbits given that they actually shoot at "
+	"you. They aren't as complex as some of the "
+	"variants found in Loonyland, but they fill "
+	"in that nice \"low level early game enemy\" "
+	"spot in an RPG. (SWE)",
 	//Mad Cow
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"It's a lot like the Triceroids but in cow "
+	"form. It's much easier to deal with, "
+	"though. (SWE)",
 	//Extremely Mad Cow
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"This cow is REALLY upset! Why does it have "
+	"so much HP? In Sleepless, you had to feed "
+	"it in order to calm it down, but it's "
+	"technically possible to do it the old fashioned way. (SWE)",
 	//Flying Pumpkin
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"It was only a matter of time before "
+	"Pumpkins learned to fly. It's similar to "
+	"the Boomkin except it explodes into "
+	"flames. (SWE)",
 	//Simulated Head
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"DANGER: Do not use unless you know what "
+	"you are doing! This is the simulated head "
+	"spawned by the Headless Horseradish. (SWE)",
 	//Beetle Nest
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"It's a Beetle Nest! You remember The "
+	"Beetles? Well, now they have a nest. (SWE)",
 	//Toad Hole
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Why does a \"Toad Hole\" look like a bush? "
+	"That's easy. The hole is under the bush. "
+	"Since it's an early game enemy, it doesn't "
+	"have as much health as you might expect it "
+	"to. (SWE)",
 	//Happy Stick Tree
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"What's a Hamumu game without a Happy Stick "
+	"enemy? This one's tucked away in a hard to "
+	"find spot, so you might beat Sleepless "
+	"without ever seeing one. It isn't that "
+	"complicated an enemy being a tree and all, "
+	"but it's still pretty dang tough! (SWE)",
 	//The Darkness
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Ignore the preview. This creature has no "
+	"true form, and is actually the embodiment "
+	"of darkness itself! It's not all that "
+	"tough, but it's a really cool concept. If "
+	"you want to be truly evil, place a bunch "
+	"of them in pitch darkness for the player "
+	"to discover. (SWE)",
 	//Spark
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"A simple puzzle based enemy that cannot "
+	"exist unless it's against a wall. In the "
+	"Tomb of Sparks, it would travel along them "
+	"in order to activate various switches. It "
+	"also does contact damge if you aren't "
+	"very carefuly. (SWE)",
 	//Lightswitch
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"A clever way to light up an area. "
+	"Unfortunately, hitting it again doesn't "
+	"turn it back off. Imagine the electric "
+	"bill from these things. (SWE)",
 	//Blaster
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"It resembles the lightballs from "
+	"Loonyland, except it shoots at you. The "
+	"redder it gets, the closer it is to "
+	"firing. Unlike turrets, it aims directly "
+	"at you at all times. (SWE)",
 	//Charge Coil
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"They're used for various puzzles in the "
+	"Tomb of Sparks. If they're placed next "
+	"to each other, they'll gain a charge. "
+	"If placed near a wall, they'll generate "
+	"a Spark. It won't work if there's less "
+	"than three of them together. (SWE)",
 	//The Grue
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Unlike the Mama Spider, it doesn't spit "
+	"acid at you. It also is much tougher in "
+	"darker areas, so make sure to put a bit of "
+	"light in if you don't want the player to "
+	"be immediately decimated. Think of it like "
+	"an inverse stealth level. Also it "
+	"periodically spawns Eensy Weensies and "
+	"Creepy Crawlies, so watch out for that. (SWE)",
 	//Sir Spookley Hauntmore
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"In the original game, you had to hop "
+	"between two dimensions in order to beat "
+	"it. Since this functionality doesn't "
+	"exist in Supreme, it will simply turn "
+	"transparent periodically in order to heal. "
+	"Because of this, it takes longer to beat "
+	"than you would think. (SWE)",
 	//Spookley
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"DANGER: Do not use unless you know what "
+	"you are doing! This is the transparent "
+	"version of Sir Spookley Hauntmore. (SWE)",
 	//Speedy Hernandez
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"While he occasionally shoots at you, the "
+	"main difficulty behind him is that he's "
+	"just too darn difficult to hit! In "
+	"Sleepless, you had your trusty "
+	"Sparkthrower to hit him with its homing "
+	"shots, but this time you'll have to "
+	"improvise. (SWE)",
 	//Iron Skull
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"This Richie Lich variant has the second "
+	"highest HP of any Hamumu enemy ever! It's "
+	"basically the same as Richie Lich except "
+	"it doesn't poison you and sometimes "
+	"summons Boneheads. In the original, you "
+	"had to rely on your reflector hammer in "
+	"order to beat it, but this time you aren't "
+	"so lucky. Though there IS a certain weapon "
+	"that might help if you want a more "
+	"accurate battle. (SWE)",
 	//Big Head Todd
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"This one lobs grenades at you "
+	"periodically. They aren't meant to be "
+	"super challenging, since you can go into "
+	"any temple in Sleepless at any order. I "
+	"wonder how their heads got so big? (SWE)",
 	//Big Head Maude
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"(pronounced \"mod\") "
+	"One of the few minibosses in Sleepless. "
+	"The three of them can be found in the Tomb "
+	"of Bones. This particular one shoots out "
+	"yellow shells at you periodically. (SWE)",
 	//Big Head Rod
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"He simply bounces around leaving fire in "
+	"his wake, nothing too complex. Fun Fact: "
+	"these are the only boss level enemies that "
+	"can be summoned via the ledger at the Inn! "
+	"(SWE)",
 	//Big Head Bod
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"DANGER: Do not use unless you know what "
+	"you are doing! This is the body for the "
+	"three Big Head bosses. (SWE)",
 	//Glass Jaw
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"It's the same as a standard Bonehead in "
+	"nearly every way, except it's native to "
+	"the Tomb of Reflection. It's also "
+	"periodically summoned by the nefarious "
+	"Rafe Lector near the end of the game. "
+	"As an added bonus to SWE, it'll make a "
+	"glass shattering sound when it dies. (SWE)",
 	//Rafe Lector
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"A Stan Glass variant that spawns Glass "
+	"Jaws periodically. If I recall, it would "
+	"also reflect your hammers back at you and "
+	"required a special ability to beat. This "
+	"time around, simple hammers will do. (SWE)",
 	//Lady Von Spatula
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Unlike Countess, she's no pushover. Even "
+	"before she's awake she'll start summoning "
+	"her bats (max 8), so take note of that "
+	"when you use her. Once she wakes up, "
+	"they'll start firing at you periodically "
+	"so be prepared! (SWE)",
 	//Royal Guard
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"DANGER: Do not use unless you know what "
+	"you are doing! This is the guardian "
+	"bat for Lady Von Spatula. (SWE)",
 	//Scaredy Bat
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"It's so scared of you. I wonder why? "
+	"It was featured in one of the tombs where you'd "
+	"have to use this to your advantage "
+	"in order to guide it to various switches. "
+	"(SWE)",
 	//Headless Horseradish
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"The final boss of Sleepless Hollow. You're "
+	"never actually meant to kill it "
+	"originally, hence the stupidly high HP. "
+	"Rather you fend off its attacks with all "
+	"your acquired abilities. If you want him "
+	"to be a regular boss in your world, you'll "
+	"probably want to lower its HP a bit. (SWE)",
 	//Sparky
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"I've never met a dog named \"Sparky\" in "
+	"real life, have you? This electrified "
+	"pooch is one of the tougher dog based "
+	"enemies in the Hamumuverse. In Sleepless, "
+	"it guarded a candle, which is valuable "
+	"currency instead of a bonus collectable. (SWE)",
 	//Fire Bug
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Every temple in Sleepless has their own "
+	"set of themed enemies. This spitter "
+	"variant shoots out red bullets and "
+	"occasionally leaves behind a flame. "
+	"Nothing too complex. (SWE)",
 	//Swampdog
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"One of the more unique species "
+	"added to Loonyland. Like their name "
+	"suggests, they mainly inhabit the "
+	"Slurpy Swamp. Like Thingies, they do a bit "
+	"of wandering around on their own when "
+	"they're not chasing you directly, so keep "
+	"that in mind. (SWE)",
 	//Bog Beast
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"A more aggressive Swampdog variant with "
+	"higher HP. Did you notice that Swampdogs "
+	"look a lot like Thingies? One popular "
+	"theory is that they're the same species, "
+	"and they don't grow a second eye until "
+	"later. Isn't life interesting? (SWE)",
 	//Shambling Thing
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"The toughest Swampdog variant prior "
+	"to the 2.0 update. It fires a spread of "
+	"red bullets at you sequentially rather "
+	"than all at once. (SWE)",
 	//Marsh Mutt
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"This dangerous dog usurped the Shambling "
+	"Thing as the most dangerous Swampdog breed "
+	"post 2.0. He has a lot of HP and shoots "
+	"out deadly triple-bullets instead of "
+	"normal ones. (SWE)",
 	//Bonehead
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Basically the same as a normal Bonehead "
+	"but with a larger head. It made sense to "
+	"port these over since the Bonehead-O- "
+	"Matics use their model. I asked Jamul why "
+	"he gave them bigger heads and he only "
+	"had this to say: "
+	"\"Yes, bigger is cuter. I was refining my style, "
+	"and I'd do it again and bigger too, "
+	"if it weren't for you meddling kids.\" "
+	"(SWE)",
 	//Redbone
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Stronger than a Bonehead and slightly more "
+	"aggressive. If you've been around the "
+	"Hamumu community long enough, you might "
+	"be more familiar with this particular "
+	"enemy. (SWE)",
 	//Gangrene
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"A sickly Bonehead variant that spews out "
+	"poison. Since health and poison work "
+	"differently in Supreme than they do in "
+	"Loonyland, you might find yourself having "
+	"dealing with the poison based enemies a "
+	"bit differently. (SWE)",
 	//Numbskull
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Not the strongest Bonehead variant, "
+	"but his ability to resurrect any nearby "
+	"Bonehead variants make him the most "
+	"dangerous. Definitely target him first! "
+	"(SWE)",
 	//Agent Skully
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Agent Skully. Get it? It's not a true "
+	"Hamumu game unless there are obscure "
+	"references thrown in everywhere. He's "
+	"the most powerful out of all Bonehead "
+	"variants out there. So powerful in fact "
+	"that the Numbskull can't revive him. What "
+	"a relief! (SWE)",
 	//Croaker
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Probably the most dangerous of the frog "
+	"species. When it dies, it releases clouds "
+	"of poison everywhere, so don't get too "
+	"close! (SWE)",
 	//Frogurt
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"A frog variant that spawns out of a "
+	"Torture Tree. It might be extremely weak, "
+	"but the constant trail of flames it spawns "
+	"linger for a bit after it's killed. The "
+	"more room you have to dodge around them "
+	"the less dangerous they are. (SWE)",
 	//Toad
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"A weak frog that shoots at you and spawns "
+	"a single flame when it dies. Not too "
+	"deadly but can still cause a bit of "
+	"damage if you aren't paying attention. "
+	"(SWE)",
 	//Zombie
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Prior to his obsession with Zombies, they "
+	"were just another enemy for Loony to beat. "
+	"The Loonyland version moves slightly "
+	"different and has a bigger head but is "
+	"largely the same. None of the Loonyland "
+	"Zombies will drop brains, either. (SWE)",
 	//Bombie
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"This is a pun that practically writes "
+	"itself. They might be weak, but don't let "
+	"them get too close to you. Their attacks "
+	"can be rather... explosive. (SWE)",
 	//Zombie Lord
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"One of the most dangerous Zombie types. It "
+	"has a powerful kicking attack which spawns "
+	"semi-homing dirt spikes. In Loonyland, "
+	"Loony has to clear three crypts of their "
+	"Zombie Lords in order to free Zombiton "
+	"from a horrible curse. I wonder if this "
+	"endeavor had a lasting effect on him? "
+	"(SWE)",
 	//Bombie Lord
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Upon the release of the Loonyland 2.0 "
+	"patch came several new enemy types, "
+	"characters, and even a new mode. One such "
+	"addition was the Bombie Lord, which "
+	"periodically summons Bombies instead of "
+	"ground spikes. He's actually more "
+	"dangerous than the Zombie Lord. (SWE)",
 	//Dingbat
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Not much to say, really. Slightly "
+	"different from your regular Scary Bat but "
+	"functionally the same. "
+	"You might wonder why some entries have "
+	"(SWE) at the end. It simply means "
+	"that this monster was added in with "
+	"the \"Supreme with Everything\" "
+	"edition, and as such the commentary "
+	"was written by someone other than "
+	"Jamul, himself. (SWE)",
 	//Gargoyle
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"The hardiest of all of the bat variants of "
+	"Loonyland. It makes sense given that it's "
+	"made out of stone. (SWE)",
 	//Vamp Bat
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Unlike the other Loonyland bat variants, "
+	"this guy can shoot at you. It's mostly "
+	"found in Castle Vampy. (SWE)",
 	//Gasbat
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Weaker than a Gargoyle, but far deadlier. "
+	"These nasty buggers spread poison wherever "
+	"they go. Very dangerous in closed spaces. "
+	"(SWE)",
 	//Rag Man
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"The weakest Mummy variant. They only use "
+	"melee attacks, but they're still faster "
+	"than the Mumbles of Supreme. ",
 	//Mummy
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"A Stronger Rag Man that fires bullets. I "
+	"guess that's what the gems are for. Why "
+	"do Ragmen have them too? I guess they "
+	"simply aren't strong enough to use them. "
+	"(SWE)",
 	//Pharaoh Faucet
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"A Strong Mummy variant that shoots out "
+	"a burst of bullets. In Loonyland, the "
+	"red bullets were a bit larger and thus "
+	"slightly more imposing. Since they're "
+	"exactly the same as the red bullets in "
+	"Supreme, they weren't ported over. (SWE)",
 	//Grand Pharaoh
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Prior to the 2.0 patch this was the "
+	"deadliest Mummy variant that you can find. "
+	"He can summon two Ragman minions at a time "
+	"and shoot a triple spread of bullets at "
+	"you as well. (SWE)",
 	//King Toot
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"With a name like \"King Toot\" you'd expect "
+	"him to shoot poison but he doesn't. He "
+	"DOES summon out Pharoh Faucets instead of "
+	"Ragmen so be careful of that. (SWE)",
 	//Terror Tree
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"This evil tree spawns Toads from its "
+	"mouth. It may LOOK scary, but that's "
+	"about the only thing it does. In "
+	"Loonyland, one of the first quests you "
+	"get is to rid a small forest of their "
+	"presence. It's a shame you don't really "
+	"see them anywhere else. (SWE)",
 	//Swamp Stump
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"A Terror Tree variant that regularly "
+	"spews out poison. A great obstacle for "
+	"narrow hallways. It can't be damaged "
+	"directly though, which is unfortunate "
+	"because you'll never get to see its name "
+	"in the game. In Loonyland, the only "
+	"way around this was to acquire the "
+	"mythical \"touch of death\" badge, which "
+	"lets you kill literally anything in one "
+	"hit. (SWE)",
 	//Torture Tree
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"A Terror Tree variant from the 2.0 patch "
+	"that spawns Frogurts instead of Toads. "
+	"Despite being alot more durable, this is "
+	"still its only method of attack. (SWE)",
 	//Ghost
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Unlike the Spooky Ghosts of Supreme, these "
+	"guys prefer to get close and punch you. "
+	"They also don't teleport away when you hit "
+	"them. Don't let too much of them surround "
+	"you because the damage adds up fast! (SWE)",
 	//Shade
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"A hardier Ghost that cloaks itself in "
+	"a mantle of darkness, which not many "
+	"Hamumu based enemies do. Other then that, "
+	"it's pretty much the same as a standard "
+	"Ghost. (SWE)",
 	//Banshee
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Watch out for their screams. They're so "
+	"scary they can freeze you in their tracks! "
+	"If there's enough of them around, you just "
+	"might be frozen forever. (SWE)",
 	//Dogboy
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"The original version of the Weremutt. "
+	"Identical in every way apart from its "
+	"name. In Loonyland, you had to complete "
+	"a special quest in order to harm their "
+	"kind. Everyone knows you need a silver "
+	"bullet to hurt werewolves! (SWE)",
 	//Wolfman
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"A stronger werewolf variant that shoots "
+	"at you. An easy recipe for variants is to "
+	"give it more HP and have at shoot at you. "
+	"Nothing fancy about it. (SWE)",
 	//Dire Wolf
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Prior to the 2.0 patch, this was the "
+	"strongest werewolf enemy you could find. "
+	"Be careful when it howls, it can summon "
+	"Dogboys from offscreen. (SWE)",
 	//Happy Stick Witch
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"One of the most powerful Happy Stick "
+	"enemies in the Hamumuverse. So powerful in "
+	"fact that she predates Count Bonkula's "
+	"Evilizer scheme entirely. Just who is "
+	"she? What is she planning? Perhaps the "
+	"two Loonyland games could shed more light "
+	"on her nefarious schemes. (SWE)",
 	//Larry
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"(awaiting rework for full commantary) ",
 	//Larry
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"(awaiting rework for full commantary) ",
 	//Harry
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Similar to Larry, except he can take "
+	"damage. He's part of the elite class of "
+	"enemies added to 2.0 shared by the likes "
+	"of the Bombie Lord and Pharoh Faucet. You "
+	"know it's tough when they spew out wispy "
+	"skulls when they die! (SWE)",
 	//Bonehead-O-Matic
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"These machines generate Boneheads "
+	"endlessly. You have to wonder where it "
+	"finds all of those bones. In Loonyland, "
+	"you have to find and destroy all of them "
+	"in order to venture deeper into Mystery "
+	"Lake. (SWE)",
 	//Redbone-O-Matic
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"It's an \"O-Matic\" variant that cranks "
+	"out Redbones. It along with the Gangrene "
+	"and Numbskull variants were added in the "
+	"2.0 patch long ago. (SWE)",
 	//Gangrene-O-Matic
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Come 2.0, brand new \"O-Matics\" were made "
+	"for Redbones, Gangrenes, and Numbskulls "
+	"alike. Each of them having more HP than a "
+	"standard Bonehead-O-Matic. Like most of "
+	"the enemies added in 2.0, they can't be "
+	"found in the standard Adventure mode map. "
+	"(SWE)",
 	//Numbskull-O-Matic
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"There's nothing more annoying than a "
+	"machine that generates badguys that "
+	"keep other badguys from dying. Like the "
+	"Numbskulls it generates, you should "
+	"try to kill it first if you plan to kill "
+	"any of the other Boneheads around. (SWE)",
 	//Vamp Jr.
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Despite looking like an SWC vampire with "
+	"a larger head, this is actually the "
+	"weakest type of vampire. (SWE)",
 	//Bloodsucker
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Weirdly enough he prefers to shoot at you "
+	"from afar rather than get up close. Kind "
+	"of a counter intuitive name, really. "
+	"He shares the same color pallete as Spikey, but he's "
+	"far less dangerous. (SWE)",
 	//Draculite
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"He shoots out poison, and can summon "
+	"Gangrenes which also shoot poison. Not to "
+	"mention that he's completely green so he "
+	"might just be made of poison. (SWE)",
 	//Vamp Lord
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"The hardiest of all the normal vampires. "
+	"He might not attack you himself, but he "
+	"can still overwhelm you by constantly "
+	"summoning waves of bats and ghosts at you. "
+	"(SWE)",
 	//Frankenjulie
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"This giant mechanical gal was built in "
+	"order to guard the Skull Key at the bottom "
+	"of Mystery Lake. She has three phases "
+	"total with differing attack patterns for "
+	"each. She also deals contact damage so be "
+	"careful! (SWE)",
 	//Frankenhand
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"DANGER: Do not use unless you know what "
+	"you are doing! This is one of Frankenjulie's hands. (SWE)",
 	//Mini-Frankenjulie
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"A miniature version of Frankenjulie "
+	"built to guard a powerup hidden at the "
+	"center of an artpiece. She's not quite "
+	"as dangerous as Frankenjulie but still "
+	"no pushover. (SWE)",
 	//Count Bonkula
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"The main antagonist of Loonyland! I guess "
+	"Bouapha isn't the only one who wields an "
+	"oversized hammer. His scheme to plunge the "
+	"world into darkness with the Evilizer was "
+	"eventually thwarted by none other than "
+	"a young Dr Lunatic. (SWE)",
 	//Mecha-Bonkula
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"A Mechanized version of Count Bonkula "
+	"exclusive to 2.0. Unlike his counterpart, "
+	"he can be damaged with normal means. (SWE)",
 	//The Evilizer
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"This evil machine was created by Count "
+	"Bonkula in order to spread darkness and "
+	"evil throughout the world. Even though "
+	"Count Bonkula was defeated, Loony still "
+	"had a tough battle against the machine "
+	"itself. I like the concept of a scheme "
+	"that outlives the villain that made it. "
+	"Note that during its second phase it will "
+	"spawn various powerful monsters from "
+	"Loonyland offscreen, so keep that in mind. "
+	"(SWE)",
 	//Steam Pump
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"A powerful turret with a skull for a head. "
+	"In Loonyland, it pumps steam into the "
+	"Evilizer in order to power it. Watch out "
+	"for the gas. It's surprisingly hard to "
+	"see! Note that you have to destroy all of "
+	"these on the map in order to damage the "
+	"Evilizer. Not 100% the same as the "
+	"original fight but it works well enough. "
+	"(SWE)",
 	//Gusty The Elder
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"One of the four Elder Vampires of Castle "
+	"Vampy. He's spent hundreds of years honing "
+	"himself in order to become impervious "
+	"to slingshot fire. Unfortunately, that isn't "
+	"helpful to him in this game. Perhaps "
+	"his ghostly minions and wind projectiles "
+	"can still make up for it? (SWE)",
 	//Stoney The Elder
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"One of the four Elder Vampires of Castle "
+	"Vampy. In the original game, he was "
+	"totally invincible! You had to slowly push "
+	"him off the top of the tower, hence why he "
+	"doesn't move. This time around, you can "
+	"damage him the normal way. (SWE)",
 	//Drippy The Elder
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"One of the four Elder Vampires that rule "
+	"Castle Vampy. This one has mastery over "
+	"water and ice, and is the only one of "
+	"the four who doesn't deal damage directly. "
+	"Make sure to take advantage of his "
+	"annoying tendancies properly when you "
+	"design a level for him. He'll need a "
+	"little help in order to win. (SWE)",
 	//Toasty The Elder
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"One of the four Elder Vampires of Castle "
+	"Vampy. He's mastered his powers over fire "
+	"and is so hot that even Loony's slingshot "
+	"couldn't damage him. Fortunately, it seems "
+	"like he can take damage this time "
+	"around. (SWE)",
 	//Summony The Elder
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"He's actually NOT one of the four Elders, "
+	"and was added in 2.0. I guess the other "
+	"four didn't want to bother building an "
+	"extra tower. He's got the most life out of "
+	"all of them, but he never attacks you "
+	"directly, instead relying on the minions "
+	"he constantly summons to do his dirty "
+	"work. (SWE)",
 	//Bubble
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"DANGER: Do not use unless you know what "
+	"you are doing! This is the bubble spawned "
+	"by Drippy The Elder. (SWE)",
 	//Villager M
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Supreme doesn't have the dialogue system "
+	"that Loonyland does, but it still made "
+	"sense to port these over. It'll be nice "
+	"to be able to use normal humans in urban "
+	"themed levels for a change. Did you "
+	"notice that their heads are the same as "
+	"a Wacko's?(SWE)",
 	//Villager M
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Another villager variant. Since they're "
+	"completely invincible, you couldn't "
+	"attack them at all in Loonyland, but with "
+	"a certain badge, you could find your way "
+	"around this. (SWE)",
 	//Villager M
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"This variant is the same model Harry Larry "
+	"uses. Also worthy of note is a villager "
+	"named Kinyova who teaches you about "
+	"special weapons. You can meet his father "
+	"in Loonyland 2. (SWE)",
 	//Villager F
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"One villager that used this model "
+	"was Zizwalda the witch, who sent you "
+	"on various quests in order to concoct "
+	"a ghost hunting potion. Prior to this, "
+	"your shots would just pass right through! "
+	"Be careful not to bug her too often or "
+	"she'll turn to into a frog for the rest "
+	"of the game! (SWE)",
 	//Villager F
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"You have to have both male and female "
+	"villagers to balance things out. It just "
+	"makes sense that way. One such villager "
+	"sent you on your way to find a lost cat "
+	"of hers. It was surprisingly hard to "
+	"find! (SWE)",
 	//Villager F
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"The third female villager variant. One "
+	"such villager warned Loony of the "
+	"impending doom of Halloween Hill and sent "
+	"him on his main quest. (SWE)",
 	//PolterGuy
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"One of the main bosses in Loonyland. He "
+	"guards the Bat Key at the top of "
+	"an ancient tower filled with ghosts. Be "
+	"sure to utilize the Junk he interacts with "
+	"somehow. He's not very tough without them. "
+	"(SWE)",
 	//Junk Barrel
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"DANGER: Do not use unless you know what "
+	"you are doing! This is the Junk weilded by "
+	"Polterguy. Included in SWE are three items "
+	"that resemble Junk. They're hardcoded to "
+	"gradually turn into Junk if a Polterguy "
+	"is present. (SWE)",
 	//Junk Chair
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"DANGER: Do not use unless you know what "
+	"you are doing! This is the Junk weilded by "
+	"Polterguy. Included in SWE are three items "
+	"that resemble Junk. They're hardcoded to "
+	"gradually turn into Junk if a Polterguy "
+	"is present. (SWE)",
 	//Junk Table
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"DANGER: Do not use unless you know what "
+	"you are doing! This is the Junk weilded by "
+	"Polterguy. Included in SWE are three items "
+	"that resemble Junk. They're hardcoded to "
+	"gradually turn into Junk if a Polterguy "
+	"is present. (SWE)",
 	//Ghastly Stench
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"One of four bosses added in 2.0. He "
+	"spreads toxic gas everywhere he floats and "
+	"even summons Gasbats. He's also the only "
+	"boss in Loonyland that can be found in "
+	"more than one place. (SWE)",
 	//Firebat
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"A deadlier version of a standard Scary Bat "
+	"that leaves a trail of fire wherever it "
+	"goes. It's harder to kill, too. Now THAT "
+	"is scary! (SWE)",
 	//Laser R
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"A big part of these guys were the mirror "
+	"based reflecting puzzles, which "
+	"unfortunately couldn't be ported over. "
+	"If you want to see these guys in their "
+	"full glory, you'll have to visit the "
+	"Tomb of Reflection in Sleepless Hollow. "
+	"(SWE)",
 	//Laser D
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"Originally, it could be only defeated by "
+	"its own laser, which is a death sentence "
+	"even at max health! Use these for some "
+	"interesting puzzles or impassible "
+	"barriers. (SWE)",
 	//Laser L
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"These lasers never change direction on "
+	"their own, so there are four versions "
+	"of them. Utilize the \"change monster\" "
+	"special to have them switch up on "
+	"unsuspecting players! (SWE)",
 	//Laser U
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"It's a Laser turret that fires upward. I "
+	"ran out of interesting things to say about "
+	"them, so here's a factoid: the Evil Clone "
+	"makes an appearance in Tomb of Mirrors "
+	"under the name \"Your Bad Side\". (SWE)",
 	//Megaburner
-	"+ + + Supreme with Everything mod + +  "
-	"",
+	"It's a burner that fires three blasts of "
+	"flame instead of one! It only fires on the "
+	"sides, and it's proximity based, so make "
+	"a note of that. (SWE)",
 };
 
 char *MonsterNotes(dword type)
 {
 	return monsNotes[type];
 }
+
