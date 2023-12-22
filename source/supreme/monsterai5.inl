@@ -3903,7 +3903,7 @@ void AI_Spook(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		if(me->hp<(int)me->mind3)	// been hurt too much, ghost out
 		{
 			me->type=MONS_SPOOKLEY;
-			//me->ignited=0;
+			me->ignited=0;
 			MakeSound(SND_SPOOKSHIFT,me->x,me->y,SND_CUTOFF,2000);
 			map->BrightTorch(me->mapx,me->mapy,16,6);
 			if(me->mind3>100)
@@ -4468,8 +4468,8 @@ void AI_Rafe(Guy *me,Map *map,world_t *world,Guy *goodguy)
 {
 	int x,y;
 
-	/*if(me->ignited)
-		me->ignited=0;*/
+	if(me->ignited)
+		me->ignited=0;
 
 	if(me->reload)
 		me->reload--;

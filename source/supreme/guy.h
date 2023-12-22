@@ -54,6 +54,9 @@ class Guy
 		char bright;
 		byte friendly;
 
+		
+		byte placed;	// if this monster was placed on the overworld, this is 1- makes it immobile
+		
 		word mindControl;
 		Guy *target;
 		Guy *parent;

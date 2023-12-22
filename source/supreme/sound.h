@@ -514,7 +514,7 @@
 
 #define NUM_ORIG_SOUNDS	446
 
-#define MAX_SOUNDS		512		// absolute maximum
+#define MAX_SOUNDS		1024		// absolute maximum
 #define MAX_CUSTOM_SOUNDS 64
 
 #define CUSTOM_SND_START (MAX_SOUNDS-MAX_CUSTOM_SOUNDS)

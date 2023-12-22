@@ -376,6 +376,13 @@ void Guy::SeqFinished(void)
 			FireExactBullet(x,y,0,0,0,0,0,ignited,0,BLT_BADSITFLAME,1);
 		}
 	}
+	if(seq==ANIM_A4 && type==MONS_BOBBY)	// blocked a shot
+	{
+		// jump back into the block animation
+		seq=ANIM_A1;
+		frm=placed;
+		return;
+	}
 	seq=ANIM_IDLE;
 	frm=0;
 	frmAdvance=128;
@@ -997,6 +1004,21 @@ void Guy::GetShot(int dx,int dy,byte damage,Map *map,world_t *world)
 			player.ammo=0;
 
 		ouch=4;	// still do the ouch so you can see it
+		return;
+	}
+
+	if(aiType==MONS_BOBBY && ((seq==ANIM_A1 && frm>1 && frm<11) || (seq==ANIM_A4)))
+	{
+		if(seq==ANIM_A4)
+			return;	// just ignore it
+
+		placed=frm;	// keep track of the frame to come back to it
+		seq=ANIM_A4;
+		frm=0;
+		frmTimer=0;
+		frmAdvance=128;
+		// make clang noise
+		MakeSound(SND_BOBBYBLOCK,x,y,SND_CUTOFF,1200);
 		return;
 	}
 
