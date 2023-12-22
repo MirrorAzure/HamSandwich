@@ -95,6 +95,8 @@ enum : byte
 	BLT_SWAMPGAS,
 	BLT_ICESHARD,
 	BLT_EVILFACE,
+
+	BLT_LIFEBLIP,
 };
 
 // the special hammer flags for different powerups

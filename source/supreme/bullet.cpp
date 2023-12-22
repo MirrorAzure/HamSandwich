@@ -114,7 +114,8 @@ byte BulletCanGo(byte type,int xx,int yy,Map *map,byte size,byte friendly)
 
 	if(xx<0 || yy<0)
 		return 0;
-
+	if(type==BLT_LIFEBLIP)
+		return 1;
 	xx>>=FIXSHIFT;
 	yy>>=FIXSHIFT;
 
@@ -748,6 +749,7 @@ void BulletRanOut(bullet_t *me,Map *map,world_t *world)
 		case BLT_BUBBLEPOP:
 		case BLT_SCANLOCK:
 		case BLT_BLACKHOLE:
+		case BLT_LIFEBLIP:
 			me->type=0;
 			break;
 		case BLT_HOLESHOT:
@@ -879,6 +881,22 @@ void HitBadguys(bullet_t *me,Map *map,world_t *world)
 	attackType=me->type;
 	switch(me->type)
 	{
+		case BLT_LIFEBLIP:
+			if(goodguy)
+			{
+				if(abs(me->x-goodguy->x)<64*FIXAMT && abs(me->y-goodguy->y)<48*FIXAMT)
+				{
+					if(me->type==BLT_LIFEBLIP)
+					{
+						if(goodguy->hp<goodguy->maxHP)
+						{
+							HealGoodguy(2);
+							me->type=BLT_NONE;
+						}
+					}
+				}
+			}
+			break;
 		case BLT_IGNITE:
 			if(FindVictim(me->x>>FIXSHIFT,me->y>>FIXSHIFT,16,0,0,0,map,world,me->friendly))
 			{
@@ -1469,6 +1487,31 @@ void UpdateBullet(bullet_t *me,Map *map,world_t *world)
 	// special things like animation
 	switch(me->type)
 	{
+		case BLT_LIFEBLIP:
+			if(Random(2)==0)
+			{
+				if(me->type==BLT_LIFEBLIP)
+					ColorDrop(1,me->x,me->y,me->z);
+			}
+			me->dx+=Random(FIXAMT/4+1)-FIXAMT/8;
+			me->dy+=Random(FIXAMT/4+1)-FIXAMT/8;
+			if(abs(me->x-goodguy->x)<96*FIXAMT && abs(me->y-goodguy->y)<72*FIXAMT)
+			{
+				if(me->x>goodguy->x)
+					me->dx-=FIXAMT/4;
+				else
+					me->dx+=FIXAMT/4;
+				if(me->y>goodguy->y)
+					me->dy-=FIXAMT/4;
+				else
+					me->dy+=FIXAMT/4;
+			}
+			Clamp(&me->dx,FIXAMT*6);
+			Clamp(&me->dy,FIXAMT*4);
+			me->dz=0;
+			me->z=FIXAMT*20;
+			HitBadguys(me,map,world);
+			break;
 		case BLT_EVILFACE:
 			me->anim+=(byte)Random(3);
 			if(me->anim>=6*16)
@@ -2666,6 +2709,15 @@ void FireMe(bullet_t *me,int x,int y,byte facing,byte type,byte friendly)
 
 	switch(me->type)
 	{
+		case BLT_LIFEBLIP:
+			me->facing=Random(256);
+			me->dx=Cosine(me->facing);
+			me->dy=Sine(me->facing);
+			me->dz=0;
+			me->z=FIXAMT*20;
+			me->anim=0;
+			me->timer=255;
+			break;
 		case BLT_EVILFACE:
 			me->anim=0;
 			me->dx=-FIXAMT+Random(FIXAMT*2);
@@ -3852,6 +3904,7 @@ static const byte bulletFacingType[] = {
 	255,
 	255,	// BLT_ICESHARD
 	0,		// BLT_EVILFACE
+	255,	// BLT_LIFEBLIP
 };
 
 byte BulletFacingType(byte type)

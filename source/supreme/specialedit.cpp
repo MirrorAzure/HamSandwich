@@ -276,8 +276,9 @@ static char bulletName[][20]={
 	"Swamp Gas",
 	"Ice Shard",
 	"Evil Face",
+	"Life Blip",
 };
-#define MAX_BULLETS (BLT_EVILFACE + 1)
+#define MAX_BULLETS (BLT_LIFEBLIP + 1)
 
 static void SetupTriggerButtons(int t,int y);
 static void SetupEffectButtons(int t,int y);

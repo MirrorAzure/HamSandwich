@@ -127,6 +127,7 @@ static char bulletName[][20]={
 	"Swamp Gas",
 	"Ice Shard",
 	"Evil Face",
+	"Life Blip",
 };
 
 void PrintFX(word flags)
