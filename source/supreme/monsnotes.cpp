@@ -1541,7 +1541,7 @@ char monsNotes[NUM_MONSTERS][512]={
 	"though. With a big enough swarm and "
 	"low enough firepower anything can be "
 	"deadly enough. (SWE)",
-	//Peeping Bomb
+	//Peeping Bomb (CW)
 	"Since Kid Mystic didn't have a stealth "
 	"mechanic, you had enemies like this that "
 	"only chase you if they're looking directly "
@@ -2340,6 +2340,9 @@ char monsNotes[NUM_MONSTERS][512]={
 	"flame instead of one! It only fires on the "
 	"sides, and it's proximity based, so make "
 	"a note of that. (SWE)",
+	//Peeping Bomb (CCW)
+	"Same as Peeping Bomb, but spins in "
+	"other direction. (SWE)",
 };
 
 char *MonsterNotes(dword type)

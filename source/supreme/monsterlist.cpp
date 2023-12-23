@@ -3100,7 +3100,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,255},	// attack
 				{5,6,7,255},	// die
 			}},
-		{"Peeping Bomb",255,255,0,AI_PeepBomb,
+		{"Peeping Bomb (CW)",255,255,0,AI_PeepBomb,
 		 13,41,20,50,"mystic/graphics/peepbomb.jsp",0,MF_FLYING|MF_ONEFACE|MF_FACECMD,
 		 MT_EVIL|MT_MYSTIC,
 			{
@@ -4505,5 +4505,13 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,255},	// attack
 				{0,255},	// attack
 			}},
-
+		{"Peeping Bomb (CCW)",255,255,0,AI_PeepBomb,
+		 13,41,20,50,"mystic/graphics/peepbomb.jsp",0,MF_FLYING|MF_ONEFACE|MF_FACECMD,
+		 MT_EVIL|MT_MYSTIC,
+			{
+				{0,0,0,0,255},	// idle
+				{0,0,0,255},	// move
+				{0,255},	// attack=rotate to next facing
+				{32,33,34,35,36,37,38,39,40,255},	// die=explode
+			}},
 	};

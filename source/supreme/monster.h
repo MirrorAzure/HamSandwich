@@ -391,8 +391,10 @@
 #define MONS_TURRETU	352	// used
 #define MONS_MEGABURNER 353	// used
 
+#define MONS_PEEPBOMB2 	354
 
-#define NUM_MONSTERS    354   // Can grow as needed
+
+#define NUM_MONSTERS    355   // Can grow as needed
 #define NUM_PROFILE_MONSTERS 211    // Do not change without redoing the profile format
 
 // fake monster codes
