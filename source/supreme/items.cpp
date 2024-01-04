@@ -715,50 +715,125 @@ item_t baseItems[]={
 	0,
 	IF_SOLID|IF_SHADOW,
 	IT_OBSTACLE|IT_CRATE,
-	ITR_NONE,IE_NONE,0,"",0},	// unused2
+	ITR_NONE,IE_NONE,0,"",0},	// barrel
 	{"Small Barrel 2",0,0,144,0,0,0,
 	0,
 	IF_SOLID|IF_SHADOW,
 	IT_OBSTACLE|IT_CRATE,
-	ITR_NONE,IE_NONE,0,"",0},	// unused3
+	ITR_NONE,IE_NONE,0,"",0},	// barrel 2
 	{"Small Table",0,0,145,0,0,0,
 	0,
 	IF_SOLID|IF_SHADOW,
 	IT_OBSTACLE|IT_CHAIR,
-	ITR_NONE,IE_NONE,0,"",0},	// unused4
+	ITR_NONE,IE_NONE,0,"",0},	// small table
 	{"Small Chair",0,0,146,0,0,0,
 	0,
 	IF_SOLID|IF_SHADOW,
 	IT_OBSTACLE|IT_CHAIR,
-	ITR_NONE,IE_NONE,0,"",0},	// unused5
+	ITR_NONE,IE_NONE,0,"",0},	// small chair
 	{"Small Chair 2",0,0,147,0,0,0,
 	0,
 	IF_SOLID|IF_SHADOW,
 	IT_OBSTACLE|IT_CHAIR,
-	ITR_NONE,IE_NONE,0,"",0},	// unused6
+	ITR_NONE,IE_NONE,0,"",0},	// small chair 2
 	{"Small Chair 3",0,0,148,0,0,0,
 	0,
 	IF_SOLID|IF_SHADOW,
 	IT_OBSTACLE|IT_CHAIR,
-	ITR_NONE,IE_NONE,0,"",0},	// unused7
+	ITR_NONE,IE_NONE,0,"",0},	// small chair 3
 	{"Small Chair 4",0,0,149,0,0,0,
 	0,
 	IF_SOLID|IF_SHADOW,
 	IT_OBSTACLE|IT_CHAIR,
-	ITR_NONE,IE_NONE,0,"",0},	// unused8
+	ITR_NONE,IE_NONE,0,"",0},	// small chair 4
 	{"Small Chair 5",0,0,150,0,0,0,
 	0,
 	IF_SOLID|IF_SHADOW,
 	IT_OBSTACLE|IT_CHAIR,
-	ITR_NONE,IE_NONE,0,"",0},	// unused9
-	{"New Item",0,0,0,0,0,0,0,0,0,ITR_NONE,IE_NONE,0,"",0},	// unused10
-	{"New Item",0,0,0,0,0,0,0,0,0,ITR_NONE,IE_NONE,0,"",0},	// unused11
-	{"New Item",0,0,0,0,0,0,0,0,0,ITR_NONE,IE_NONE,0,"",0},	// unused12
-	{"New Item",0,0,0,0,0,0,0,0,0,ITR_NONE,IE_NONE,0,"",0},	// unused13
-	{"New Item",0,0,0,0,0,0,0,0,0,ITR_NONE,IE_NONE,0,"",0},	// unused14
-	{"New Item",0,0,0,0,0,0,0,0,0,ITR_NONE,IE_NONE,0,"",0},	// unused15
-	{"New Item",0,0,0,0,0,0,0,0,0,ITR_NONE,IE_NONE,0,"",0},	// unused16
-	{"New Item",0,0,0,0,0,0,0,0,0,ITR_NONE,IE_NONE,0,"",0},	// unused17
+	ITR_NONE,IE_NONE,0,"",0},	// small chair 5
+	{"Sewer Gate",3,26,151,0,0,0,
+	0,
+	0,
+	IT_DECOR,
+	ITR_NONE,IE_NONE,0,"",0},	// sewer gate
+	{"Terror Tree",0,0,152,0,0,0,
+	0,
+	IF_SOLID|IF_BULLETPROOF|IF_SHADOW,
+	IT_OBSTACLE|IT_BULLETPROOF|IT_TREE,
+	ITR_NONE,IE_NONE,0,"",0},	// terror tree
+	{"Chair 3",0,0,153,0,0,0,
+	0,
+	IF_SOLID|IF_SHADOW,
+	IT_OBSTACLE|IT_CHAIR,
+	ITR_NONE,IE_NONE,0,"",0},	// chair 3
+	{"Chair 4",0,0,154,0,0,0,
+	0,
+	IF_SOLID|IF_SHADOW,
+	IT_OBSTACLE|IT_CHAIR,
+	ITR_NONE,IE_NONE,0,"",0},	// chair 4
+	{"Small Table 2",0,0,155,0,0,0,
+	0,
+	IF_SOLID|IF_SHADOW,
+	IT_OBSTACLE|IT_CHAIR,
+	ITR_NONE,IE_NONE,0,"",0},	// small table 2
+	{"Stool",0,0,156,0,0,0,
+	0,
+	IF_SHADOW,
+	IT_CHAIR,
+	ITR_NONE,IE_NONE,0,"",0},	// stool
+	{"Logs",0,0,157,0,0,0,
+	0,
+	IF_SOLID|IF_SHADOW,
+	IT_OBSTACLE,
+	ITR_NONE,IE_NONE,0,"",0},	// logs
+	{"Log",0,0,158,0,0,0,
+	0,
+	IF_SOLID|IF_SHADOW,
+	IT_OBSTACLE,
+	ITR_NONE,IE_NONE,0,"",0},	// log
+	{"Log 2",0,0,159,0,0,0,
+	0,
+	IF_SOLID|IF_SHADOW,
+	IT_OBSTACLE,
+	ITR_NONE,IE_NONE,0,"",0},	// log 2
+	{"Pedestal",0,0,160,0,0,0,
+	0,
+	IF_SOLID|IF_SHADOW,
+	IT_OBSTACLE,
+	ITR_NONE,IE_NONE,0,"",0},	// pedestal
+	{"Statue Vampire",0,0,161,0,0,0,
+	0,
+	IF_SOLID|IF_BULLETPROOF|IF_SHADOW,
+	IT_OBSTACLE|IT_BULLETPROOF,
+	ITR_NONE,IE_NONE,0,"",0},	// vampire statue
+	{"Statue Bat",0,0,162,0,0,0,
+	0,
+	IF_SOLID|IF_BULLETPROOF|IF_SHADOW,
+	IT_OBSTACLE|IT_BULLETPROOF,
+	ITR_NONE,IE_NONE,0,"",0},	// bat statue
+	{"Grass 3",0,0,163,0,0,0,
+		0,
+		0,
+		IT_DECOR|IT_TREE,
+		ITR_NONE,IE_NONE,0,"",0},	// grass 3
+	{"Grass 4",0,0,164,0,0,0,
+		0,
+		0,
+		IT_DECOR|IT_TREE,
+		ITR_NONE,IE_NONE,0,"",0},	// grass 4
+	{"Grass 5",0,0,165,0,0,0,
+		0,
+		0,
+		IT_DECOR|IT_TREE,
+		ITR_NONE,IE_NONE,0,"",0},	// grass 5
+	{"Cattail",0,0,166,0,0,0,
+		0,
+		IF_SOLID|IF_SHADOW,
+		IT_OBSTACLE|IT_TREE,
+		ITR_CHOP,IE_DESTROY,1,"",0},	// cattail
+	//{"New Item",0,0,0,0,0,0,0,0,0,ITR_NONE,IE_NONE,0,"",0},	// unused17
+	//{"New Item",0,0,0,0,0,0,0,0,0,ITR_NONE,IE_NONE,0,"",0},	// unused17
+
 };
 
 static item_t emptyItem=
