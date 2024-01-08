@@ -125,7 +125,7 @@ static int numFiles;
 static byte profChoice;
 
 static const char diffName[][16]={"Normal","Hard","Lunatic"};
-static const char charName[][16]={"Bouapha","Happy Stick Man","Dr. Lunatic","Shtupid Shroom","LunaChick","MechaBouapha"};
+static const char charName[][16]={"Bouapha","Happy Stick Man","Dr. Lunatic","Shtupid Shroom","LunaChick","MechaBouapha","Kid Mystic"};
 
 static byte recordBook,candleRadar,brainRadar,moveNShoot;
 
@@ -473,12 +473,12 @@ byte UpdateProfMenu(int *lastTime,MGLDraw *mgl)
 						break;
 					case ButtonId::Character:
 						profile.playAs++;
-						if(profile.playAs>5)
+						if(profile.playAs>PLAY_MAX)
 							profile.playAs=0;
-						while(profile.playAs!=PLAY_BOUAPHA && !ItemPurchased(SHOP_PLAYABLE,profile.playAs))
+						while(profile.playAs!=PLAY_BOUAPHA && profile.playAs!=PLAY_MYSTIC && !ItemPurchased(SHOP_PLAYABLE,profile.playAs))
 						{
 							profile.playAs++;
-							if(profile.playAs>5)
+							if(profile.playAs>PLAY_MAX)
 								profile.playAs=0;
 						}
 						break;

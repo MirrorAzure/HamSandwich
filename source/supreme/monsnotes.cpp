@@ -2341,8 +2341,15 @@ char monsNotes[NUM_MONSTERS][512]={
 	"sides, and it's proximity based, so make "
 	"a note of that. (SWE)",
 	//Peeping Bomb (CCW)
-	"Same as Peeping Bomb, but spins in "
-	"other direction. (SWE)",
+	"Same as Peeping Bomb, but spins "
+	"counterclockwise. (SWE)",
+	//Kid Mystic
+	"DANGER: Do not use unless you know what you are doing! "
+	"This is the dummy monster for the playable Kid Mystic. (SWE)",
+	//Kid Mystic (Armageddon Sword)
+	"DANGER: Do not use unless you know what you are doing! "
+	"This is the dummy monster for the playable Kid Mystic with "
+	"Armageddon Sword. (SWE)",
 };
 
 char *MonsterNotes(dword type)

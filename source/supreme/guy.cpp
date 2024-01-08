@@ -681,6 +681,14 @@ void Guy::Update(Map *map,world_t *world)
 
 	if(aiType==MONS_BOUAPHA)	// special case, Bouapha is the player, follow him
 	{
+		if(player.armageddon>0)
+		{
+			player.armageddon--;
+			x=goodguy->x;
+			y=goodguy->y;
+			Armageddon(map,x,y,1);
+			ShakeScreen(10);
+		}
 		if(player.vehicle==0 && !editing && !player.cheated)
 		{
 			profile.progress.footDistance+=abs(dx/FIXAMT)+abs(dy/FIXAMT);
@@ -755,6 +763,8 @@ void Guy::Update(Map *map,world_t *world)
 				action=ACTION_BUSY;
 				if(player.playAs==PLAY_LUNACHIK)
 					MakeSound(SND_LUNADROWN,x,y,SND_CUTOFF|SND_ONE,65536);
+				else if(player.playAs==PLAY_MYSTIC)
+					MakeSound(SND_MYSTICDROWN,x,y,SND_CUTOFF|SND_ONE,65536);
 				else
 					MakeSound(SND_DROWN,x,y,SND_CUTOFF|SND_ONE,65536);
 				if(player.shield)
@@ -811,7 +821,7 @@ void Guy::Render(byte light)
 {
 	byte oldFrom,oldTo;
 	char oldBrt;
-	byte t;
+	int t;
 
 	if(type==MONS_NONE)
 		return;
@@ -840,6 +850,11 @@ void Guy::Render(byte light)
 			t=MONS_PLAYSHROOM;
 		else if(player.playAs==PLAY_LUNACHIK)
 			t=MONS_LUNACHICK;
+		else if(player.playAs==PLAY_MYSTIC)
+			if(player.cheesePower)
+				t=MONS_MYSTICSWORD;
+			else
+				t=MONS_MYSTIC;
 		else
 			t=MONS_BOUAPHA;
 

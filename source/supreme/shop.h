@@ -54,6 +54,8 @@
 #define PLAY_SHROOM		3
 #define PLAY_LUNACHIK	4
 #define PLAY_MECHA		5
+#define PLAY_MYSTIC		6
+#define PLAY_MAX		6	// number of playable characters
 
 // shop item flags (used in the player progress file)
 #define SIF_AVAILABLE	1

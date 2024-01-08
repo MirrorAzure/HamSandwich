@@ -4375,7 +4375,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{7,8,9,10,11,10,9,10,11,10,9,8,7,255},	// A1 = yawn
 			}},
     	{"PolterGuy",255,255,0,AI_Polterguy,
-		 30,9,300,0,"sleepless/graphics/bigghost.jsp",0,MF_ONEFACE|MF_FLYING|MF_GHOST|MF_FREEWALK|MF_ENEMYWALK|MF_NOSHADOW|MF_NOMOVE,
+		 30,9,500,0,"sleepless/graphics/bigghost.jsp",0,MF_ONEFACE|MF_FLYING|MF_GHOST|MF_FREEWALK|MF_ENEMYWALK|MF_NOSHADOW|MF_NOMOVE,
          MT_EVIL|MT_BOSS|MT_SPOOKY|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4513,5 +4513,33 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,0,0,255},	// move
 				{0,255},	// attack=rotate to next facing
 				{32,33,34,35,36,37,38,39,40,255},	// die=explode
+			}},
+		{"Kid Mystic",255,255,0,NULL,
+		 11,25,128,0,"mystic/graphics/sylabulus.jsp",0,MF_WATERWALK,
+		 MT_BITS|MT_MYSTIC,
+			{
+				{0,255},	// idle
+				{1,2,3,2,1,0,4,5,6,5,4,0,255},	// move
+				{7,8,9,10,10,11,11,12,12,12,255},	// attack
+				{15,16,17,18,19,20,21,22,23,24,255},		// die
+				{7,8,9,10,11,255},	// cast pointy spell
+				{13,13,14,14,13,13,14,14,13,13,14,14,13,13,14,255},	// bored
+				{1,3,1,0,4,6,4,0,1,3,1,0,0,254,254,254,254,255},	// watery death
+				{7,8,9,10,10,11,11,12,12,12,255},		// attack
+				{0,255},
+			}},
+		{"Kid Mystic (Armageddon Sword)",255,255,0,NULL,
+		 11,25,128,0,"mystic/graphics/sylab2.jsp",0,MF_WATERWALK,
+		 MT_BITS|MT_MYSTIC,
+			{
+				{0,255},	// idle
+				{1,2,3,2,1,0,4,5,6,5,4,0,255},	// move
+				{7,8,9,10,10,11,11,12,12,12,255},	// attack
+				{15,16,17,18,19,20,21,22,23,24,255},		// die
+				{7,8,9,10,11,255},	// cast pointy spell
+				{13,13,14,14,13,13,14,14,13,13,14,14,13,13,14,255},	// bored
+				{1,3,1,0,4,6,4,0,1,3,1,0,0,254,254,254,254,255},	// watery death
+				{7,8,9,10,10,11,11,12,12,12,255},		// attack
+				{0,255},
 			}},
 	};

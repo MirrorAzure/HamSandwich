@@ -138,6 +138,9 @@ void DoRage(Guy *me)
 				case PLAY_LUNACHIK:
 					FireExactBullet(me->x,me->y,FIXAMT*20,Cosine((player.rageClock*16))*12,Sine((player.rageClock*16))*12,0,0,50,0,BLT_LUNA2,1);
 					break;
+				case PLAY_MYSTIC:
+					player.armageddon=30;
+					break;
 			}
 			break;
 		case WPN_MISSILES:

@@ -196,6 +196,15 @@ sprite_t *GetMonsterSprite(dword type,byte seq,byte frm,byte facing)
 				type=MONS_PLAYSHROOM;
 			else if(player.playAs==PLAY_LUNACHIK)
 				type=MONS_LUNACHICK;
+			else {
+				if(player.playAs==PLAY_MYSTIC)
+				{
+					if(player.cheesePower)
+						type=MONS_MYSTICSWORD;
+					else
+						type=MONS_MYSTIC;
+				}
+			}
 		}
 	}
 
@@ -248,6 +257,16 @@ void MonsterDraw(int x,int y,int z,dword type,dword aiType,byte seq,byte frm,byt
 				type=MONS_PLAYSHROOM;
 			else if(player.playAs==PLAY_LUNACHIK)
 				type=MONS_LUNACHICK;
+			else 
+			{
+				if(player.playAs==PLAY_MYSTIC)
+				{
+					if(player.cheesePower)
+						type=MONS_MYSTICSWORD;
+					else
+						type=MONS_MYSTIC;
+				}
+			}
 		}
 
 		isBouapha=1;

@@ -16,7 +16,7 @@ constexpr int SPR_LOONYKEY = 50;
 constexpr int SPR_KEYCH = 52;
 
 static const char diffName[][16]={"Normal","Hard","Lunatic"};
-static const char charName[][16]={"Bouapha","Happy Stick Man","Dr. Lunatic","Shtupid Shroom","LunaChick","MechaBouapha"};
+static const char charName[][16]={"Bouapha","Happy Stick Man","Dr. Lunatic","Shtupid Shroom","LunaChick","MechaBouapha","Kid Mystic"};
 
 // Matches Pack* in steam.cpp
 static void UnpackWorldProgress(int32_t packed, byte* keychains, float* percentage)

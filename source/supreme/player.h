@@ -108,6 +108,7 @@ struct player_t
 	int brainX,brainY,candleX,candleY;
 	word brainTime,candleTime;
 	byte playAs;
+	int armageddon;
 };
 
 extern player_t player;

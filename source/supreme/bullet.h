@@ -97,6 +97,12 @@ enum : byte
 	BLT_EVILFACE,
 
 	BLT_LIFEBLIP,
+
+	BLT_FIREBALL,
+	BLT_FIREBALL2,
+	BLT_SKULL,
+	BLT_COMET,
+	BLT_COMETBOOM,
 };
 
 // the special hammer flags for different powerups
@@ -162,5 +168,8 @@ void ChangeBullet(byte fx,int x,int y,int type,int newtype); // for specials to 
 byte BulletFacingType(byte type); // To check if a type of bullet uses none, 0-7, or 0-255 facings
 
 void GetBulletDeltas(int *bdx,int *bdy);
+
+void Armageddon(Map *map,int x,int y,byte friendly);
+void SkullLaunch(int x,int y,byte facing,byte count,byte flags);
 
 #endif

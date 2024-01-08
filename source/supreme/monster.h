@@ -393,8 +393,10 @@
 
 #define MONS_PEEPBOMB2 	354
 
+#define MONS_MYSTIC		355
+#define MONS_MYSTICSWORD 356
 
-#define NUM_MONSTERS    355   // Can grow as needed
+#define NUM_MONSTERS    357   // Can grow as needed
 #define NUM_PROFILE_MONSTERS 211    // Do not change without redoing the profile format
 
 // fake monster codes

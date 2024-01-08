@@ -277,8 +277,13 @@ static char bulletName[][20]={
 	"Ice Shard",
 	"Evil Face",
 	"Life Blip",
+	"Fireball",
+	"Bouncy Fireball",
+	"Skull",
+	"Comet",
+	"Comet Boom",
 };
-#define MAX_BULLETS (BLT_LIFEBLIP + 1)
+#define MAX_BULLETS (BLT_COMETBOOM + 1)
 
 static void SetupTriggerButtons(int t,int y);
 static void SetupEffectButtons(int t,int y);
@@ -772,7 +777,7 @@ static void PlayAsClick(int id)
 		curTrig=trgStart + id/100-1;
 
 		spcl.trigger[curTrig].value++;
-		if(spcl.trigger[curTrig].value>PLAY_MECHA)
+		if(spcl.trigger[curTrig].value>PLAY_MAX)
 			spcl.trigger[curTrig].value=PLAY_BOUAPHA;
 
 		MakeNormalSound(SND_MENUCLICK);
@@ -784,7 +789,7 @@ static void PlayAsClick(int id)
 		MakeNormalSound(SND_MENUCLICK);
 
 		spcl.effect[curEff].value++;
-		if(spcl.effect[curEff].value>PLAY_MECHA)
+		if(spcl.effect[curEff].value>PLAY_MAX)
 			spcl.effect[curEff].value=PLAY_BOUAPHA;
 
 		SetupEffectButtons(curEff-effStart,(curEff-effStart)*38+264);
@@ -1750,6 +1755,8 @@ static void SetupTriggerButtons(int t,int y)
 				MakeButton(BTN_NORMAL,ID_TRIG0+OFS_CUSTOM+1+100*t,0,213,y+17,140,14,"Lunachick",PlayAsClick);
 			else if(trigger.value==PLAY_MECHA)
 				MakeButton(BTN_NORMAL,ID_TRIG0+OFS_CUSTOM+1+100*t,0,213,y+17,140,14,"Mechabouapha",PlayAsClick);
+			else if(trigger.value==PLAY_MYSTIC)
+				MakeButton(BTN_NORMAL,ID_TRIG0+OFS_CUSTOM+1+100*t,0,213,y+17,140,14,"Kid Mystic",PlayAsClick);
 			break;
 		case TRG_MONSCOLOR:
 			MakeButton(BTN_STATIC,ID_TRIG0+OFS_CUSTOM+0+100*t,0,40,y+17,1,1,"If",NULL);
@@ -2326,6 +2333,8 @@ static void SetupEffectButtons(int t,int y)
 				MakeButton(BTN_NORMAL,ID_EFF0+OFS_CUSTOM+1+100*t,0,213,y+17,140,14,"Lunachick",PlayAsClick);
 			else if(effect.value==PLAY_MECHA)
 				MakeButton(BTN_NORMAL,ID_EFF0+OFS_CUSTOM+1+100*t,0,213,y+17,140,14,"Mechabouapha",PlayAsClick);
+			else if(effect.value==PLAY_MYSTIC)
+				MakeButton(BTN_NORMAL,ID_EFF0+OFS_CUSTOM+1+100*t,0,213,y+17,140,14,"Kid Mystic",PlayAsClick);
 			break;
 		case EFF_MONSGRAPHICS:
 			MakeButton(BTN_STATIC,ID_EFF0+OFS_CUSTOM+0+100*t,0,40,y+17,1,1,"Change",NULL);

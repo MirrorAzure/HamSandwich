@@ -92,6 +92,7 @@ void TeamChangeRing(byte color,int x,int y,int z,byte num,byte force);
 void SmokeTile(int x,int y);
 void JackFrostWeather(int x,int y);
 void SuckParticle(int x,int y,int z);
+void AddParticle(int x,int y,int z,int dx,int dy,int dz,byte life,byte type,byte color);
 
 int CountParticles();
 

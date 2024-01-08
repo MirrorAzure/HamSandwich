@@ -1453,6 +1453,30 @@ void SuckParticle(int x,int y,int z)
 	}
 }
 
+void AddParticle(int x,int y,int z,int dx,int dy,int dz,byte life,byte type,byte color)
+{
+	int i;
+
+	for(i=0;i<maxParticles;i++)
+	{
+		if(!particleList[i]->Alive())
+		{
+
+			particleList[i]->x=x;
+			particleList[i]->y=y;
+			particleList[i]->z=z;
+			particleList[i]->dx=dx;
+			particleList[i]->dy=dy;
+			particleList[i]->dz=dz;
+			particleList[i]->size=2;
+			particleList[i]->life=life;
+			particleList[i]->type=type;
+			particleList[i]->color=color;
+			break;
+		}
+	}
+}
+
 int CountParticles()
 {
 	int i, n = 0;

@@ -110,6 +110,8 @@ void InitPlayer(byte level,const char *fname)
 	player.bestCombo=0;
 	player.cheesePower=0;
 
+	player.armageddon=0;
+
 	for(i=1;i<6;i++)
 	{
 		player.ability[i]=ItemPurchased(SHOP_ABILITY,i);
@@ -472,6 +474,8 @@ void PlayerGetBrain(int amt)
 			MakeNormalSound(SND_MUSHMAD);
 		else if(player.playAs==PLAY_LUNACHIK)
 			MakeNormalSound(SND_LUNABRAINS);
+		else if(player.playAs==PLAY_MYSTIC)
+			MakeNormalSound(SND_MYSTICKOOLKAT);
 
 		playerGlow=127;
 	}
@@ -606,6 +610,13 @@ void PlayerThrowHammer(Guy *me)
 	if(player.playAs==PLAY_BOUAPHA || player.playAs==PLAY_MECHA || player.playAs==PLAY_LUNACHIK)
 	{
 		HammerLaunch(me->x,me->y,me->facing,player.hammers,player.hammerFlags);
+	}
+	else if(player.playAs==PLAY_MYSTIC)
+	{
+		if(player.cheesePower)
+			SkullLaunch(me->x,me->y,me->facing,player.hammers,player.hammerFlags);
+		else
+			HammerLaunch(me->x,me->y,me->facing,player.hammers,player.hammerFlags);
 	}
 	else if(player.playAs==PLAY_LUNATIC)
 	{
@@ -1338,6 +1349,13 @@ void PlayerControlMe(Guy *me,mapTile_t *mapTile,world_t *world)
 				BlowUpGuy(x+me->rectx,y+me->recty,x+me->rectx2,y+me->recty2,me->z,1);
 			}
 		}
+		else if(player.playAs==PLAY_MYSTIC)
+		{
+			if(me->hp>0)
+				MakeSound(SND_MYSTICOUCH,me->x,me->y,SND_CUTOFF|SND_ONE,2000);
+			else if(me->seq==ANIM_DIE)	// so it doesn't do this if you're drowning
+				MakeSound(SND_MYSTICDIE,me->x,me->y,SND_CUTOFF|SND_ONE,2000);
+		}
 	}
 
 	if(me->parent)	// being grabbed by a Super Zombie or something
@@ -1613,6 +1631,8 @@ void PlayerControlMe(Guy *me,mapTile_t *mapTile,world_t *world)
 		{
 			if(player.playAs==PLAY_LUNACHIK)
 				MakeSound(SND_LUNABORED,me->x,me->y,SND_CUTOFF|SND_ONE,2000);
+			else if(player.playAs==PLAY_MYSTIC)
+				MakeSound(SND_BOUAPHABORED,me->x,me->y,SND_CUTOFF|SND_ONE,2000);
 			else
 				MakeSound(SND_BOUAPHABORED,me->x,me->y,SND_CUTOFF|SND_ONE,2000);
 			me->seq=ANIM_A2;
