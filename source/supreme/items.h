@@ -157,20 +157,12 @@
 #define ITM_EVILTREE		143
 #define ITM_CHAIR3			144
 #define ITM_CHAIR4			145
-#define ITM_SMALLTABLE2		146
-#define ITM_STOOL			147
-#define ITM_LOG				148
-#define ITM_LOG2			149
-#define ITM_LOG3			150
-#define ITM_PEDESTAL		151
-#define ITM_VAMPSTATUE		152
-#define ITM_BATSTATUE		153
-#define ITM_GRASS3			154
-#define ITM_GRASS4			155
-#define ITM_GRASS5			156
-#define ITM_CATTAIL			157
+#define ITM_CATTAIL			146
+#define ITM_UNUSED1			147
+#define ITM_UNUSED2			148
+#define ITM_UNUSED3			149
 
-#define NUM_ORIGINAL_ITEMS	158
+#define NUM_ORIGINAL_ITEMS	150
 #define MAX_ITEMS	255
 
 #define ITM_RANDOM	255		// the item number for random item drops
