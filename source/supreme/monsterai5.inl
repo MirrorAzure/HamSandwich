@@ -552,17 +552,18 @@ void AI_Trapazoid(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	{
 		me->type=MONS_TRAPAZOID2;
 	}
+	
 	if(me->reload)
 		me->reload--;
 
-	if(me->type==MONS_TRAPAZOID2)
+	if(me->ouch==4)
 	{
-		if(me->hp==0)
-			return;	// don't sweat it if you dead
-			
-
-		
+		if(me->hp>0)
+			MakeSound(SND_SERPENTOUCH,me->x,me->y,SND_CUTOFF,1200);
+		else
+			MakeSound(SND_SERPENTDIE,me->x,me->y,SND_CUTOFF,1200);
 	}
+
 	if(goodguy && ((RangeToTarget(me,goodguy))<(150*FIXAMT)) && (me->reload==0) && me->seq!=ANIM_ATTACK)
 		{
 			FaceGoodguy(me,goodguy);
@@ -578,15 +579,6 @@ void AI_Trapazoid(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		}
 	else
 	{
-		if(me->ouch==4)
-		{
-			if(me->hp>0)
-				MakeSound(SND_SERPENTOUCH,me->x,me->y,SND_CUTOFF,1200);
-			else
-				MakeSound(SND_SERPENTDIE,me->x,me->y,SND_CUTOFF,1200);
-		}
-		
-
 		if(me->action==ACTION_BUSY)
 		{
 			if(me->seq==ANIM_DIE && me->frm==6)
@@ -5314,7 +5306,7 @@ void AI_LL_Bonehead(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	if(me->aiType==MONS_BONEHEAD4)
 		map->BrightTorch((me->x/TILE_WIDTH)>>FIXSHIFT,(me->y/TILE_HEIGHT)>>FIXSHIFT,12,16);
 
-	BasicAI(me,SND_SKELOUCH,SND_SKELDIE,map,world,goodguy);
+	BasicAI(me,SND_LL_SKELOUCH,SND_LL_SKELDIE,map,world,goodguy);
 
 	if(me->aiType==MONS_BONEHEAD6 && me->seq==ANIM_DIE && Random(10)==0)
 	{
@@ -5399,7 +5391,7 @@ void AI_LL_Bonehead(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			//map->CheckLOS(me->mapx,me->mapy,4,goodguy->mapx,goodguy->mapy))
 		{
 			// get him!
-			MakeSound(SND_SKELKICK,me->x,me->y,SND_CUTOFF,1200);
+			MakeSound(SND_LL_SKELKICK,me->x,me->y,SND_CUTOFF,1200);
 			me->seq=ANIM_ATTACK;
 			me->frm=0;
 			me->frmTimer=0;
@@ -5417,7 +5409,7 @@ void AI_LL_Bonehead(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			//map->CheckLOS(me->mapx,me->mapy,10,goodguy->mapx,goodguy->mapy))
 		{
 			// get him!
-			MakeSound(SND_SKELKICK,me->x,me->y,SND_CUTOFF,1200);
+			MakeSound(SND_LL_SKELKICK,me->x,me->y,SND_CUTOFF,1200);
 			me->seq=ANIM_ATTACK;
 			me->frm=0;
 			me->frmTimer=0;
@@ -5436,7 +5428,7 @@ void AI_LL_Bonehead(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			//map->CheckLOS(me->mapx,me->mapy,15,goodguy->mapx,goodguy->mapy))
 		{
 			// spit at him
-			MakeSound(SND_SKELSHOOT,me->x,me->y,SND_CUTOFF,1200);
+			MakeSound(SND_LL_SKELSHOOT,me->x,me->y,SND_CUTOFF,1200);
 			me->seq=ANIM_A1;
 			me->frm=0;
 			me->frmTimer=0;
@@ -5740,7 +5732,7 @@ void AI_LL_Zombie(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	int x,y,i;
 	Guy *g;
 
-	BasicAI(me,SND_ZOMBIEOUCH,SND_ZOMBIEDIE,map,world,goodguy);
+	BasicAI(me,SND_LL_ZOMBIEOUCH,SND_LL_ZOMBIEDIE,map,world,goodguy);
 
 	if(me->seq==ANIM_DIE && me->aiType==MONS_ZOMBIE5)
 	{
@@ -5840,7 +5832,7 @@ void AI_LL_Zombie(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			//map->CheckLOS(me->mapx,me->mapy,8,goodguy->mapx,goodguy->mapy))
 		{
 			// get him!
-			MakeSound(SND_ZOMBIELEAP,me->x,me->y,SND_CUTOFF,1200);
+			MakeSound(SND_LL_ZOMBIELEAP,me->x,me->y,SND_CUTOFF,1200);
 			me->seq=ANIM_ATTACK;
 			me->frm=0;
 			me->frmTimer=0;
@@ -5905,7 +5897,7 @@ void AI_LL_Bat(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	int x,y;
 	//bullet_t *b;
 
-	BasicAI(me,SND_BATOUCH,SND_BATDIE,map,world,goodguy);
+	BasicAI(me,SND_LL_BATOUCH,SND_LL_BATDIE,map,world,goodguy);
 
 	if(me->aiType==MONS_BAT5 && Random(3)==0)
 	{
@@ -5961,7 +5953,7 @@ void AI_LL_Bat(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			//map->CheckLOS(me->mapx,me->mapy,6,goodguy->mapx,goodguy->mapy))
 		{
 			// get him!
-			MakeSound(SND_BATEYES,me->x,me->y,SND_CUTOFF,1200);
+			MakeSound(SND_LL_BATEYES,me->x,me->y,SND_CUTOFF,1200);
 			me->seq=ANIM_ATTACK;
 			me->frm=0;
 			me->frmTimer=0;
@@ -5978,7 +5970,7 @@ void AI_LL_Bat(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			//map->CheckLOS(me->mapx,me->mapy,15,goodguy->mapx,goodguy->mapy))
 		{
 			FaceGoodguy(me,goodguy);
-			MakeSound(SND_BATDIVE,me->x,me->y,SND_CUTOFF,1200);
+			MakeSound(SND_LL_BATDIVE,me->x,me->y,SND_CUTOFF,1200);
 			me->seq=ANIM_A1;	// diving attack move
 			me->frm=0;
 			me->frmTimer=0;
@@ -6016,7 +6008,7 @@ void AI_Mummy(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	byte ang;
 	Guy *g;
 
-	BasicAI(me,SND_ZOMBIEOUCH,SND_ZOMBIEDIE,map,world,goodguy);
+	BasicAI(me,SND_LL_ZOMBIEOUCH,SND_LL_ZOMBIEDIE,map,world,goodguy);
 
 	if(me->aiType==MONS_MUMMY5 && me->seq==ANIM_DIE && Random(5)==0)
 	{
@@ -6271,7 +6263,7 @@ void AI_LL_Ghost(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		map->BrightTorch((me->x/TILE_WIDTH)>>FIXSHIFT,
 						 (me->y/TILE_HEIGHT)>>FIXSHIFT,-4,8);
 
-	BasicAI(me,SND_GHOSTOUCH,SND_GHOSTDIE,map,world,goodguy);
+	BasicAI(me,SND_LL_GHOSTOUCH,SND_LL_GHOSTDIE,map,world,goodguy);
 
 	if(me->mind3>0)
 		me->mind3--;
@@ -6395,7 +6387,7 @@ void AI_LL_Ghost(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	// teleport if non-Ghost
 	if(me->aiType!=MONS_GHOST2 && RangeToTarget(me,goodguy)>(320*FIXAMT) && Random(32)==0)
 	{
-		MakeSound(SND_GHOSTTPORT,me->x,me->y,SND_CUTOFF,1200);
+		MakeSound(SND_GHOSTTELEPORT,me->x,me->y,SND_CUTOFF,1200);
 		DoMove(me,ANIM_A1,128,1,0,0);
 		me->reload=0;
 		return;
@@ -6405,7 +6397,7 @@ void AI_LL_Ghost(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	{
 		// scream
 		me->mind3=30*5;
-		MakeSound(SND_GHOSTYELL,me->x,me->y,SND_CUTOFF,1200);
+		MakeSound(SND_GHOSTSCREAM,me->x,me->y,SND_CUTOFF,1200);
 		DoMove(me,ANIM_A3,128,1,0,0);
 		me->reload=0;
 		return;
@@ -7248,7 +7240,7 @@ void AI_LL_Vampire(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	int x,y;
 	Guy *g;
 
-	BasicAI(me,SND_VAMPOUCH,SND_VAMPDIE,map,world,goodguy);
+	BasicAI(me,SND_LL_VAMPOUCH,SND_LL_VAMPDIE,map,world,goodguy);
 
 	if(me->mind3>0)
 		me->mind3--;

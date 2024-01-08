@@ -455,8 +455,38 @@ soundDesc_t soundInfo[MAX_SOUNDS]={
 	{SND_VILLDIE2,"Villager Die 2",ST_MONSTER},
 	{SND_POLTERSNEEZE,"PolterGuy Sneeze",ST_MONSTER},
 	{SND_POLTERGET,"PolterGuy Get",ST_MONSTER},
+
 	{SND_PTEROSHOOT,"Pterodactyl Shoot",ST_MONSTER},
 	{SND_PTERODIE,"Pterodactyl Die",ST_MONSTER},
+
+	{SND_FBALLREFLECT,"Fireball Reflect",ST_MONSTER},
+	{SND_SKULLSHOOT,"Skull Launch",ST_MONSTER},
+	{SND_MYSTICKOOLKAT,"Kid Mystic Kool Kat Bad",ST_PLAYER},
+	{SND_MYSTICOUCH,"Kid Mystic Ouch",ST_PLAYER},
+	{SND_MYSTICDIE,"Kid Mystic Die",ST_PLAYER},
+	{SND_MYSTICDROWN,"Kid Mystic Drown",ST_PLAYER},
+
+	{SND_LL_SKELOUCH,"LL Skeleton Ouch",ST_MONSTER},
+	{SND_LL_SKELDIE,"LL Skeleton Die",ST_MONSTER},
+	{SND_LL_SKELKICK,"LL Skeleton Kick",ST_MONSTER},
+	{SND_LL_SKELSHOOT,"LL Skeleton Shoot",ST_MONSTER},
+
+	{SND_LL_ZOMBIEOUCH,"LL Zombie Ouch",ST_MONSTER},
+	{SND_LL_ZOMBIEDIE,"LL Zombie Die",ST_MONSTER},
+	{SND_LL_ZOMBIELEAP,"LL Zombie Leap",ST_MONSTER},
+
+	{SND_LL_BATOUCH,"LL Bat Ouch",ST_MONSTER},
+	{SND_LL_BATDIE,"LL Bat Die",ST_MONSTER},
+	{SND_LL_BATEYES,"LL Bat Eyes",ST_MONSTER},
+	{SND_LL_BATDIVE,"LL Bat Dive",ST_MONSTER},
+
+	{SND_LL_GHOSTOUCH,"LL Ghost Ouch",ST_MONSTER},
+	{SND_LL_GHOSTDIE,"LL Ghost Die",ST_MONSTER},
+	{SND_GHOSTTELEPORT,"LL Ghost Teleport",ST_MONSTER},
+	{SND_GHOSTSCREAM,"LL Ghost Scream",ST_MONSTER},
+
+	{SND_LL_VAMPOUCH,"LL Vampire Ouch",ST_MONSTER},
+	{SND_LL_VAMPDIE,"LL Vampire Die",ST_MONSTER},
 };
 
 static int numSounds,numCustom;
