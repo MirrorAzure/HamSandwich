@@ -3811,7 +3811,7 @@ void AI_Grue(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		if(Random(100)==0)
 			AddBaby(me->x+((-8+Random(17))<<FIXSHIFT),me->y+((-8+Random(17))<<FIXSHIFT),0,MONS_SPIDER,me);
 		if(Random(300)==0)
-			AddBaby(me->x+((-8+Random(17))<<FIXSHIFT),me->y+((-8+Random(17))<<FIXSHIFT),0,MONS_BIGSPDR,me);
+			AddBaby(me->x+((-8+Random(17))<<FIXSHIFT),me->y+((-8+Random(17))<<FIXSHIFT),0,MONS_BIGSPDR2,me);
 	}
 
 	if(goodguy)
@@ -6860,7 +6860,8 @@ void AI_Larry(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	*/
 	if(me->mind==0)
 	{
-		//me->aiType=MONS_HUMANLARRY;
+		me->aiType=MONS_HUMANLARRY;
+		me->type=MONS_HUMANLARRY;
 		DoMove(me,ANIM_IDLE,128,0,0,0);
 		MakeSound(SND_LARRYNORMAL,me->x,me->y,SND_CUTOFF,1800);
 		SelectDestination(me,goodguy,map,1);
@@ -6992,11 +6993,10 @@ void AI_HumanLarry(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		}
 		if(me->seq==ANIM_DIE)
 		{
-			//g=AddGuy(me->x,me->y,me->z,MONS_VILLAGER3);
+			AddGuy(me->x,me->y,me->z,MONS_VILLAGER3,1);
+			me->type=MONS_NONE;
 			// BadgeCheck(BE_KILL,me->aiType,map);
 			// PlayerSetVar(VAR_QUESTDONE+QUEST_WOLF,1);
-			me->type=MONS_HUMANLARRY;
-			me->aiType=MONS_HUMANLARRY;
 			// if(g)
 			// 	g->tag=16;
 			//BeginChatting(234);
@@ -7019,6 +7019,7 @@ void AI_HumanLarry(Guy *me,Map *map,world_t *world,Guy *goodguy)
 
 	if(me->mind==0)
 	{
+		me->type=MONS_LARRY;
 		me->aiType=MONS_LARRY;
 		DoMove(me,ANIM_A2,128,1,0,0);
 		MakeSound(SND_LARRYHOWL,me->x,me->y,SND_CUTOFF,1800);
@@ -9031,7 +9032,7 @@ void AI_Polterguy(Guy *me,Map *map,world_t *world,Guy *goodguy)
 
 void AI_Junk(Guy *me,Map *map,world_t *world,Guy *goodguy)
 {
-	BasicAI(me,SND_LIGHTSMACK,SND_BOMBBOOM,map,world,goodguy);
+	BasicAI(me,SND_LIGHTSMACK,SND_BULLETHIT,map,world,goodguy);
 
 	if(me->action==ACTION_BUSY)
 	{
