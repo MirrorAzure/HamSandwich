@@ -361,6 +361,8 @@ void AI_BigSpider(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			else
 				FireBullet(x,y,me->facing*32,BLT_ACID,me->friendly);
 			me->reload=40;
+			if(me->type==MONS_BIGSPDR2)
+				me->reload=30;
 		}
 		return;	// can't do nothin' right now
 	}
@@ -392,8 +394,17 @@ void AI_BigSpider(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		me->mind=Random(120)+1;
 	}
 
-	me->dx=Cosine(me->facing*32)*4;
-	me->dy=Sine(me->facing*32)*4;
+
+	if(me->type==MONS_BIGSPDR2)
+	{
+		me->dx=Cosine(me->facing*32)*6;
+		me->dy=Sine(me->facing*32)*6;
+	}
+	else
+	{
+		me->dx=Cosine(me->facing*32)*4;
+		me->dy=Sine(me->facing*32)*4;
+	}
 	if(me->seq!=ANIM_MOVE)
 	{
 		me->seq=ANIM_MOVE;

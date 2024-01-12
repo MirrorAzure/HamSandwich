@@ -2350,6 +2350,8 @@ char monsNotes[NUM_MONSTERS][512]={
 	"DANGER: Do not use unless you know what you are doing! "
 	"This is the dummy monster for the playable Kid Mystic with "
 	"Armageddon Sword. (SWE)",
+	//Creepy Crawly
+	"(SWE)",
 };
 
 char *MonsterNotes(dword type)

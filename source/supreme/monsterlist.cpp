@@ -4060,7 +4060,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{1,0,2,0,1,0,2,0,1,0,2,0,1,0,2,0,4,0,3,3,3,255},	// appear=A2
 			}},
 		{"Larry",255,255,0,AI_Larry,
-		 25,38,150,0,"loonyland/graphics/larry.jsp",0,MF_NOMOVE,//|MF_INVINCIBLE,
+		 25,38,250,0,"loonyland/graphics/larry.jsp",0,MF_NOMOVE|MF_INVINCIBLE,
          MT_EVIL|MT_BOSS|MT_ANIMAL|MT_LOONY,
 			{
 				{0,255},	// idle
@@ -4072,8 +4072,8 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,255},	// blank = A3
 			}},
     	{"Larry",4,1,0,AI_HumanLarry,
-		 25,14,150,0,"loonyland/graphics/village.jsp",0,0,
-         MT_HUMAN|MT_LOONY,
+		 25,14,250,0,"loonyland/graphics/village.jsp",0,0,
+         MT_NONE,
 			{
 				{0,255},	// idle
 				{1,2,3,2,1,0,4,5,6,5,4,0,255},	// move
@@ -4540,6 +4540,20 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{13,13,14,14,13,13,14,14,13,13,14,14,13,13,14,255},	// bored
 				{1,3,1,0,4,6,4,0,1,3,1,0,0,254,254,254,254,255},	// watery death
 				{7,8,9,10,10,11,11,12,12,12,255},		// attack
+				{0,255},
+			}},
+		{"Creepy Crawly",1,0,-3,AI_BigSpider,
+		 8,21,10,50,"graphics/bigspdr.jsp",0,0,
+		 MT_EVIL|MT_SPIDER|MT_ANIMAL|MT_SLEEPLESS,
+			{
+				{0,255},	// idle
+				{1,2,3,2,1,0,4,5,6,5,4,0,255},	// move
+				{7,8,9,10,11,12,12,13,13,255},	// attack
+				{14,15,16,17,18,17,18,17,18,19,19,20,20,255},	// die
+				{7,8,9,10,11,12,12,13,13,255},	// attack
+				{7,8,9,10,11,12,12,13,13,255},	// attack
+				{7,8,9,10,11,12,12,13,13,255},	// attack
+				{0,255},
 				{0,255},
 			}},
 	};

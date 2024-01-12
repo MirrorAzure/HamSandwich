@@ -396,7 +396,9 @@
 #define MONS_MYSTIC		355
 #define MONS_MYSTICSWORD 356
 
-#define NUM_MONSTERS    357   // Can grow as needed
+#define MONS_BIGSPDR2  357
+
+#define NUM_MONSTERS    358   // Can grow as needed
 #define NUM_PROFILE_MONSTERS 211    // Do not change without redoing the profile format
 
 // fake monster codes
