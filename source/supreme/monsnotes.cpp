@@ -2352,6 +2352,8 @@ char monsNotes[NUM_MONSTERS][512]={
 	"Armageddon Sword. (SWE)",
 	//Creepy Crawly
 	"(SWE)",
+	//Deadhead
+	"(SWE)",
 };
 
 char *MonsterNotes(dword type)

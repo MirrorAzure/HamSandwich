@@ -2374,7 +2374,7 @@ void AI_CrazyBone(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			me->reload=5;
 			me->mind1=1;
 		}
-		if(me->seq==ANIM_DIE && me->frm==7 && Random(6)==0)
+		if(me->seq==ANIM_DIE && me->frm==7 && (me->type==MONS_DEADHEAD || Random(6)==0))
 		{
 			// come back!
 			if(me->friendly==0)

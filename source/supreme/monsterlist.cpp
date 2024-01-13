@@ -4556,4 +4556,17 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,255},
 				{0,255},
 			}},
+		{"Deadhead",0,6,-16,AI_CrazyBone,
+		 8,32,10,100,"sleepless/graphics/bonehead.jsp",0,0,
+		 MT_EVIL|MT_SPOOKY|MT_SLEEPLESS,
+			{
+				{0,255},	// idle
+				{1,2,3,2,1,0,4,5,6,5,4,0,255},	// move
+				{12,13,14,15,16,17,18,19,255},	// attack
+				{7,8,9,10,11,11,11,11,254,11,254,11,254,11,254,11,254,11,254,11,254,11,255},		// die
+				{20,21,22,23,24,25,255},	// chomp/spit projectile
+				{26,27,27,27,26,255},	// point at bouapha
+				{11,10,9,8,7,255},	// resurrect=A3
+				{28,29,30,31,30,29,28,255},	// leap skyward
+			}},
 	};
