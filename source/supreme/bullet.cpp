@@ -1597,7 +1597,7 @@ void UpdateBullet(bullet_t *me,Map *map,world_t *world)
 	// all gravity-affected bullets, get gravitized
 	if(me->type==BLT_HAMMER || me->type==BLT_HAMMER2 || me->type==BLT_BOMB || me->type==BLT_GRENADE
 		|| me->type==BLT_ROCK || me->type==BLT_EVILHAMMER || me->type==BLT_SPEAR || me->type==BLT_BADSPEAR
-		|| me->type==BLT_BUBBLE || me->type==BLT_BADSITFLAME || me->type==BLT_FIREBALL || me->type==BLT_FIREBALL2)
+		|| me->type==BLT_BUBBLE || me->type==BLT_BADSITFLAME)
 		me->dz-=FIXAMT;
 
 	me->timer--;
@@ -1668,6 +1668,7 @@ void UpdateBullet(bullet_t *me,Map *map,world_t *world)
 			break;
 		case BLT_FIREBALL:
 		case BLT_FIREBALL2:
+			me->dz=0;
 			me->anim++;
 			if(me->anim>4)
 			{
@@ -2949,7 +2950,7 @@ void FireMe(bullet_t *me,int x,int y,byte facing,byte type,byte friendly)
 			me->z=FIXAMT*20;
 			me->dx=Cosine(me->facing*32)*12;
 			me->dy=Sine(me->facing*32)*12;
-			me->dz=FIXAMT*10;
+			me->dz=0;//FIXAMT*10;
 			break;
 		case BLT_COMET:
 			me->anim=(byte)MGL_random(8);
