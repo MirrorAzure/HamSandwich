@@ -399,7 +399,9 @@
 #define MONS_BIGSPDR2  357
 #define MONS_DEADHEAD  358
 
-#define NUM_MONSTERS    359   // Can grow as needed
+#define MONS_EVILIZER2  359
+
+#define NUM_MONSTERS    360   // Can grow as needed
 #define NUM_PROFILE_MONSTERS 211    // Do not change without redoing the profile format
 
 // fake monster codes

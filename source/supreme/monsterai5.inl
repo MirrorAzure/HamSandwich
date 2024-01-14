@@ -8101,6 +8101,7 @@ void AI_Evilizer(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	if(me->mind==0 && CountMonsters(MONS_EVILPUMP)==0)
 	{
 		me->mind=1;
+		me->type=MONS_EVILIZER2;
 		for(i=0;i<10;i++)
 		{
 			x=me->x>>FIXSHIFT;
@@ -8111,10 +8112,6 @@ void AI_Evilizer(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		}
 		
 
-	}
-	if(me->mind==0)
-	{
-		me->hp=me->maxHP;
 	}
 
 	//SetBossHP(me->hp,MonsterHP(me->aiType));

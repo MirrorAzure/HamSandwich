@@ -4232,7 +4232,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,255},	// A1=spin around
 			}},
     	{"The Evilizer",255,255,0,AI_Evilizer,
-		 140,32,2000,0,"loonyland/graphics/evilizer.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_FACECMD,//|MF_INVINCIBLE,
+		 140,32,2000,0,"loonyland/graphics/evilizer.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_FACECMD|MF_INVINCIBLE,
          MT_EVIL|MT_BOSS|MT_LOONY,
 			{
 				{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,255},	// idle
@@ -4568,5 +4568,14 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{26,27,27,27,26,255},	// point at bouapha
 				{11,10,9,8,7,255},	// resurrect=A3
 				{28,29,30,31,30,29,28,255},	// leap skyward
+			}},
+    	{"The Evilizer",255,255,0,AI_Evilizer,
+		 140,32,2000,0,"loonyland/graphics/evilizer.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_FACECMD,//|MF_INVINCIBLE,
+         MT_NONE,
+			{
+				{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,255},	// idle
+				{0,255},	// move
+				{0,255},	// attack (shoot)
+				{0,0,0,0,0,0,0,255},	// die
 			}},
 	};

@@ -162,6 +162,10 @@
 #define ITM_UNUSED2			148
 #define ITM_UNUSED3			149
 
+// NOTE: had to left some of item slots unused
+// for backward compatibility
+// (items with ID>149 replaced custom items)
+
 #define NUM_ORIGINAL_ITEMS	150
 #define MAX_ITEMS	255
 

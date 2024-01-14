@@ -2354,6 +2354,8 @@ char monsNotes[NUM_MONSTERS][512]={
 	"(SWE)",
 	//Deadhead
 	"(SWE)",
+	//Vulnerable Evilizer
+	"",
 };
 
 char *MonsterNotes(dword type)

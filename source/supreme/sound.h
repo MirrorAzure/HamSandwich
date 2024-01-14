@@ -509,47 +509,51 @@
 #define SND_POLTERSNEEZE 442
 #define SND_POLTERGET	443	// activating a chair/barrel/etc
 
-#define SND_PTEROSHOOT  444
-#define SND_PTERODIE    445
+#define SND_PTEROSHOOT  	444
+#define SND_PTERODIE    	445
 
-#define SND_FBALLREFLECT 446
-#define SND_SKULLSHOOT	  447
+#define SND_FBALLREFLECT 	446
+#define SND_SKULLSHOOT	  	447
 
-#define SND_MYSTICKOOLKAT 513
-#define SND_MYSTICOUCH 514
-#define SND_MYSTICDIE 515
-#define SND_MYSTICDROWN 516
+// NOTE: sounds 448-512 were intentionally skipped 
+// for backward compatibility, don't use those slots
+// (otherwise they will replace custom sounds)
 
-#define SND_LL_SKELOUCH 517
-#define SND_LL_SKELDIE 518
-#define SND_LL_SKELKICK 519
-#define SND_LL_SKELSHOOT 520
+#define SND_MYSTICKOOLKAT 	513
+#define SND_MYSTICOUCH 		514
+#define SND_MYSTICDIE 		515
+#define SND_MYSTICDROWN 	516
 
-#define SND_LL_ZOMBIEOUCH 521
-#define SND_LL_ZOMBIEDIE 522
-#define SND_LL_ZOMBIELEAP 523
+#define SND_LL_SKELOUCH 	517
+#define SND_LL_SKELDIE 		518
+#define SND_LL_SKELKICK 	519
+#define SND_LL_SKELSHOOT 	520
 
-#define SND_LL_BATOUCH 524
-#define SND_LL_BATDIE 525
-#define SND_LL_BATEYES 526
-#define SND_LL_BATDIVE 527
+#define SND_LL_ZOMBIEOUCH 	521
+#define SND_LL_ZOMBIEDIE 	522
+#define SND_LL_ZOMBIELEAP 	523
 
-#define SND_LL_GHOSTOUCH 528
-#define SND_LL_GHOSTDIE 529
-#define SND_GHOSTTELEPORT 530
-#define SND_GHOSTSCREAM 531
+#define SND_LL_BATOUCH 		524
+#define SND_LL_BATDIE 		525
+#define SND_LL_BATEYES 		526
+#define SND_LL_BATDIVE 		527
 
-#define SND_LL_VAMPOUCH 532
-#define SND_LL_VAMPDIE 533
+#define SND_LL_GHOSTOUCH 	528
+#define SND_LL_GHOSTDIE 	529
+#define SND_GHOSTTELEPORT 	530
+#define SND_GHOSTSCREAM 	531
+
+#define SND_LL_VAMPOUCH 	532
+#define SND_LL_VAMPDIE 		533
 
 
-#define NUM_ORIG_SOUNDS	469
+#define NUM_ORIG_SOUNDS		469
 
 #define MAX_SOUNDS		1024		// absolute maximum
 #define MAX_CUSTOM_SOUNDS 64
 
 
-
+// sounds 448-512 reserved for custom sounds
 #define CUSTOM_SND_START (512-MAX_CUSTOM_SOUNDS)
 
 //--------------------------------
