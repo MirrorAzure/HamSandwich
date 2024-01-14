@@ -397,8 +397,9 @@
 #define MONS_DEADHEAD  	358
 #define MONS_EVILIZER2  359
 #define MONS_DUMBLE		360
+#define MONS_MARCHMARROW 361
 
-#define NUM_MONSTERS    361   // Can grow as needed
+#define NUM_MONSTERS    362   // Can grow as needed
 #define NUM_PROFILE_MONSTERS 211    // Do not change without redoing the profile format
 
 // fake monster codes

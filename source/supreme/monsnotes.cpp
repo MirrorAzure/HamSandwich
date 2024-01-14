@@ -2358,6 +2358,8 @@ char monsNotes[NUM_MONSTERS][512]={
 	"",
 	//Dumble
 	"(SWE)",
+	//Marsh Marrow
+	"(SWE)",
 };
 
 char *MonsterNotes(dword type)
