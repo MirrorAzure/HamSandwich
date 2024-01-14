@@ -4578,4 +4578,18 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,255},	// attack (shoot)
 				{0,0,0,0,0,0,0,255},	// die
 			}},
+		{"Dumble",1,6,0,AI_BabyThing,
+		 12,44,20,50,"graphics/babything.jsp",0,0,
+		 MT_EVIL|MT_THINGY|MT_SLEEPLESS,
+			{
+				{12,255},	// idle
+				{1,2,3,4,5,6,7,8,9,10,11,255},	// move
+				{20,21,22,23,24,25,26,27,255},	// attack
+				{34,35,36,37,38,39,40,41,42,43,255},	// die
+				{13,14,15,16,17,16,15,16,17,16,15,16,17,16,15,255},	// fall asleep (A1)
+				{18,19,18,255},	// blink (A2)
+				{28,29,30,29,28,255}, // look right (A3)
+				{31,32,33,32,31,255}, // look left (A4)
+				{0,255},
+			}},
 	};

@@ -390,18 +390,15 @@
 #define MONS_TURRETL	351	// used
 #define MONS_TURRETU	352	// used
 #define MONS_MEGABURNER 353	// used
-
 #define MONS_PEEPBOMB2 	354
-
 #define MONS_MYSTIC		355
 #define MONS_MYSTICSWORD 356
-
-#define MONS_BIGSPDR2  357
-#define MONS_DEADHEAD  358
-
+#define MONS_BIGSPDR2  	357
+#define MONS_DEADHEAD  	358
 #define MONS_EVILIZER2  359
+#define MONS_DUMBLE		360
 
-#define NUM_MONSTERS    360   // Can grow as needed
+#define NUM_MONSTERS    361   // Can grow as needed
 #define NUM_PROFILE_MONSTERS 211    // Do not change without redoing the profile format
 
 // fake monster codes
