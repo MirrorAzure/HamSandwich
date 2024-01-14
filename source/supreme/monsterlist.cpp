@@ -4605,4 +4605,44 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{11,10,9,8,7,255},	// resurrect=A3
 				{28,29,30,31,30,29,28,255},	// leap skyward
 			}},
+		{"Friendly (Bald)",255,255,0,NULL,	// a friendly bystander
+		 9,4,100,0,"mystic/graphics/friendly.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_INVINCIBLE,
+		 MT_GOOD|MT_BITS|MT_MYSTIC,
+			{
+				{0,255},	// idle (bald guy)
+				{0,255},	// move (blond hair)
+				{0,255},	// fire (chick)
+				{0,255},	// die
+				{0,255}		// A1   (wizard)
+			}},
+		{"Friendly (Blond)",255,255,0,NULL,	// a friendly bystander
+		 9,4,100,0,"mystic/graphics/friendly.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_INVINCIBLE,
+		 MT_GOOD|MT_BITS|MT_MYSTIC,
+			{
+				{1,255},	// idle (bald guy)
+				{1,255},	// move (blond hair)
+				{1,255},	// fire (chick)
+				{1,255},	// die
+				{1,255}		// A1   (wizard)
+			}},
+		{"Friendly (Girl)",255,255,0,NULL,	// a friendly bystander
+		 9,4,100,0,"mystic/graphics/friendly.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_INVINCIBLE,
+		 MT_GOOD|MT_BITS|MT_MYSTIC,
+			{
+				{2,255},	// idle (bald guy)
+				{2,255},	// move (blond hair)
+				{2,255},	// fire (chick)
+				{2,255},	// die
+				{2,255}		// A1   (wizard)
+			}},
+		{"Friendly (Wizard)",255,255,0,NULL,	// a friendly bystander
+		 9,4,100,0,"mystic/graphics/friendly.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_INVINCIBLE,
+		 MT_GOOD|MT_BITS|MT_MYSTIC,
+			{
+				{3,255},	// idle (bald guy)
+				{3,255},	// move (blond hair)
+				{3,255},	// fire (chick)
+				{3,255},	// die
+				{3,255}		// A1   (wizard)
+			}},
 	};

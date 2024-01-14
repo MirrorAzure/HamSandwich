@@ -1490,7 +1490,8 @@ Guy *AddGuy(int x,int y,int z,int type,byte friendly)
 				type==MONS_WIZARD || type==MONS_GOODROBOT || type==MONS_GOODROBOT2 ||
 				type==MONS_FRIENDLY2 || type==MONS_FOLLOWBUNNY || type==MONS_MINECART || type==MONS_RAFT ||
 				type==MONS_YUGO || type==MONS_PUNKBUNNY || type==MONS_PTERO || type==MONS_SCAREDYBAT ||
-				type==MONS_VILLAGER || type==MONS_VILLAGER2 || type==MONS_VILLAGER3 || type==MONS_VILLAGER4 || type==MONS_VILLAGER5 || type==MONS_VILLAGER6)))
+				type==MONS_VILLAGER || type==MONS_VILLAGER2 || type==MONS_VILLAGER3 || type==MONS_VILLAGER4 || type==MONS_VILLAGER5 || type==MONS_VILLAGER6 ||
+				type==MONS_FRIENDLYNPC1 || type==MONS_FRIENDLYNPC2 || type==MONS_FRIENDLYNPC3 || type==MONS_FRIENDLYNPC4)))
 			{
 				guys[i]->friendly=1;
 				j=LockOnEvil(x>>FIXSHIFT,y>>FIXSHIFT);
@@ -1967,7 +1968,8 @@ void AddMapGuys(Map *map)
 						genType[i]==MONS_MINECART || genType[i]==MONS_RAFT || genType[i]==MONS_YUGO || genType[i]==MONS_PTERO ||
 						genType[i]==MONS_VILLAGER || genType[i]==MONS_VILLAGER2 || genType[i]==MONS_VILLAGER3 ||
 						genType[i]==MONS_VILLAGER4 || genType[i]==MONS_VILLAGER5 || genType[i]==MONS_VILLAGER6 ||
-						genType[i]==MONS_SCAREDYBAT)
+						genType[i]==MONS_SCAREDYBAT || genType[i]==MONS_FRIENDLYNPC1 || genType[i]==MONS_FRIENDLYNPC2 ||
+						genType[i]==MONS_FRIENDLYNPC3 || genType[i]==MONS_FRIENDLYNPC4)
 					{
 						player.totalEnemies--;
 						g->friendly=1;

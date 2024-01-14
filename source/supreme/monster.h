@@ -399,7 +399,12 @@
 #define MONS_DUMBLE		360
 #define MONS_MARCHMARROW 361
 
-#define NUM_MONSTERS    362   // Can grow as needed
+#define MONS_FRIENDLYNPC1	362
+#define MONS_FRIENDLYNPC2	363
+#define MONS_FRIENDLYNPC3	364
+#define MONS_FRIENDLYNPC4	365
+
+#define NUM_MONSTERS    366   // Can grow as needed
 #define NUM_PROFILE_MONSTERS 211    // Do not change without redoing the profile format
 
 // fake monster codes

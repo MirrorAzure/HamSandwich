@@ -2360,6 +2360,14 @@ char monsNotes[NUM_MONSTERS][512]={
 	"(SWE)",
 	//Marsh Marrow
 	"(SWE)",
+	//Friendly (Bald)
+	"(SWE)",
+	//Friendly (Blonde)
+	"(SWE)",
+	//Friendly (Girl)
+	"(SWE)",
+	//Friendly (Wizard)
+	"(SWE)",
 };
 
 char *MonsterNotes(dword type)
