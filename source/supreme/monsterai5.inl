@@ -6808,7 +6808,9 @@ void AI_Larry(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			//PlayerSetVar(VAR_QUESTDONE+QUEST_WOLF,1);
 			me->aiType=MONS_HUMANLARRY;
 			me->type=MONS_HUMANLARRY;
-			FireBullet(me->x,me->y,0,BLT_BOOM,me->friendly);
+			x=me->x>>FIXSHIFT;
+			y=me->y>>FIXSHIFT;
+			BlowUpGuy(x+me->rectx,y+me->recty,x+me->rectx2,y+me->recty2,me->z,1);
 			// if(g)
 			// 	g->tag=16;
 		// 	}
@@ -6994,6 +6996,9 @@ void AI_HumanLarry(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		if(me->seq==ANIM_DIE)
 		{
 			AddGuy(me->x,me->y,me->z,MONS_VILLAGER3,1);
+			x=me->x>>FIXSHIFT;
+			y=me->y>>FIXSHIFT;
+			BlowUpGuy(x+me->rectx,y+me->recty,x+me->rectx2,y+me->recty2,me->z,1);
 			me->type=MONS_NONE;
 			// BadgeCheck(BE_KILL,me->aiType,map);
 			// PlayerSetVar(VAR_QUESTDONE+QUEST_WOLF,1);
@@ -7145,9 +7150,11 @@ void AI_Harry(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		}
 		if(me->seq==ANIM_DIE)
 		{
-			x=me->x-20*FIXAMT+Random(40*FIXAMT);
-			y=me->y-20*FIXAMT+Random(40*FIXAMT);
-			FireBullet(x,y,0,BLT_BOOM,me->friendly);
+			//x=me->x-20*FIXAMT+Random(40*FIXAMT);
+			//y=me->y-20*FIXAMT+Random(40*FIXAMT);
+			x=me->x>>FIXSHIFT;
+			y=me->y>>FIXSHIFT;
+			BlowUpGuy(x+me->rectx,y+me->recty,x+me->rectx2,y+me->recty2,me->z,1);
 			if(Random(2)==0)
 			{
 				y=me->y-FIXAMT*10+Random(FIXAMT*11);
@@ -7191,6 +7198,8 @@ void AI_Boneheadomatic(Guy *me,Map *map,world_t *world,Guy *goodguy)
 {
 	Guy *g;
 
+	int x,y;
+
 	if(me->ouch==4)
 		MakeSound(SND_LIGHTSMACK,me->x,me->y,SND_CUTOFF,1200);
 
@@ -7218,7 +7227,9 @@ void AI_Boneheadomatic(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		if(me->seq==ANIM_DIE && me->frm==1 && me->reload==0)
 		{
 			me->reload=4;
-			FireBullet(me->x,me->y,0,BLT_BOOM,me->friendly);
+			x=me->x>>FIXSHIFT;
+			y=me->y>>FIXSHIFT;
+			BlowUpGuy(x+me->rectx,y+me->recty,x+me->rectx2,y+me->recty2,me->z,1);
 		}
 		return;
 	}
@@ -7473,8 +7484,9 @@ void AI_Frankenjulie(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		if(me->seq==ANIM_DIE)
 		{
 			ShakeScreen(120);
-			FireBullet(me->x-60*FIXAMT+Random(120*FIXAMT),
-						   me->y-60*FIXAMT+Random(120*FIXAMT),0,BLT_MEGABOOM,me->friendly);
+			x=me->x>>FIXSHIFT;
+			y=me->y>>FIXSHIFT;
+			BlowUpGuy(x+me->rectx,y+me->recty,x+me->rectx2,y+me->recty2,me->z,1);
 		}
 		if(me->seq==ANIM_ATTACK)
 		{
@@ -7694,8 +7706,9 @@ void AI_MiniFrankenjulie(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	{
 		if(me->seq==ANIM_DIE)
 		{
-			FireBullet(me->x-60*FIXAMT+Random(120*FIXAMT),
-						   me->y-60*FIXAMT+Random(120*FIXAMT),0,BLT_BOOM,me->friendly);
+			x=me->x>>FIXSHIFT;
+			y=me->y>>FIXSHIFT;
+			BlowUpGuy(x+me->rectx,y+me->recty,x+me->rectx2,y+me->recty2,me->z,1);
 		}
 		if(me->seq==ANIM_ATTACK)
 		{
@@ -8104,10 +8117,10 @@ void AI_Evilizer(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		me->type=MONS_EVILIZER2;
 		for(i=0;i<10;i++)
 		{
-			x=me->x>>FIXSHIFT;
-			y=me->y>>FIXSHIFT;
 			//y=me->y+140*FIXAMT-Random(281*FIXAMT);
 			//x=me->x-140*FIXAMT+Random(281*FIXAMT);
+			x=me->x>>FIXSHIFT;
+			y=me->y>>FIXSHIFT;
 			BlowUpGuy(x+me->rectx,y+me->recty,x+me->rectx2,y+me->recty2,me->z,1);
 		}
 		
@@ -8175,9 +8188,11 @@ void AI_Evilizer(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	{
 		if(me->seq==ANIM_DIE)
 		{
-			y=me->y+140*FIXAMT-Random(281*FIXAMT);
-			x=me->x-140*FIXAMT+Random(281*FIXAMT);
-			FireBullet(x,y,0,BLT_BOOM,me->friendly);
+			//y=me->y+140*FIXAMT-Random(281*FIXAMT);
+			//x=me->x-140*FIXAMT+Random(281*FIXAMT);
+			x=me->x>>FIXSHIFT;
+			y=me->y>>FIXSHIFT;
+			BlowUpGuy(x+me->rectx,y+me->recty,x+me->rectx2,y+me->recty2,me->z,1);
 		}
 	}
 
@@ -8278,9 +8293,11 @@ void AI_EvilPump(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		{
 			if(me->frm==0)
 				me->reload=0;
-			x=me->x-20*FIXAMT+Random(40*FIXAMT);
-			y=me->y-20*FIXAMT+Random(40*FIXAMT);
-			FireBullet(x,y,0,BLT_BOOM,me->friendly);
+			//x=me->x-20*FIXAMT+Random(40*FIXAMT);
+			//y=me->y-20*FIXAMT+Random(40*FIXAMT);
+			x=me->x>>FIXSHIFT;
+			y=me->y>>FIXSHIFT;
+			BlowUpGuy(x+me->rectx,y+me->recty,x+me->rectx2,y+me->recty2,me->z,1);
 			if(me->frm==4 && me->reload==0)
 			{
 				me->reload=10;
@@ -8363,22 +8380,11 @@ void AI_WindElder(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		}
 		if(me->seq==ANIM_DIE)
 		{
-			x=me->x-40*FIXAMT+Random(80*FIXAMT);
-			y=me->y-30*FIXAMT+Random(60*FIXAMT);
-			switch(Random(3))
-			{
-				case 0:
-					FireBullet(x,y,Random(255),BLT_FLAME,me->friendly);
-					break;
-				case 1:
-					FireBullet(x,y,0,BLT_BOOM,me->friendly);
-					break;
-				case 2:
-					FireBullet(x,y,0,BLT_MEGABOOM,me->friendly);
-					break;
-				default:
-					break;
-			}
+			//x=me->x-40*FIXAMT+Random(80*FIXAMT);
+			//y=me->y-30*FIXAMT+Random(60*FIXAMT);
+			x=me->x>>FIXSHIFT;
+			y=me->y>>FIXSHIFT;
+			BlowUpGuy(x+me->rectx,y+me->recty,x+me->rectx2,y+me->recty2,me->z,1);
 			MakeSound(SND_ELDERDIE,me->x,me->y-200*me->frm,SND_CUTOFF,2000);
 		}
 		return;	// can't do nothin' right now
@@ -8546,22 +8552,11 @@ void AI_WaterElder(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		}
 		if(me->seq==ANIM_DIE)
 		{
-			x=me->x-40*FIXAMT+Random(80*FIXAMT);
-			y=me->y-30*FIXAMT+Random(60*FIXAMT);
-			switch(Random(3))
-			{
-				case 0:
-					FireBullet(x,y,Random(255),BLT_FLAME,me->friendly);
-					break;
-				case 1:
-					FireBullet(x,y,0,BLT_BOOM,me->friendly);
-					break;
-				case 2:
-					FireBullet(x,y,0,BLT_MEGABOOM,me->friendly);
-					break;
-				default:
-					break;
-			}
+			//x=me->x-40*FIXAMT+Random(80*FIXAMT);
+			//y=me->y-30*FIXAMT+Random(60*FIXAMT);
+			x=me->x>>FIXSHIFT;
+			y=me->y>>FIXSHIFT;
+			BlowUpGuy(x+me->rectx,y+me->recty,x+me->rectx2,y+me->recty2,me->z,1);
 		}
 		return;	// can't do nothin' right now
 	}
@@ -8709,22 +8704,11 @@ void AI_FireElder(Guy *me,Map *map,world_t *world,Guy *goodguy)
 
 		if(me->seq==ANIM_DIE)
 		{
-			x=me->x-40*FIXAMT+Random(80*FIXAMT);
-			y=me->y-30*FIXAMT+Random(60*FIXAMT);
-			switch(Random(3))
-			{
-				case 0:
-					FireBullet(x,y,Random(255),BLT_FLAME,me->friendly);
-					break;
-				case 1:
-					FireBullet(x,y,0,BLT_BOOM,me->friendly);
-					break;
-				case 2:
-					FireBullet(x,y,0,BLT_MEGABOOM,me->friendly);
-					break;
-				default:
-					break;
-			}
+			//x=me->x-40*FIXAMT+Random(80*FIXAMT);
+			//y=me->y-30*FIXAMT+Random(60*FIXAMT);
+			x=me->x>>FIXSHIFT;
+			y=me->y>>FIXSHIFT;
+			BlowUpGuy(x+me->rectx,y+me->recty,x+me->rectx2,y+me->recty2,me->z,1);
 			MakeSound(SND_ELDERDIE,me->x,me->y-200*me->frm,SND_CUTOFF,2000);
 		}
 		return;	// can't do nothin' right now
@@ -8809,22 +8793,11 @@ void AI_SummonElder(Guy *me,Map *map,world_t *world,Guy *goodguy)
 
 		if(me->seq==ANIM_DIE)
 		{
-			x=me->x-40*FIXAMT+Random(80*FIXAMT);
-			y=me->y-30*FIXAMT+Random(60*FIXAMT);
-			switch(Random(3))
-			{
-				case 0:
-					FireBullet(x,y,Random(255),BLT_FLAME,me->friendly);
-					break;
-				case 1:
-					FireBullet(x,y,0,BLT_BOOM,me->friendly);
-					break;
-				case 2:
-					FireBullet(x,y,0,BLT_MEGABOOM,me->friendly);
-					break;
-				default:
-					break;
-			}
+			//x=me->x-40*FIXAMT+Random(80*FIXAMT);
+			//y=me->y-30*FIXAMT+Random(60*FIXAMT);
+			x=me->x>>FIXSHIFT;
+			y=me->y>>FIXSHIFT;
+			BlowUpGuy(x+me->rectx,y+me->recty,x+me->rectx2,y+me->recty2,me->z,1);
 			MakeSound(SND_ELDERDIE,me->x,me->y-200*me->frm,SND_CUTOFF,2000);
 		}
 		return;	// can't do nothin' right now
