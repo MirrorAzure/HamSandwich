@@ -1632,7 +1632,7 @@ void PlayerControlMe(Guy *me,mapTile_t *mapTile,world_t *world)
 			if(player.playAs==PLAY_LUNACHIK)
 				MakeSound(SND_LUNABORED,me->x,me->y,SND_CUTOFF|SND_ONE,2000);
 			else if(player.playAs==PLAY_MYSTIC)
-				MakeSound(SND_BOUAPHABORED,me->x,me->y,SND_CUTOFF|SND_ONE,2000);
+				MakeSound(SND_MYSTICBORED,me->x,me->y,SND_CUTOFF|SND_ONE,2000);
 			else
 				MakeSound(SND_BOUAPHABORED,me->x,me->y,SND_CUTOFF|SND_ONE,2000);
 			me->seq=ANIM_A2;

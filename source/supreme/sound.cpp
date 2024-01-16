@@ -487,6 +487,14 @@ soundDesc_t soundInfo[MAX_SOUNDS]={
 
 	{SND_LL_VAMPOUCH,"LL Vampire Ouch",ST_MONSTER},
 	{SND_LL_VAMPDIE,"LL Vampire Die",ST_MONSTER},
+
+	{SND_COWOUCH,"Cow Ouch",ST_MONSTER},
+	{SND_COWDIE,"Cow Die",ST_MONSTER},
+	{SND_COWROAR,"Cow Roar",ST_MONSTER},
+	{SND_COWBUMP,"Cow Bump",ST_MONSTER},
+
+	{SND_FBALLLAUNCH,"Fireball Launch",ST_EFFECT},
+	{SND_MYSTICBORED,"Kid Mystic Bored",ST_PLAYER},
 };
 
 static int numSounds,numCustom;

@@ -3815,7 +3815,7 @@ void HammerLaunch(int x,int y,byte facing,byte count,byte flags)
 			type=BLT_FIREBALL;
 		else if(type==BLT_HAMMER2)
 			type=BLT_FIREBALL2;
-		//MakeSound(SND_LUNASHOOT,x,y,SND_CUTOFF,1200);
+		MakeSound(SND_FBALLLAUNCH,x,y,SND_CUTOFF,1200);
 	}
 	else
 		MakeSound(SND_HAMMERTOSS,x,y,SND_CUTOFF,1200);

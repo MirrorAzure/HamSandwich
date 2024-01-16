@@ -546,8 +546,15 @@
 #define SND_LL_VAMPOUCH 	532
 #define SND_LL_VAMPDIE 		533
 
+#define SND_COWOUCH			534
+#define SND_COWDIE			535
+#define SND_COWROAR			536
+#define SND_COWBUMP			537
 
-#define NUM_ORIG_SOUNDS		469
+#define SND_FBALLLAUNCH  	538
+#define SND_MYSTICBORED		539
+
+#define NUM_ORIG_SOUNDS		475
 
 #define MAX_SOUNDS		1024		// absolute maximum
 #define MAX_CUSTOM_SOUNDS 64
