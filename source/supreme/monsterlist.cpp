@@ -4645,4 +4645,22 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{3,255},	// die
 				{3,255}		// A1   (wizard)
 			}},
+		{"Smashball",255,255,0,AI_Ball,
+		 14,1,40,500,"mystic/graphics/ball.jsp",0,MF_INVINCIBLE|MF_ENEMYWALK|MF_NOMOVE|MF_ONEFACE|MF_WATERWALK|MF_FREEWALK,
+		 MT_BITS|MT_MYSTIC,
+			{
+				{0,255},	// idle
+				{0,255},	// move
+				{0,255},	// attack
+				{0,255},	// die
+			}},
+		{"Happy Stick Dancer",255,255,0,AI_Dancer,
+		 11,10,400,5000,"mystic/graphics/stkskl.jsp",0,MF_ONEFACE|MF_FREEWALK|MF_ENEMYWALK|MF_NOMOVE,
+		 MT_WACKY|MT_MYSTIC,
+			{
+				{0,255},	// idle
+				{0,1,0,2,0,1,0,2,255},	// move=walk
+				{3,3,3,3,255},	// attack=shoot
+				{4,5,6,7,8,9,255},	// die
+			}},
 	};

@@ -9179,3 +9179,96 @@ void AI_LaserTurret(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	me->facing=((me->type-MONS_TURRETR)*2);
 	FireBullet(me->x,me->y,me->facing,BLT_LASER2,me->friendly);
 }
+
+void AI_Ball(Guy *me,Map *map,world_t *world,Guy *goodguy)
+{
+	if(goodguy && RangeToTarget(me,goodguy)<40*FIXAMT && me->reload==0)// me->dy>=0)
+	{
+		MakeSound(SND_BALLBOUNCE,me->x,me->y,SND_CUTOFF,200);
+		/*if(me->dy==0)
+			me->dy=-FIXAMT*4;
+		else
+			me->dy=-me->dy;*/
+		me->dy=(goodguy->dy/4)+Sine(goodguy->facing*32)*2;
+		me->dx=(goodguy->dx/4)+Cosine(goodguy->facing*32)*2;
+		me->reload=25;
+	}
+
+	if(me->mind1)
+	{
+		MakeSound(SND_BALLBOUNCE,me->x,me->y,SND_CUTOFF,200);
+		if(me->mind1&1)	// horiz hit
+		{
+			me->dx=-me->dx;
+			me->dy+=-FIXAMT/16+MGL_random(FIXAMT/8+1);
+		}
+		if(me->mind1&2)	// vert hit
+		{
+			me->dy=-me->dy;
+			me->dx+=-FIXAMT/16+MGL_random(FIXAMT/8+1);
+		}
+		me->mind1=0;
+	}
+
+	if(world->terrain[map->map[me->mapx+me->mapy*map->width].floor].flags&(TF_WATER|TF_LAVA))
+	{
+		FireBullet(me->x,me->y,0,BLT_BOOM,me->friendly);
+		me->type=MONS_NONE;
+		//goodguy->GetShot(0,0,99999,map,world);
+	}
+	if(me->reload>0)
+	{
+		me->reload--;
+	}
+	
+	Clamp(&me->dx,FIXAMT*5);
+	Clamp(&me->dy,FIXAMT*5);
+}
+
+void AI_Dancer(Guy *me,Map *map,world_t *world,Guy *goodguy)
+{
+	if(me->reload)
+		me->reload--;
+
+	if(me->ouch==4)
+	{
+		if(me->hp>0)
+			MakeSound(SND_SKELOUCH,me->x,me->y,SND_CUTOFF,1200);
+		else
+			MakeSound(SND_SKELDIE,me->x,me->y,SND_CUTOFF,1200);
+	}
+
+	if(me->action==ACTION_BUSY)
+	{
+		return;	// can't do nothin' right now
+	}
+	switch(me->mind)
+	{
+		case 0:
+		case 12:
+			DoMove(me,ANIM_MOVE,128,1,-FIXAMT,0);
+			break;
+		case 1:
+		case 2:
+		case 4:
+		case 8:
+		case 10:
+			DoMove(me,ANIM_ATTACK,128,1,0,0);
+			break;
+		case 3:
+		case 11:
+			DoMove(me,ANIM_MOVE,128,1,FIXAMT,0);
+			break;
+		case 5:
+		case 9:
+			DoMove(me,ANIM_MOVE,128,1,0,-FIXAMT);
+			break;
+		case 6:
+		case 7:
+			DoMove(me,ANIM_MOVE,128,1,0,FIXAMT);
+			break;
+	}
+	me->mind++;
+	if(me->mind==13)
+		me->mind=0;
+}

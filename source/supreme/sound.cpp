@@ -495,6 +495,7 @@ soundDesc_t soundInfo[MAX_SOUNDS]={
 
 	{SND_FBALLLAUNCH,"Fireball Launch",ST_EFFECT},
 	{SND_MYSTICBORED,"Kid Mystic Bored",ST_PLAYER},
+	{SND_BALLBOUNCE,"Ball Bounce",ST_EFFECT},
 };
 
 static int numSounds,numCustom;

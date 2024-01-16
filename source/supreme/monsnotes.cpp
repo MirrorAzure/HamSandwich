@@ -2368,6 +2368,10 @@ char monsNotes[NUM_MONSTERS][512]={
 	"(SWE)",
 	//Friendly (Wizard)
 	"(SWE)",
+	//Smashball
+	"(SWE)",
+	//Happy Stick Dancer
+	"(SWE)",
 };
 
 char *MonsterNotes(dword type)

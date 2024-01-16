@@ -553,8 +553,9 @@
 
 #define SND_FBALLLAUNCH  	538
 #define SND_MYSTICBORED		539
+#define SND_BALLBOUNCE		540
 
-#define NUM_ORIG_SOUNDS		475
+#define NUM_ORIG_SOUNDS		476
 
 #define MAX_SOUNDS		1024		// absolute maximum
 #define MAX_CUSTOM_SOUNDS 64

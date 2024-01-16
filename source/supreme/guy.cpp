@@ -586,10 +586,10 @@ void Guy::Update(Map *map,world_t *world)
 			aiType==MONS_FRIENDLY2 || aiType==MONS_CRAZYPANTS || aiType==MONS_AUTOZOID || aiType==MONS_YUGO ||
 			aiType==MONS_PATTY || aiType==MONS_PATROLLR || aiType==MONS_PATROLUD || aiType==MONS_DPATROLLR || aiType==MONS_DPATROLUD ||
 			aiType==MONS_MINIWACKO || aiType==MONS_JACKFROST || aiType==MONS_INCAGOLD || aiType==MONS_INCAGOLD2 || aiType==MONS_SLUG ||
-			type==MONS_GOAT1 || type==MONS_GOAT1B || type==MONS_INCABOSS || type==MONS_OCTOBOSS || aiType==MONS_MADCOW ||
+			aiType==MONS_GOAT1 || aiType==MONS_GOAT1B || aiType==MONS_INCABOSS || aiType==MONS_OCTOBOSS || aiType==MONS_MADCOW ||
 			aiType==MONS_HAUNTMORE || aiType==MONS_SPOOKLEY || aiType==MONS_SPEEDY || aiType==MONS_BIGHEAD2 ||
-			aiType==MONS_RADISH || aiType==MONS_SPARKY || type==MONS_LARRY || type==MONS_HUMANLARRY || type==MONS_BUBBLE ||
-			aiType==MONS_BIGGHOST || aiType==MONS_GHASTLY)
+			aiType==MONS_RADISH || aiType==MONS_SPARKY || aiType==MONS_LARRY || aiType==MONS_HUMANLARRY || aiType==MONS_BUBBLE ||
+			aiType==MONS_BIGGHOST || aiType==MONS_GHASTLY || aiType==MONS_SMASHBALL)
 			mind1=1;	// tell it that it hit a wall
 		b=1;
 	}
@@ -609,10 +609,10 @@ void Guy::Update(Map *map,world_t *world)
 			aiType==MONS_FRIENDLY2 || aiType==MONS_CRAZYPANTS || aiType==MONS_AUTOZOID || aiType==MONS_YUGO ||
 			aiType==MONS_PATTY || aiType==MONS_PATROLLR || aiType==MONS_PATROLUD || aiType==MONS_DPATROLLR || aiType==MONS_DPATROLUD ||
 			aiType==MONS_MINIWACKO || aiType==MONS_JACKFROST || aiType==MONS_INCAGOLD || aiType==MONS_INCAGOLD2 || aiType==MONS_SLUG ||
-			type==MONS_GOAT1 || type==MONS_GOAT1B || type==MONS_INCABOSS || type==MONS_OCTOBOSS || aiType==MONS_MADCOW ||
+			aiType==MONS_GOAT1 || aiType==MONS_GOAT1B || aiType==MONS_INCABOSS || aiType==MONS_OCTOBOSS || aiType==MONS_MADCOW ||
 			aiType==MONS_HAUNTMORE || aiType==MONS_SPOOKLEY || aiType==MONS_SPEEDY || aiType==MONS_BIGHEAD2 ||
-			aiType==MONS_RADISH || aiType==MONS_SPARKY || type==MONS_LARRY || type==MONS_HUMANLARRY || type==MONS_BUBBLE ||
-			aiType==MONS_BIGGHOST || aiType==MONS_GHASTLY)
+			aiType==MONS_RADISH || aiType==MONS_SPARKY || aiType==MONS_LARRY || aiType==MONS_HUMANLARRY || aiType==MONS_BUBBLE ||
+			aiType==MONS_BIGGHOST || aiType==MONS_GHASTLY || aiType==MONS_SMASHBALL)
 			mind1+=2;	// tell it that it hit a wall
 		b=1;
 	}

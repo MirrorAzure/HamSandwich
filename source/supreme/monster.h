@@ -404,7 +404,10 @@
 #define MONS_FRIENDLYNPC3	364
 #define MONS_FRIENDLYNPC4	365
 
-#define NUM_MONSTERS    366   // Can grow as needed
+#define MONS_SMASHBALL	366
+#define MONS_STICKDANCER 367
+
+#define NUM_MONSTERS    368   // Can grow as needed
 #define NUM_PROFILE_MONSTERS 211    // Do not change without redoing the profile format
 
 // fake monster codes
@@ -803,6 +806,8 @@ void AI_Polterguy(Guy *me,Map *map,world_t *world,Guy *goodguy);
 void AI_Junk(Guy *me,Map *map,world_t *world,Guy *goodguy);
 void AI_Ghastly(Guy *me,Map *map,world_t *world,Guy *goodguy);
 void AI_LaserTurret(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Ball(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Dancer(Guy *me,Map *map,world_t *world,Guy *goodguy);
 
 
 #endif
