@@ -9272,3 +9272,40 @@ void AI_Dancer(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	if(me->mind==13)
 		me->mind=0;
 }
+
+void AI_Lightball(Guy *me,Map *map,world_t *world,Guy *goodguy)
+{
+	if(me->ouch==4)
+		MakeSound(SND_LIGHTSMACK,me->x,me->y,SND_CUTOFF,1200);
+
+	if(me->seq==ANIM_DIE && me->frm==0 && me->reload==0)
+	{	
+		FireBullet(me->x,me->y,0,BLT_BOOM,me->friendly);
+		me->reload=1;
+	}
+	me->mind++;
+	me->mind1++;
+
+	if(RangeToTarget(me,goodguy)<400*FIXAMT)
+	{
+		switch(me->type)
+		{
+			case MONS_LIGHTBALL25:
+				if((me->mind&32)==0)
+					Shock(map,world,me->type,me->mapx,me->mapy,me->mind1);
+				break;
+			case MONS_LIGHTBALL52:
+				if(((me->mind+16)&64)==0)
+					Shock(map,world,me->type,me->mapx,me->mapy,me->mind1);
+				break;
+			case MONS_LIGHTBALL:
+				Shock(map,world,me->type,me->mapx,me->mapy,me->mind1);
+				break;
+			case MONS_LIGHTBALLON:
+				Shock(map,world,me->type,me->mapx,me->mapy,me->mind1);
+				break;
+			case MONS_LIGHTBALLOFF:
+				break;
+		}
+	}
+}

@@ -4273,3 +4273,109 @@ void Sneeze(void)
 		}
 	}
 }
+
+
+void Shock(Map *map,world_t *world,int type,int x,int y,byte liteup)
+{
+	int i,j;
+	int x1,x2;
+	int goodx=0,goody=0;
+
+	//bulletHittingType=255;
+
+	for(i=0;i<maxGuys;i++)
+	{
+		if(guys[i]->type==type && (guys[i]->mapx==x || guys[i]->mapy==y))
+		{
+			j=abs(guys[i]->mapx-x);
+			if(j>0 && j<10)
+			{
+				// horizontal zap
+				if(guys[i]->mapx<x)
+				{
+					x1=guys[i]->mapx;
+					x2=x;
+				}
+				else
+				{
+					x1=x;
+					x2=guys[i]->mapx;
+				}
+				for(j=x1;j<x2;j++)
+				{
+					map->TempTorch(j,y,(byte)Random(32));
+					if(goodguy->mapx==j && goodguy->mapy==y)
+					{
+						if(goodguy->y/FIXAMT-(goodguy->mapy*TILE_HEIGHT)<TILE_HEIGHT/2)
+						{
+							goodguy->GetShot(0,0,2,map,world);
+							goodx=0;
+							goody=-FIXAMT*8;
+						}
+						else
+						{
+							goodguy->GetShot(0,0,2,map,world);
+							goodx=0;
+							goody=FIXAMT*8;
+						}
+					}
+				}
+				if((liteup&3)==3)
+					LightningBolt((x1*TILE_WIDTH+TILE_WIDTH/2)*FIXAMT,
+								  (y*TILE_HEIGHT+TILE_HEIGHT/2)*FIXAMT-FIXAMT*20,
+								  (x2*TILE_WIDTH+TILE_WIDTH/2)*FIXAMT,
+								  (y*TILE_HEIGHT+TILE_HEIGHT/2)*FIXAMT-FIXAMT*20);
+			}
+			else
+			{
+				j=abs(guys[i]->mapy-y);
+				if(j>0 && j<10)
+				{
+					// vertical zap
+					if(guys[i]->mapy<y)
+					{
+						x1=guys[i]->mapy;
+						x2=y;
+					}
+					else
+					{
+						x1=y;
+						x2=guys[i]->mapy;
+					}
+					for(j=x1;j<x2;j++)
+					{
+						map->TempTorch(x,j,(byte)Random(32));
+						if(goodguy->mapx==x && goodguy->mapy==j)
+						{
+							if(goodguy->x/FIXAMT-(goodguy->mapx*TILE_WIDTH)<TILE_WIDTH/2)
+							{
+								goodguy->GetShot(0,0,2,map,world);
+								goodx=-FIXAMT*8;
+								goody=0;
+							}
+							else
+							{
+								goodguy->GetShot(0,0,2,map,world);
+								goodx=FIXAMT*8;
+								goody=0;
+							}
+						}
+					}
+					if((liteup&3)==3)
+						LightningBolt((x*TILE_WIDTH+TILE_WIDTH/2)*FIXAMT,
+									  (x1*TILE_HEIGHT+TILE_HEIGHT/2)*FIXAMT-FIXAMT*20,
+									  (x*TILE_WIDTH+TILE_WIDTH/2)*FIXAMT,
+									  (x2*TILE_HEIGHT+TILE_HEIGHT/2)*FIXAMT-FIXAMT*20);
+				}
+			}
+		}
+	}
+	goodguy->x+=goodx;
+	if(goodx!=0)
+		if(!goodguy->CanWalk(goodguy->x,goodguy->y,map,world))
+			goodguy->x-=goodx;
+	goodguy->y+=goody;
+	if(goody!=0)
+		if(!goodguy->CanWalk(goodguy->x,goodguy->y,map,world))
+			goodguy->y-=goody;
+}

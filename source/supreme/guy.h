@@ -138,6 +138,8 @@ bool AddMonsterOffscreen(Map *map,world_t *world,int type,byte friendly);
 int CountChildren(Guy *g);
 void LaunchJunk(Map *map,Guy *me);
 void Sneeze(void);
+void Shock(Map *map,world_t *world,int type,int x,int y,byte liteup);
+
 
 byte PeepAtGuy(int x,int y,Map *map,byte face);
 void SuckIn(int x,int y,byte friendly);

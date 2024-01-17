@@ -407,7 +407,13 @@
 #define MONS_SMASHBALL	366
 #define MONS_STICKDANCER 367
 
-#define NUM_MONSTERS    368   // Can grow as needed
+#define MONS_LIGHTBALL25	368
+#define MONS_LIGHTBALL52	369
+#define MONS_LIGHTBALL		370
+#define MONS_LIGHTBALLON	371
+#define MONS_LIGHTBALLOFF	372
+
+#define NUM_MONSTERS    373   // Can grow as needed
 #define NUM_PROFILE_MONSTERS 211    // Do not change without redoing the profile format
 
 // fake monster codes
@@ -808,6 +814,7 @@ void AI_Ghastly(Guy *me,Map *map,world_t *world,Guy *goodguy);
 void AI_LaserTurret(Guy *me,Map *map,world_t *world,Guy *goodguy);
 void AI_Ball(Guy *me,Map *map,world_t *world,Guy *goodguy);
 void AI_Dancer(Guy *me,Map *map,world_t *world,Guy *goodguy);
+void AI_Lightball(Guy *me,Map *map,world_t *world,Guy *goodguy);
 
 
 #endif

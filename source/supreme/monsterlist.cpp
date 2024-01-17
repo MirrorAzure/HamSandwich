@@ -4663,4 +4663,49 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{3,3,3,3,255},	// attack=shoot
 				{4,5,6,7,8,9,255},	// die
 			}},
+		{"Lightball2.5",255,255,0,AI_Lightball,
+		 10,8,3000,0,"sleepless/graphics/lghtball.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_INVINCIBLE,
+		 MT_TRAP|MT_LOONY,
+			{
+				{0,1,2,3,4,5,6,7,6,5,4,3,2,1,255},	// idle
+				{0,255},	// move
+				{0,255},	// attack (shove)
+				{0,255},	// die
+			}},
+		{"Lightball5.2",255,255,-3,AI_Lightball,
+		 10,8,3000,0,"sleepless/graphics/lghtball.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_INVINCIBLE,
+		 MT_TRAP|MT_LOONY,
+			{
+				{0,1,2,3,4,5,6,7,6,5,4,3,2,1,255},	// idle
+				{0,255},	// move
+				{0,255},	// attack (shove)
+				{0,255},	// die
+			}},
+		{"Lightball",5,1,2,AI_Lightball,	// can be destroyed
+		 10,8,50,0,"sleepless/graphics/lghtball.jsp",0,MF_NOMOVE|MF_ONEFACE,
+		 MT_TRAP|MT_LOONY,
+			{
+				{0,1,2,3,4,5,6,7,6,5,4,3,2,1,255},	// idle
+				{0,255},	// move
+				{0,255},	// attack (shove)
+				{0,255},	// die
+			}},
+		{"LightballOn",255,255,6,AI_Lightball,
+		 10,8,3000,0,"sleepless/graphics/lghtball.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_INVINCIBLE,
+		 MT_TRAP|MT_LOONY,
+			{
+				{0,1,2,3,2,1,255},	// idle
+				{0,255},	// move
+				{0,255},	// attack (shove)
+				{0,255},	// die
+			}},
+		{"LightballOff",255,255,-3,AI_Lightball,
+		 10,8,3000,0,"sleepless/graphics/lghtball.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_INVINCIBLE,
+		 MT_TRAP|MT_LOONY,
+			{
+				{7,255},	// idle
+				{0,255},	// move
+				{0,255},	// attack (shove)
+				{0,255},	// die
+			}},
 	};
