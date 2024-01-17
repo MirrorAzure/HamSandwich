@@ -285,7 +285,7 @@ void MonsterEdit_Render(int mouseX,int mouseY,MGLDraw *mgl)
 
 	CenterPrint(317,270,MonsterName(curMons),0,1);
 	mgl->FillBox(170,286,460,286,31);
-	if(profile.progress.scanned[curMons])
+	if(profile.progress.scanned[curMons] || curMons > NUM_PROFILE_MONSTERS)
 	{
 		PrintRect(164,290,470,479,13,MonsterNotes(curMons),1);
 
