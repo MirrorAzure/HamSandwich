@@ -248,7 +248,7 @@ void ClearProgress(void)
 	profile.progress.cheats=0;
 
 	profile.progress.wpnLock=0;
-	profile.progress.oldHud=0;
+	profile.progress.hudChoice = HudChoice::Supreme;
 	for(i=0;i<NUM_PROFILE_MONSTERS;i++)
 	{
 		profile.progress.kills[i]=0;
@@ -564,4 +564,18 @@ void EraseWorldProgress(const char *fname)
 	profile.progress.num_worlds--;
 	profile.progress.world=(worldData_t *)realloc(profile.progress.world,sizeof(worldData_t)*profile.progress.num_worlds);
 	SaveProfile();
+}
+
+static const char diffName[][16] = {
+	"Normal",
+	"Hard",
+	"Lunatic",
+};
+static_assert(SDL_arraysize(diffName) == MAX_DIFFICULTY, "Must give new difficulties a name");
+
+const char* GetDifficultyName(int difficulty)
+{
+	if (difficulty >= 0 && difficulty < MAX_DIFFICULTY)
+		return diffName[difficulty];
+	return "???";
 }

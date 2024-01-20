@@ -7,59 +7,58 @@
 #include "shop.h"
 #include "config.h"
 
-#define SPR_FLAME   0
-#define SPR_LASER   5
-#define SPR_HAMMER  21
-#define SPR_MISSILE 149
-#define SPR_SMOKE	165
-#define SPR_ACID	172
-#define SPR_BOMB	228
-#define SPR_ENERGY	236
-#define SPR_BOOM	238
-#define SPR_MEGABEAM 246
-#define SPR_SPORE	254
-#define SPR_SHROOM  258
-#define SPR_GRENADE 266
-#define SPR_YELBOOM 268
-#define SPR_SHOCKWAVE 273
-#define SPR_LILBOOM  277
-#define SPR_SNOWBALL 282
-#define SPR_BIGSNOW  283
-#define SPR_ICESPIKE 286
-#define SPR_ROCK	 290
-#define SPR_SPINE	 294
-#define SPR_BIGAXE	 310
-#define SPR_SPEAR	 318
-#define SPR_SLASH	 326
-#define SPR_MINE	 350
-#define SPR_STINKY	 355
-#define SPR_GREEN	 358
-#define SPR_ORBITER  359
-#define SPR_PAPER	 367
-#define SPR_BUBBLE	 375
-#define SPR_SCANSHOT 384
-#define SPR_SCANLOCK 387
-#define SPR_ICEBEAM  388
-#define SPR_SLIME 	 393
-#define SPR_WAVE 	 405
-#define SPR_POISONGAS 413
-#define SPR_FLAMEWALL 419
-#define SPR_EATHSPIKE 423
-#define SPR_MEGABOOM  431
-#define SPR_CLAW 	  441
-#define SPR_SWAMPGAS  457
-#define SPR_EVILFACE  461
-#define SPR_FIREBALL  467
-#define SPR_SKULL	  507
-#define SPR_COMET	  523
-#define SPR_COMETBOOM 531
+constexpr int SPR_FLAME     = 0;
+constexpr int SPR_LASER     = 5;
+constexpr int SPR_HAMMER    = 21;
+constexpr int SPR_MISSILE   = 149;
+constexpr int SPR_SMOKE     = 165;
+constexpr int SPR_ACID      = 172;
+constexpr int SPR_BOMB      = 228;
+constexpr int SPR_ENERGY    = 236;
+constexpr int SPR_BOOM      = 238;
+constexpr int SPR_MEGABEAM  = 246;
+constexpr int SPR_SPORE     = 254;
+constexpr int SPR_SHROOM    = 258;
+constexpr int SPR_GRENADE   = 266;
+constexpr int SPR_YELBOOM   = 268;
+constexpr int SPR_SHOCKWAVE = 273;
+constexpr int SPR_LILBOOM   = 277;
+constexpr int SPR_SNOWBALL  = 282;
+constexpr int SPR_BIGSNOW   = 283;
+constexpr int SPR_ICESPIKE  = 286;
+constexpr int SPR_ROCK      = 290;
+constexpr int SPR_SPINE     = 294;
+constexpr int SPR_BIGAXE    = 310;
+constexpr int SPR_SPEAR     = 318;
+constexpr int SPR_SLASH     = 326;
+constexpr int SPR_MINE      = 350;
+constexpr int SPR_STINKY    = 355;
+constexpr int SPR_GREEN     = 358;
+constexpr int SPR_ORBITER   = 359;
+constexpr int SPR_PAPER     = 367;
+constexpr int SPR_BUBBLE    = 375;
+constexpr int SPR_SCANSHOT  = 384;
+constexpr int SPR_SCANLOCK  = 387;
+constexpr int SPR_ICEBEAM 	= 388;
+constexpr int SPR_SLIME 	= 393;
+constexpr int SPR_WAVE 		= 405;
+constexpr int SPR_POISONGAS = 413;
+constexpr int SPR_FLAMEWALL = 419;
+constexpr int SPR_EATHSPIKE = 423;
+constexpr int SPR_MEGABOOM  = 431;
+constexpr int SPR_CLAW 	  	= 441;
+constexpr int SPR_SWAMPGAS  = 457;
+constexpr int SPR_EVILFACE  = 461;
+constexpr int SPR_FIREBALL  = 467;
+constexpr int SPR_SKULL	  	= 507;
+constexpr int SPR_COMET	  	= 523;
+constexpr int SPR_COMETBOOM = 531;
 
-
-bullet_t *bullet;
-sprite_set_t *bulletSpr;
-byte reflect=0;
-byte attackType;
-int activeBulDX,activeBulDY;
+static bullet_t *bullet;
+static sprite_set_t *bulletSpr;
+static byte reflect = 0;
+static byte attackType;
+static int activeBulDX, activeBulDY;
 
 void GetBulletDeltas(int *bdx,int *bdy)
 {
@@ -4136,8 +4135,13 @@ void ChangeBullet(byte fx,int x,int y,int type,int newtype)
 
 }
 
+byte GetBulletAttackType(void)
+{
+	return attackType;
+}
+
 // TORPEDO, LASER
-static const byte bulletFacingType[] = {
+static const byte bulletFacingType[NUM_BULLETS] = {
 	0,  	// BLT_NONE    0
 	7,  	// BLT_HAMMER  1
 	7,  	// BLT_HAMMER2 2	// this is a hammer with reflection
@@ -4227,10 +4231,74 @@ static const byte bulletFacingType[] = {
 
 byte BulletFacingType(byte type)
 {
+	SDL_assert(type < NUM_BULLETS);
 	return bulletFacingType[type];
 }
 
-byte GetBulletAttackType(void)
+static const char bulletName[][20] = {
+	"Anything",
+	"Hammer",
+	"Bouncy Hammer",
+	"Missile",
+	"Flame",
+	"AK-8087 Shot",
+	"Acid",
+	"Cherry Bomb",
+	"Explosion",
+	"Red Bullet",
+	"Megabeam Source",
+	"Megabeam Part",
+	"Megabeam End",
+	"Evil Flame",
+	"Spore",
+	"Mushroom",
+	"Grenade",
+	"Grenade Boom",
+	"SDZ Shockwave",
+	"Missile Boom",
+	"Snowball",
+	"Big Snowball",
+	"Ice Spike",
+	"Rock",
+	"Cactus Spine",
+	"Evil Hammer",
+	"Power Shell",
+	"Big Axe",
+	"Lightning",
+	"Spear",
+	"Machete",
+	"Landmine",
+	"Evil Spear",
+	"Orbiter",
+	"Green Bullet",
+	"Ball Lightning",
+	"Zap Wand Shock",
+	"Mind Control",
+	"Reflect Shield",
+	"Swap Gun",
+	"Water Shot",
+	"Orbit Bomber",
+	"Harpoon",
+	"Scanner",
+	"Scanner Shot",
+	"Torpedo",
+	"Dirt Spike",
+	"Paper",
+	"Scanner Lock",
+	"Bubble",
+	"Freeze Ray",
+	"Bubble Pop",
+	"Harmless Boom",
+	"Cheese Hammer",
+	"Evil Freeze",
+	"Lunachick Ray",
+	"Bouncy Lunachick",
+};
+static_assert(SDL_arraysize(bulletName) == NUM_BULLETS, "Must give new bullets a name");
+
+const char* BulletName(int type)
 {
-	return attackType;
+	if (type >= 0 && type < NUM_BULLETS)
+		return bulletName[type];
+	return "???";
 }

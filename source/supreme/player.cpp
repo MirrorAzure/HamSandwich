@@ -158,7 +158,7 @@ void PoisonVictim(Guy *me,byte amt)
 {
 	if(me==goodguy && player.shield)
 		return;	// can't be poisoned when invulnerable
-	if(me==goodguy && profile.difficulty==0)
+	if(me==goodguy && profile.difficulty==DIFFICULTY_NORMAL)
 	{
 		amt/=2;
 		if(amt==0)
@@ -276,7 +276,7 @@ byte PlayerGetWeapon(byte wpn,int x,int y)
 	return 1;
 }
 
-byte PlayerPowerup(char powerup)
+byte PlayerPowerup(int powerup)
 {
 	if(powerup>0)
 	{
@@ -639,7 +639,7 @@ void PlayerThrowHammer(Guy *me)
 
 void PlayerHeal(byte amt)
 {
-	if(profile.difficulty==0)
+	if(profile.difficulty==DIFFICULTY_NORMAL)
 	{
 		if(amt>127)
 			amt=255;
@@ -2018,4 +2018,36 @@ void PutPlayerAtStart(Guy *g)
 		g->y=(pStartY*TILE_HEIGHT+TILE_HEIGHT/2)*FIXAMT;
 		PutCamera(g->x,g->y);
 	}
+}
+
+static const char wpnName[][32] = {
+	"None",
+	"Missiles",
+	"AK-8087",
+	"Bombs",
+	"Flamethrower",
+	"Power Armor",
+	"Big Axe",
+	"Lightning Rod",
+	"Spears",
+	"Machete",
+	"Mines",
+	"Turrets",
+	"Mind Control Ray",
+	"Reflect Shield",
+	"Jetpack",
+	"Swapgun",
+	"Torch",
+	"Scanner",
+	"Mini-Sub",
+	"Freeze Ray",
+	"Stopwatch",
+};
+static_assert(SDL_arraysize(wpnName) == MAX_WEAPONS, "Must give new weapon a name");
+
+const char* GetWeaponName(byte weapon)
+{
+	if (weapon < MAX_WEAPONS)
+		return wpnName[weapon];
+	return "???";
 }

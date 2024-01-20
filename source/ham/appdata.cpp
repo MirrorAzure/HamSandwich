@@ -113,6 +113,14 @@ static Mount init_vfs_spec(const char* what, const char* mountpoint, const char*
 		}
 		return { vanilla::open_inno(fp.get()), mountpoint, { vanilla::VfsSourceKind::BaseGame } };
 	}
+	else if (!strcmp(kind, "inno3")) {
+		owned::SDL_RWops fp = owned::SDL_RWFromFile(param, "rb");
+		if (!fp) {
+			LogError("%s: failed to open '%s' in VFS spec '%s@%s@%s'", what, param, mountpoint, kind, param);
+			return { nullptr };
+		}
+		return { vanilla::open_inno3(std::move(fp)), mountpoint, { vanilla::VfsSourceKind::BaseGame } };
+	}
 #ifdef __ANDROID__
 	else if (!strcmp(kind, "android")) {
 		return { vanilla::open_android(param), mountpoint, { vanilla::VfsSourceKind::BaseGame } };
@@ -188,6 +196,8 @@ void AppdataSync() {
 #include <SDL_system.h>
 
 static VfsStack default_vfs_stack(bool* error) {
+	(void) error;
+
 	VfsStack result;
 	int need_flags = SDL_ANDROID_EXTERNAL_STORAGE_READ | SDL_ANDROID_EXTERNAL_STORAGE_WRITE;
 	result.push_back(vanilla::open_android(), "", vanilla::VfsSourceKind::BaseGame);
@@ -314,7 +324,7 @@ static VfsStack vfs_stack_from_env(bool* error) {
 
 static bool check_assets(VfsStack& vfs) {
 	// Every game has this asset, so use it to sanity check.
-	return vfs.open_sdl("graphics/verdana.jft") != nullptr;
+	return vfs.open_sdl("sound/snd001.wav") != nullptr;
 }
 
 static char bin_dir_buf[1024] = {0};
@@ -481,10 +491,6 @@ vanilla::VfsStack& AppdataVfs() {
 
 FILE* AssetOpen(const char* filename) {
 	return vfs_stack.open_stdio(filename).release();
-}
-
-SDL_RWops* AssetOpen_SDL(const char* filename) {
-	return vfs_stack.open_sdl(filename).release();
 }
 
 owned::SDL_RWops AssetOpen_SDL_Owned(const char* filename) {

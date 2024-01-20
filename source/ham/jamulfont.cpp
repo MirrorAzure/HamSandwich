@@ -561,6 +561,9 @@ static void FontPrintCharGlowLimited(int x, int y, int maxX, dword c, const mfon
 
 static byte CharWidth(dword c, const mfont_t *font)
 {
+	if (c == '\n')
+		return 0;
+
 	if (c < font->firstChar || c >= (font->firstChar + font->numChars))
 		return font->spaceSize; // unprintable
 
@@ -1120,6 +1123,21 @@ void FontPrintStringUnGlowSideways(int x,int y,int minY,std::string_view s,const
 	{
 		FontPrintCharUnGlowSideways(x,y,minY,s[i],font);
 		y-=(CharWidth(s[i],font)+font->gapSize);
+	}
+}
+
+void FontPrintStringMultiline(int x, int y, std::string_view s, const mfont_t *font)
+{
+	int x0 = x;
+	for (char ch : s)
+	{
+		FontPrintChar(x, y, ch, font);
+		x += font->gapSize + CharWidth(ch, font);
+		if (ch == '\n')
+		{
+			y = y + font->gapHeight;
+			x = x0;
+		}
 	}
 }
 

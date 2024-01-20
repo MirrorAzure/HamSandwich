@@ -15,7 +15,7 @@
 
 word moneyAmts[11]={25,75,1500,5000,2222,250,17,300,2,716,42};
 
-shopItem_t shop[NUMSHOPITEMS]={
+static const shopItem_t shop[NUMSHOPITEMS]={
 
 	// bones, bats, and beyond
 	{SHOP_SPOOKY,
@@ -680,7 +680,7 @@ shopItem_t shop[NUMSHOPITEMS]={
 	 0},
 };
 
-char worldFName[NUMBUILTINWORLDS][32]={
+static const char worldFName[NUMBUILTINWORLDS][32]={
 	"mansion.dlw",			// 0
 	"HauntedH.dlw",
 	"loonyhalloween.dlw",
@@ -766,7 +766,7 @@ char worldFName[NUMBUILTINWORLDS][32]={
 	"champ.dlw",
 };
 
-static char shopName[][32]={
+static const char shopName[][32]={
 	"Bones, Bats & Beyond",
 	"Sputnik's",
 	"Pier 2",
@@ -1708,4 +1708,21 @@ void RenderShopping(MGLDraw *mgl)
 			RenderShopButton(1,320-48,240+shopSize/2-27,95,"Thank you!",mgl);
 		}
 	}
+}
+
+static const char charName[][16] = {
+	"Bouapha",
+	"Happy Stick Man",
+	"Dr. Lunatic",
+	"Shtupid Shroom",
+	"LunaChick",
+	"MechaBouapha",
+};
+static_assert(SDL_arraysize(charName) == MAX_PLAYAS, "Must give new playable character a name");
+
+const char* GetPlayableCharacterName(int playAs)
+{
+	if (playAs >= 0 && playAs < MAX_PLAYAS)
+		return charName[playAs];
+	return "???";
 }
