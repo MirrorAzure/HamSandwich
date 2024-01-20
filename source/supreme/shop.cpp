@@ -1717,6 +1717,7 @@ static const char charName[][16] = {
 	"Shtupid Shroom",
 	"LunaChick",
 	"MechaBouapha",
+	"Kid Mystic",
 };
 static_assert(SDL_arraysize(charName) == MAX_PLAYAS, "Must give new playable character a name");
 

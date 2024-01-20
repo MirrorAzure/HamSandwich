@@ -472,12 +472,12 @@ byte UpdateProfMenu(int *lastTime,MGLDraw *mgl)
 						break;
 					case ButtonId::Character:
 						profile.playAs++;
-						if(profile.playAs>PLAY_MAX)
+						if(profile.playAs>=MAX_PLAYAS)
 							profile.playAs=0;
 						while(profile.playAs!=PLAY_BOUAPHA && profile.playAs!=PLAY_MYSTIC && !ItemPurchased(SHOP_PLAYABLE,profile.playAs))
 						{
 							profile.playAs++;
-							if(profile.playAs>PLAY_MAX)
+							if(profile.playAs>=MAX_PLAYAS)
 								profile.playAs=0;
 						}
 						break;
