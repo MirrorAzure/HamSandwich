@@ -4183,7 +4183,7 @@ byte DyingSkellies(void)
 	int i;
 
 	for(i=0;i<maxGuys;i++)
-		if(guys[i] && (guys[i]->type==MONS_BONEHEAD || guys[i]->type==MONS_BONEHEAD2 || guys[i]->type==MONS_BONEHEAD3 || guys[i]->type==MONS_BONEHEAD4)
+		if(guys[i] && (guys[i]->type==MONS_BONEHEAD || guys[i]->type==MONS_BONEHEAD2 || guys[i]->type==MONS_REDBONE || guys[i]->type==MONS_GANGRENE)
 			&& guys[i]->hp==0 && guys[i]->seq==ANIM_DIE)
 			return 1;
 	return 0;
@@ -4194,7 +4194,7 @@ void RaiseSkellies(void)
 	int i;
 
 	for(i=0;i<maxGuys;i++)
-		if(guys[i] && (guys[i]->type==MONS_BONEHEAD || guys[i]->type==MONS_BONEHEAD2 || guys[i]->type==MONS_BONEHEAD3 || guys[i]->type==MONS_BONEHEAD4)
+		if(guys[i] && (guys[i]->type==MONS_BONEHEAD || guys[i]->type==MONS_BONEHEAD2 || guys[i]->type==MONS_REDBONE || guys[i]->type==MONS_GANGRENE)
 			&& guys[i]->hp==0 && guys[i]->seq==ANIM_DIE)
 		{
 			// come to life

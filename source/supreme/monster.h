@@ -313,52 +313,52 @@
 #define MONS_FIREBUG	277
 
 //loonyland
-#define MONS_SWAMPDOG  	278
-#define MONS_SWAMPDOG2 	279
-#define MONS_SWAMPDOG3 	280
-#define MONS_SWAMPDOG4	281
-#define MONS_BONEHEAD2 282
-#define MONS_BONEHEAD3 283
-#define MONS_BONEHEAD4 284
-#define MONS_BONEHEAD5 285
-#define MONS_BONEHEAD6 286
-#define MONS_FROG3	   287
-#define MONS_FROG4	   288
-#define MONS_FROG5	   289
-#define MONS_ZOMBIE2   290
-#define MONS_ZOMBIE3   291
-#define MONS_ZOMBIE4   292
-#define MONS_ZOMBIE5   293
-#define MONS_BAT2	   294
-#define MONS_BAT3	   295
-#define MONS_BAT4	   296
-#define MONS_BAT5	   297
-#define MONS_MUMMY	   298
-#define MONS_MUMMY2	   299
-#define MONS_MUMMY3	   300
-#define MONS_MUMMY4	   301
-#define MONS_MUMMY5	   302
-#define MONS_EVILTREE  303
-#define MONS_EVILTREE2 304
-#define MONS_EVILTREE3 305
-#define MONS_GHOST2	   306
-#define MONS_GHOST3	   307
-#define MONS_GHOST4	   308
-#define MONS_WOLFMAN   309
-#define MONS_WOLFMAN2  310
-#define MONS_WOLFMAN3  311
+#define MONS_SWAMPDOG  	278	// swampdog
+#define MONS_SWAMPDOG2 	279	// bog beast
+#define MONS_SWAMPDOG3 	280 // shambling thing
+#define MONS_SWAMPDOG4	281 // marsh mutt
+#define MONS_BONEHEAD2 	282 // bonehead
+#define MONS_REDBONE 	283 // redbone
+#define MONS_GANGRENE 	284	// gangrene
+#define MONS_NUMBSKULL 	285 // numbskull
+#define MONS_SKULLY 	286 // agent skully
+#define MONS_CROAKER	287	// croaker
+#define MONS_FROGURT	288	// frogurt
+#define MONS_TOAD	   	289	// toad
+#define MONS_ZOMBIE2   	290 // zombie
+#define MONS_BOMBIE   	291	// bombie
+#define MONS_ZOMBIELORD 292	// zombie lord
+#define MONS_BOMBIELORD 293	// bombie lord
+#define MONS_DINGBAT	294	// dingbat
+#define MONS_GARGOYLE	295	// gargoyle
+#define MONS_VAMPBAT	296	// vamp bat
+#define MONS_GASBAT	   	297	// gasbat
+#define MONS_MUMMY	   	298	// rag man
+#define MONS_MUMMY2	   	299	// mummy
+#define MONS_MUMMY3	   	300	// pharaoh faucet
+#define MONS_MUMMY4	   	301	// grand pharaoh
+#define MONS_MUMMY5	   	302	// king toot
+#define MONS_EVILTREE  	303	// terror tree
+#define MONS_EVILTREE2 	304	// swamp stump
+#define MONS_EVILTREE3 	305	// torture tree
+#define MONS_GHOST2	   	306	// ghost
+#define MONS_GHOST3	   	307	// shade
+#define MONS_GHOST4	   	308	// banshee
+#define MONS_WOLFMAN   	309	// dogboy
+#define MONS_WOLFMAN2  	310	// wolfman
+#define MONS_WOLFMAN3  	311	// dire wolf
 #define MONS_STICKWITCH 312
-#define MONS_LARRY	   313
+#define MONS_LARRY	   	313
 #define MONS_HUMANLARRY 314	// larry in human form
 #define MONS_HARRY		315
 #define MONS_BHOMATIC	316	// Boneheadomatic
 #define MONS_RBOMATIC	317
 #define MONS_GGOMATIC	318
 #define MONS_NSOMATIC	319
-#define MONS_VAMPIRE2   320
-#define MONS_VAMPIRE3   321
-#define MONS_VAMPIRE4   322
-#define MONS_VAMPIRE5   323
+#define MONS_VAMPIRE2   320	// vamp jr.
+#define MONS_VAMPIRE3   321 // bloodsucker
+#define MONS_VAMPIRE4   322 // draculite
+#define MONS_VAMPIRE5   323 // vamp lord
 #define MONS_FRANKENJ	324	// Frankenjulie
 #define MONS_HAND		325	// Frankenjulie's hand
 #define MONS_MINIFRANK	326
@@ -404,8 +404,8 @@
 #define MONS_FRIENDLYNPC3	364
 #define MONS_FRIENDLYNPC4	365
 
-#define MONS_SMASHBALL	366
-#define MONS_STICKDANCER 367
+#define MONS_SMASHBALL		366
+#define MONS_STICKDANCER 	367
 
 #define MONS_LIGHTBALL25	368
 #define MONS_LIGHTBALL52	369
@@ -413,7 +413,7 @@
 #define MONS_LIGHTBALLON	371
 #define MONS_LIGHTBALLOFF	372
 
-#define NUM_MONSTERS    373   // Can grow as needed
+#define NUM_MONSTERS    	373   // Can grow as needed
 #define NUM_PROFILE_MONSTERS 211    // Do not change without redoing the profile format
 
 // fake monster codes

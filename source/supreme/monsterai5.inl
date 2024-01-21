@@ -2961,7 +2961,7 @@ void AI_Frog(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	}
 
 	/*
-	if(me->type==MONS_FROG4 && Random(3)==0)
+	if(me->type==MONS_FROGURT && Random(3)==0)
 	{
 		x=me->x-10*FIXAMT+Random(21*FIXAMT);
 		y=me->y-10*FIXAMT+Random(21*FIXAMT);
@@ -3005,7 +3005,7 @@ void AI_Frog(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			FireBullet(x,y,me->facing*32,BLT_GASBLAST);
 			me->reload=5;
 		}
-		if(me->seq==ANIM_ATTACK && me->frm==2 && me->reload==0 && me->type==MONS_FROG3)
+		if(me->seq==ANIM_ATTACK && me->frm==2 && me->reload==0 && me->type==MONS_CROAKER)
 		{
 			x=me->x+Cosine(me->facing*32)*8;
 			y=me->y+Sine(me->facing*32)*8;
@@ -3020,7 +3020,7 @@ void AI_Frog(Guy *me,Map *map,world_t *world,Guy *goodguy)
 				FireBullet(me->x,me->y,x,BLT_GASBLAST);
 			}
 		}
-		if(me->seq==ANIM_DIE && me->type==MONS_FROG3 && me->frm==4 && me->reload==0)
+		if(me->seq==ANIM_DIE && me->type==MONS_CROAKER && me->frm==4 && me->reload==0)
 		{
 			FireBullet(me->x,me->y,0,BLT_FLAMEWALL);
 			me->reload=5;
@@ -3030,7 +3030,7 @@ void AI_Frog(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		return;	// can't do nothin' right now
 	}
 
-	if(me->mind==0) // && me->type!=MONS_FROG4)	// heading for Bouapha
+	if(me->mind==0) // && me->type!=MONS_FROGURT)	// heading for Bouapha
 	{
 		if(RangeToTarget(me,goodguy)<(128*FIXAMT) && Random(8)==0 && me->type==MONS_FROG)
 		{
@@ -5303,12 +5303,12 @@ void AI_LL_Bonehead(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	int x=0,y=0,i;
 
 	// Gangrenes glow
-	if(me->aiType==MONS_BONEHEAD4)
+	if(me->aiType==MONS_GANGRENE)
 		map->BrightTorch((me->x/TILE_WIDTH)>>FIXSHIFT,(me->y/TILE_HEIGHT)>>FIXSHIFT,12,16);
 
 	BasicAI(me,SND_LL_SKELOUCH,SND_LL_SKELDIE,map,world,goodguy);
 
-	if(me->aiType==MONS_BONEHEAD6 && me->seq==ANIM_DIE && Random(10)==0)
+	if(me->aiType==MONS_SKULLY && me->seq==ANIM_DIE && Random(10)==0)
 	{
 		y=me->y-FIXAMT*10+Random(FIXAMT*11);
 		x=me->x-32*FIXAMT+Random(65*FIXAMT);
@@ -5319,7 +5319,7 @@ void AI_LL_Bonehead(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	{
 		if(me->seq==ANIM_DIE && me->frm==8)
 			me->frmAdvance=256;
-		if(me->seq==ANIM_ATTACK && me->aiType==MONS_BONEHEAD6)
+		if(me->seq==ANIM_ATTACK && me->aiType==MONS_SKULLY)
 		{
 			me->dx+=Cosine(me->facing*32)*2;
 			me->dy+=Sine(me->facing*32)*2;
@@ -5338,11 +5338,11 @@ void AI_LL_Bonehead(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		{
 			x=me->x+Cosine(me->facing*32)*16;
 			y=me->y+Sine(me->facing*32)*16;
-			if(me->aiType==MONS_BONEHEAD3)
+			if(me->aiType==MONS_REDBONE)
 				FireBullet(x,y,me->facing*32,BLT_ENERGY,me->friendly);
-			else if(me->aiType==MONS_BONEHEAD4)
+			else if(me->aiType==MONS_GANGRENE)
 				FireBullet(x,y,me->facing*32,BLT_GASBLAST,me->friendly);
-			else if(me->aiType==MONS_BONEHEAD6)
+			else if(me->aiType==MONS_SKULLY)
 			{
 				FireBullet(x,y,(byte)((me->facing*32-16+Random(32))&255),BLT_FLAME,me->friendly);
 				FireBullet(x,y,(byte)((me->facing*32-16+Random(32))&255),BLT_FLAME,me->friendly);
@@ -5351,7 +5351,7 @@ void AI_LL_Bonehead(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			me->reload=5;
 			me->mind1=1;
 		}
-		if(me->seq==ANIM_A2 && me->aiType==MONS_BONEHEAD5 && me->reload==0 && me->frm>=2)
+		if(me->seq==ANIM_A2 && me->aiType==MONS_NUMBSKULL && me->reload==0 && me->frm>=2)
 		{
 			i=Random(TILE_WIDTH)+TILE_WIDTH*(me->frm-1);
 			x=me->x+Cosine(me->facing*32)*i;
@@ -5372,7 +5372,7 @@ void AI_LL_Bonehead(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	// (but only if in pursuit mode, because otherwise you'd point the wrong way)
 	// Numbskulls don't do this, since they have a much nastier point they use
 	// neither does Agent Skully
-	if((!Random(100)) && me->mind==0 && me->aiType!=MONS_BONEHEAD5 && me->aiType!=MONS_BONEHEAD6)
+	if((!Random(100)) && me->mind==0 && me->aiType!=MONS_NUMBSKULL && me->aiType!=MONS_SKULLY)
 	{
 		me->seq=ANIM_A2;
 		me->frm=0;
@@ -5385,7 +5385,7 @@ void AI_LL_Bonehead(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	}
 
 	// if you aren't wandering and you are a Bonehead or Numbskull, then kick as needed
-	if(me->mind==0 && (me->aiType==MONS_BONEHEAD2 || me->aiType==MONS_BONEHEAD5))
+	if(me->mind==0 && (me->aiType==MONS_BONEHEAD2 || me->aiType==MONS_NUMBSKULL))
 	{
 		if(goodguy && RangeToTarget(me,goodguy)<(48*FIXAMT) && Random(8)==0)// &&
 			//map->CheckLOS(me->mapx,me->mapy,4,goodguy->mapx,goodguy->mapy))
@@ -5403,7 +5403,7 @@ void AI_LL_Bonehead(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			return;
 		}
 	}
-	if(me->mind==0 && me->aiType==MONS_BONEHEAD6)
+	if(me->mind==0 && me->aiType==MONS_SKULLY)
 	{
 		if(goodguy && RangeToTarget(me,goodguy)<(200*FIXAMT) && Random(8)==0)// &&
 			//map->CheckLOS(me->mapx,me->mapy,10,goodguy->mapx,goodguy->mapy))
@@ -5422,7 +5422,7 @@ void AI_LL_Bonehead(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		}
 	}
 	// Redbones and Gangrenes shoot only
-	if(me->aiType==MONS_BONEHEAD3 || me->aiType==MONS_BONEHEAD4 || me->aiType==MONS_BONEHEAD6)
+	if(me->aiType==MONS_REDBONE || me->aiType==MONS_GANGRENE || me->aiType==MONS_SKULLY)
 	{
 		if(goodguy && RangeToTarget(me,goodguy)<(512*FIXAMT) && Random(32)==0)// &&
 			//map->CheckLOS(me->mapx,me->mapy,15,goodguy->mapx,goodguy->mapy))
@@ -5442,7 +5442,7 @@ void AI_LL_Bonehead(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		}
 	}
 	// numbskull special attacks
-	if(me->aiType==MONS_BONEHEAD5)
+	if(me->aiType==MONS_NUMBSKULL)
 	{
 		// resurrect any dying skellies
 		if(Random(8)==0 && DyingSkellies())
@@ -5496,37 +5496,37 @@ void AI_LL_Bonehead(Guy *me,Map *map,world_t *world,Guy *goodguy)
 
 	if(me->action==ACTION_BUSY)
 	{
-		if(me->seq==ANIM_ATTACK && me->frm==4 && me->reload==0 && me->type==MONS_FROG3)
+		if(me->seq==ANIM_ATTACK && me->frm==4 && me->reload==0 && me->type==MONS_CROAKER)
 		{
 			x=me->x+Cosine(me->facing*32)*30;
 			y=me->y+Sine(me->facing*32)*30;
 			if(me->AttackCheck(10,x>>FIXSHIFT,y>>FIXSHIFT,goodguy))
 			{
-				goodguy->GetShot(Cosine(me->facing*32)*4,Sine(me->facing*32)*4,damageValues[me->type-MONS_FROG3],map,world);
+				goodguy->GetShot(Cosine(me->facing*32)*4,Sine(me->facing*32)*4,damageValues[me->type-MONS_CROAKER],map,world);
 			}
 			x=me->x+Cosine(me->facing*32)*60;
 			y=me->y+Sine(me->facing*32)*60;
 			if(me->AttackCheck(10,x>>FIXSHIFT,y>>FIXSHIFT,goodguy))
 			{
-				goodguy->GetShot(Cosine(me->facing*32)*4,Sine(me->facing*32)*4,damageValues[me->type-MONS_FROG3],map,world);
+				goodguy->GetShot(Cosine(me->facing*32)*4,Sine(me->facing*32)*4,damageValues[me->type-MONS_CROAKER],map,world);
 			}
 			me->reload=5;
 		}
-		if(me->seq==ANIM_ATTACK && me->frm==3 && me->reload==0 && me->type==MONS_FROG4)
+		if(me->seq==ANIM_ATTACK && me->frm==3 && me->reload==0 && me->type==MONS_FROGURT)
 		{
 			x=me->x+Cosine(me->facing*32)*8;
 			y=me->y+Sine(me->facing*32)*8;
 			FireBullet(x,y,me->facing*32,BLT_GASBLAST,me->friendly);
 			me->reload=5;
 		}
-		if(me->seq==ANIM_ATTACK && me->frm==2 && me->reload==0 && me->type==MONS_FROG5)
+		if(me->seq==ANIM_ATTACK && me->frm==2 && me->reload==0 && me->type==MONS_TOAD)
 		{
 			x=me->x+Cosine(me->facing*32)*8;
 			y=me->y+Sine(me->facing*32)*8;
 			FireBullet(x,y,me->facing*32,BLT_ENERGY,me->friendly);
 			me->reload=30;
 		}
-		if(me->seq==ANIM_DIE && me->type==MONS_FROG4 && me->frm==4)
+		if(me->seq==ANIM_DIE && me->type==MONS_FROGURT && me->frm==4)
 		{
 			for(y=0;y<4;y++)
 			{
@@ -5534,7 +5534,7 @@ void AI_LL_Bonehead(Guy *me,Map *map,world_t *world,Guy *goodguy)
 				FireBullet(me->x,me->y,x,BLT_GASBLAST,me->friendly);
 			}
 		}
-		if(me->seq==ANIM_DIE && me->type==MONS_FROG5 && me->frm==4 && me->reload==0)
+		if(me->seq==ANIM_DIE && me->type==MONS_TOAD && me->frm==4 && me->reload==0)
 		{
 			FireBullet(me->x,me->y,0,BLT_FLAMEWALL,me->friendly);
 			me->reload=5;
@@ -5544,7 +5544,7 @@ void AI_LL_Bonehead(Guy *me,Map *map,world_t *world,Guy *goodguy)
 
 	if(me->mind==0 && me->type!=MONS_FROG6)	// heading for Bouapha
 	{
-		if(RangeToTarget(me,goodguy)<(128*FIXAMT) && Random(8)==0 && me->type==MONS_FROG3)// &&
+		if(RangeToTarget(me,goodguy)<(128*FIXAMT) && Random(8)==0 && me->type==MONS_CROAKER)// &&
 			//map->CheckLOS(me->mapx,me->mapy,5,goodguy->mapx,goodguy->mapy))
 		{
 			// get him!
@@ -5561,7 +5561,7 @@ void AI_LL_Bonehead(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		}
 	}
 
-	if(me->type==MONS_FROG4 && RangeToTarget(me,goodguy)<(256*FIXAMT) && Random(64)==0)// &&
+	if(me->type==MONS_FROGURT && RangeToTarget(me,goodguy)<(256*FIXAMT) && Random(64)==0)// &&
 		//map->CheckLOS(me->mapx,me->mapy,8,goodguy->mapx,goodguy->mapy))
 	{
 		// spit out gas
@@ -5577,7 +5577,7 @@ void AI_LL_Bonehead(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		FaceGoodguy(me,goodguy);
 		return;
 	}
-	if(me->type==MONS_FROG5 && RangeToTarget(me,goodguy)<(512*FIXAMT) && Random(64)==0 && me->reload==0)// &&
+	if(me->type==MONS_TOAD && RangeToTarget(me,goodguy)<(512*FIXAMT) && Random(64)==0 && me->reload==0)// &&
 		//map->CheckLOS(me->mapx,me->mapy,15,goodguy->mapx,goodguy->mapy))
 	{
 		// spit out fireball
@@ -5594,7 +5594,7 @@ void AI_LL_Bonehead(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		return;
 	}
 
-	WanderAI(me,64,40,3,map,world,goodguy,speedValues[me->type-MONS_FROG3]);
+	WanderAI(me,64,40,3,map,world,goodguy,speedValues[me->type-MONS_CROAKER]);
 }*/
 
 void AI_FireFrog(Guy *me,Map *map,world_t *world,Guy *goodguy)
@@ -5734,7 +5734,7 @@ void AI_LL_Zombie(Guy *me,Map *map,world_t *world,Guy *goodguy)
 
 	BasicAI(me,SND_LL_ZOMBIEOUCH,SND_LL_ZOMBIEDIE,map,world,goodguy);
 
-	if(me->seq==ANIM_DIE && me->aiType==MONS_ZOMBIE5)
+	if(me->seq==ANIM_DIE && me->aiType==MONS_BOMBIELORD)
 	{
 		if(Random(5)==0)
 		{
@@ -5765,11 +5765,11 @@ void AI_LL_Zombie(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		{
 			Dampen(&me->dx,FIXAMT*2);
 			Dampen(&me->dy,FIXAMT*2);
-			if(me->frm==11 && me->reload==0 && (me->aiType==MONS_ZOMBIE3 || me->aiType==MONS_ZOMBIE5))	// bombie
+			if(me->frm==11 && me->reload==0 && (me->aiType==MONS_BOMBIE || me->aiType==MONS_BOMBIELORD))	// bombie
 			{
 				// blow self up
 				FireBullet(me->x,me->y,0,BLT_MEGABOOM,me->friendly);
-				if(me->aiType==MONS_ZOMBIE3)
+				if(me->aiType==MONS_BOMBIE)
 				{
 					me->seq=ANIM_DIE;
 					me->frm=0;
@@ -5784,7 +5784,7 @@ void AI_LL_Zombie(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		}
 		if(me->seq==ANIM_A1 && me->frm==3 && me->reload==0 && goodguy)
 		{
-			if(me->aiType==MONS_ZOMBIE4)
+			if(me->aiType==MONS_ZOMBIELORD)
 			{
 				x=me->x+Cosine(me->facing*32)*16;
 				y=me->y+Sine(me->facing*32)*16;
@@ -5801,7 +5801,7 @@ void AI_LL_Zombie(Guy *me,Map *map,world_t *world,Guy *goodguy)
 				{
 					x=me->x-48+Random(97)*FIXAMT;
 					y=me->y-48+Random(97)*FIXAMT;
-					g=AddGuy(x,y,FIXAMT*40,MONS_ZOMBIE3,me->friendly);
+					g=AddGuy(x,y,FIXAMT*40,MONS_BOMBIE,me->friendly);
 					if(g && !g->CanWalk(g->x,g->y,map,world))
 					{
 						g->type=MONS_NONE;
@@ -5825,7 +5825,7 @@ void AI_LL_Zombie(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	{
 		x=128*FIXAMT;
 		y=32;
-		if(me->aiType==MONS_ZOMBIE3)
+		if(me->aiType==MONS_BOMBIE)
 			y=16;
 
 		if(RangeToTarget(me,goodguy)<(x) && Random(y)==0)// &&
@@ -5846,14 +5846,14 @@ void AI_LL_Zombie(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	}
 	else	// wandering
 	{
-		if(me->aiType==MONS_ZOMBIE3)	// bombie
+		if(me->aiType==MONS_BOMBIE)	// bombie
 		{
 			me->dx=me->dx/2;
 			me->dy=me->dy/2;
 		}
 	}
 
-	if((me->aiType==MONS_ZOMBIE4 || me->aiType==MONS_ZOMBIE5) && RangeToTarget(me,goodguy)<(512*FIXAMT) && Random(64)==0)
+	if((me->aiType==MONS_ZOMBIELORD || me->aiType==MONS_BOMBIELORD) && RangeToTarget(me,goodguy)<(512*FIXAMT) && Random(64)==0)
 	{
 		// stomp earth at him
 		MakeSound(SND_ZOMBIESTOMP,me->x,me->y,SND_CUTOFF,1200);
@@ -5875,16 +5875,16 @@ void AI_LL_Zombie(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			case MONS_ZOMBIE2:
 				me->frmAdvance=64;
 				break;
-			case MONS_ZOMBIE3:	// bombie
+			case MONS_BOMBIE:	// bombie
 				me->frmAdvance=128;
 				break;
-			case MONS_ZOMBIE4:	// zombie lord
-			case MONS_ZOMBIE5:
+			case MONS_ZOMBIELORD:	// zombie lord
+			case MONS_BOMBIELORD:
 				me->frmAdvance=48;
 				break;
 		}
 	}
-	if(me->aiType!=MONS_ZOMBIE3)
+	if(me->aiType!=MONS_BOMBIE)
 		WanderAI(me,64,40,3,map,world,goodguy,speedValues[me->aiType-MONS_ZOMBIE2]);
 	else
 		WanderAI(me,128,10,3,map,world,goodguy,speedValues[me->aiType-MONS_ZOMBIE2]);
@@ -5899,7 +5899,7 @@ void AI_LL_Bat(Guy *me,Map *map,world_t *world,Guy *goodguy)
 
 	BasicAI(me,SND_LL_BATOUCH,SND_LL_BATDIE,map,world,goodguy);
 
-	if(me->aiType==MONS_BAT5 && Random(3)==0)
+	if(me->aiType==MONS_GASBAT && Random(3)==0)
 	{
 		FireBullet(me->x,me->y,(byte)Random(256),BLT_GASBLAST,me->friendly);
 		// if(b)
@@ -5916,7 +5916,7 @@ void AI_LL_Bat(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			x=me->x+Cosine(me->facing*32)*16;
 			y=me->y+Sine(me->facing*32)*16;
 			if(me->AttackCheck(16,x>>FIXSHIFT,y>>FIXSHIFT,goodguy))
-				goodguy->GetShot(Cosine(me->facing*32)*4,Sine(me->facing*32)*4,damageValues[me->aiType-MONS_BAT2],map,world);
+				goodguy->GetShot(Cosine(me->facing*32)*4,Sine(me->facing*32)*4,damageValues[me->aiType-MONS_DINGBAT],map,world);
 			me->reload=2;
 
 		}
@@ -5927,7 +5927,7 @@ void AI_LL_Bat(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			y=me->y;
 			if(me->AttackCheck(16,x>>FIXSHIFT,y>>FIXSHIFT,goodguy))
 			{
-				goodguy->GetShot(Cosine(me->facing*32)*8,Sine(me->facing*32)*8,damageValues[me->aiType-MONS_BAT2],map,world);
+				goodguy->GetShot(Cosine(me->facing*32)*8,Sine(me->facing*32)*8,damageValues[me->aiType-MONS_DINGBAT],map,world);
 				me->seq=ANIM_A2;	// bounce off
 				me->frm=0;
 				me->frmTimer=0;
@@ -5947,7 +5947,7 @@ void AI_LL_Bat(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		return;	// can't do nothin' right now
 	}
 
-	if(me->aiType!=MONS_BAT5)
+	if(me->aiType!=MONS_GASBAT)
 	{
 		if(RangeToTarget(me,goodguy)<(48*FIXAMT) && Random(4)==0)// &&
 			//map->CheckLOS(me->mapx,me->mapy,6,goodguy->mapx,goodguy->mapy))
@@ -5966,7 +5966,7 @@ void AI_LL_Bat(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			return;
 		}
 
-		if(RangeToTarget(me,goodguy)>(75*FIXAMT) && Random(32)==0 && me->aiType==MONS_BAT3)// &&
+		if(RangeToTarget(me,goodguy)>(75*FIXAMT) && Random(32)==0 && me->aiType==MONS_GARGOYLE)// &&
 			//map->CheckLOS(me->mapx,me->mapy,15,goodguy->mapx,goodguy->mapy))
 		{
 			FaceGoodguy(me,goodguy);
@@ -5981,7 +5981,7 @@ void AI_LL_Bat(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			return;
 		}
 
-		if(RangeToTarget(me,goodguy)>(200*FIXAMT) && Random(32)==0 && me->aiType==MONS_BAT4)// &&
+		if(RangeToTarget(me,goodguy)>(200*FIXAMT) && Random(32)==0 && me->aiType==MONS_VAMPBAT)// &&
 			//map->CheckLOS(me->mapx,me->mapy,15,goodguy->mapx,goodguy->mapy))
 		{
 			MakeSound(SND_BATSHOOT,me->x,me->y,SND_CUTOFF,1200);
@@ -5997,7 +5997,7 @@ void AI_LL_Bat(Guy *me,Map *map,world_t *world,Guy *goodguy)
 		}
 	}
 
-	WanderAI(me,64,40,3,map,world,goodguy,speedValues[me->aiType-MONS_BAT2]);
+	WanderAI(me,64,40,3,map,world,goodguy,speedValues[me->aiType-MONS_DINGBAT]);
 }
 
 void AI_Mummy(Guy *me,Map *map,world_t *world,Guy *goodguy)
@@ -6178,7 +6178,7 @@ void AI_EvilTree(Guy *me,Map *map,world_t *world,Guy *goodguy)
 				MakeSound(SND_TREEFROG,me->x,me->y,SND_CUTOFF,1200);
 				x=me->x;
 				y=me->y+40*FIXAMT;
-				g=AddGuy(x,y,FIXAMT*10,MONS_FROG3,me->friendly);
+				g=AddGuy(x,y,FIXAMT*10,MONS_TOAD,me->friendly);
 				if(g && (!g->CanWalk(g->x,g->y,map,world)))
 					g->type=MONS_NONE;	// vanish if this spot is occupied
 				me->reload=30*3;
@@ -6189,7 +6189,7 @@ void AI_EvilTree(Guy *me,Map *map,world_t *world,Guy *goodguy)
 				MakeSound(SND_TREEFROG,me->x,me->y,SND_CUTOFF,1200);
 				x=me->x;
 				y=me->y+40*FIXAMT;
-				g=AddGuy(x,y,FIXAMT*10,MONS_FROG4,me->friendly);
+				g=AddGuy(x,y,FIXAMT*10,MONS_FROGURT,me->friendly);
 				if(g && (!g->CanWalk(g->x,g->y,map,world)))
 					g->type=MONS_NONE;	// vanish if this spot is occupied
 				me->reload=30*3;
@@ -7216,11 +7216,11 @@ void AI_Boneheadomatic(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			if(me->aiType==MONS_BHOMATIC)
 				g=AddGuy(me->x,me->y+36*FIXAMT,0,MONS_BONEHEAD2,me->friendly);
 			else if(me->aiType==MONS_RBOMATIC)
-				g=AddGuy(me->x,me->y+36*FIXAMT,0,MONS_BONEHEAD3,me->friendly);
+				g=AddGuy(me->x,me->y+36*FIXAMT,0,MONS_REDBONE,me->friendly);
 			else if(me->aiType==MONS_GGOMATIC)
-				g=AddGuy(me->x,me->y+36*FIXAMT,0,MONS_BONEHEAD4,me->friendly);
+				g=AddGuy(me->x,me->y+36*FIXAMT,0,MONS_GANGRENE,me->friendly);
 			else if(me->aiType==MONS_NSOMATIC)
-				g=AddGuy(me->x,me->y+36*FIXAMT,0,MONS_BONEHEAD5,me->friendly);
+				g=AddGuy(me->x,me->y+36*FIXAMT,0,MONS_NUMBSKULL,me->friendly);
 			if(g && (!g->CanWalk(g->x,g->y,map,world)))
 				g->type=MONS_NONE;	// vanish if this spot is occupied
 		}
@@ -7280,7 +7280,7 @@ void AI_LL_Vampire(Guy *me,Map *map,world_t *world,Guy *goodguy)
 				// summon Gangrenes, one on either side
 				x=me->x-64*FIXAMT;
 				y=me->y;
-				g=AddGuy(x,y,0,MONS_BONEHEAD4,me->friendly);
+				g=AddGuy(x,y,0,MONS_GANGRENE,me->friendly);
 				if(g)
 				{
 					if(!g->CanWalk(g->x,g->y,map,world))
@@ -7292,7 +7292,7 @@ void AI_LL_Vampire(Guy *me,Map *map,world_t *world,Guy *goodguy)
 				}
 				x=me->x+64*FIXAMT;
 				y=me->y;
-				g=AddGuy(x,y,0,MONS_BONEHEAD4,me->friendly);
+				g=AddGuy(x,y,0,MONS_GANGRENE,me->friendly);
 				if(g)
 				{
 					if(!g->CanWalk(g->x,g->y,map,world))
@@ -7355,7 +7355,7 @@ void AI_LL_Vampire(Guy *me,Map *map,world_t *world,Guy *goodguy)
 				// shoot a bat
 				x=me->x+Cosine(me->facing*32)*32;
 				y=me->y+Sine(me->facing*32)*32;
-				g=AddGuy(x,y,0,MONS_BAT2,me->friendly);
+				g=AddGuy(x,y,0,MONS_DINGBAT,me->friendly);
 				if(g && (!g->CanWalk(g->x,g->y,map,world)))
 					g->type=MONS_NONE;	// vanish if this spot is occupied
 				else if(g)
@@ -8105,7 +8105,7 @@ void AI_MechaBonkula(Guy *me,Map *map,world_t *world,Guy *goodguy)
 
 void AI_Evilizer(Guy *me,Map *map,world_t *world,Guy *goodguy)
 {
-	int summonTab[]={MONS_BONEHEAD5,MONS_ZOMBIE4,MONS_MUMMY4,MONS_WOLFMAN3,MONS_SWAMPDOG3,
+	int summonTab[]={MONS_NUMBSKULL,MONS_ZOMBIELORD,MONS_MUMMY4,MONS_WOLFMAN3,MONS_SWAMPDOG3,
 		MONS_GHOST4,MONS_VAMPIRE5};
 
 	int x,y,i;
@@ -9123,7 +9123,7 @@ void AI_Ghastly(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			{
 				x=me->x-30*FIXAMT+Random(61)*FIXAMT;
 				y=me->y-20*FIXAMT+Random(51)*FIXAMT;
-				g=AddGuy(x,y,FIXAMT*30,MONS_BAT5,me->friendly);
+				g=AddGuy(x,y,FIXAMT*30,MONS_GASBAT,me->friendly);
 				if(g && !g->CanWalk(g->x,g->y,map,world))
 				{
 					g->type=MONS_NONE;
