@@ -412,8 +412,10 @@
 #define MONS_LIGHTBALL		370
 #define MONS_LIGHTBALLON	371
 #define MONS_LIGHTBALLOFF	372
+#define MONS_STAREYBAT2		373
+#define MONS_LOOKEYLOO2		374
 
-#define NUM_MONSTERS    	373   // Can grow as needed
+#define NUM_MONSTERS    	375   // Can grow as needed
 #define NUM_PROFILE_MONSTERS 211    // Do not change without redoing the profile format
 
 // fake monster codes

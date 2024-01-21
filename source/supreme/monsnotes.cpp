@@ -2461,6 +2461,10 @@ char monsNotes[NUM_MONSTERS][512]={
 	"utilize specials for that. (SWE)",
 	//LightballOff
 	"It's a Lightball that's been turned off. (SWE)",
+	//Starey bat (strong)
+	"(SWE)",
+	//vulnerable Lookey-Loo
+	"",
 };
 
 char *MonsterNotes(dword type)

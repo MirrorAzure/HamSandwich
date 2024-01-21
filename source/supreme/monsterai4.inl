@@ -68,6 +68,8 @@ void AI_Lazybones(Guy *me,Map *map,world_t *world,Guy *goodguy)
 
 void AI_StareyBat(Guy *me,Map *map,world_t *world,Guy *goodguy)
 {
+	int smlFactor, bigFactor;
+
 	if(me->reload)
 		me->reload--;
 
@@ -97,30 +99,42 @@ void AI_StareyBat(Guy *me,Map *map,world_t *world,Guy *goodguy)
 			}
 		}
 
-		if(me->seq==ANIM_ATTACK && me->frm==4)
+		if(me->seq==ANIM_ATTACK && (me->aiType==MONS_STAREYBAT2 || me->frm==4))
 		{
 			if(RangeToTarget(me,goodguy)<300*FIXAMT)
 			{
+
+				if(me->aiType==MONS_STAREYBAT2)
+				{
+					smlFactor=32;
+					bigFactor=256;
+				}
+				else
+				{
+					smlFactor=128;
+					bigFactor=1024;
+				}
+
 				me->frmTimer=0;
 				if(goodguy->x<me->x)
 				{
-					goodguy->dx-=(340*FIXAMT/128);
-					goodguy->dy-=(340*FIXAMT/1024);
+					goodguy->dx-=(340*FIXAMT/smlFactor);
+					goodguy->dy-=(340*FIXAMT/bigFactor);
 				}
 				else
 				{
-					goodguy->dx+=(340*FIXAMT/128);
-					goodguy->dy+=(340*FIXAMT/1024);
+					goodguy->dx+=(340*FIXAMT/smlFactor);
+					goodguy->dy+=(340*FIXAMT/bigFactor);
 				}
 				if(goodguy->y<me->y)
 				{
-					goodguy->dy-=(340*FIXAMT/128);
-					goodguy->dx+=(340*FIXAMT/1024);
+					goodguy->dy-=(340*FIXAMT/smlFactor);
+					goodguy->dx+=(340*FIXAMT/bigFactor);
 				}
 				else
 				{
-					goodguy->dy+=(340*FIXAMT/128);
-					goodguy->dx-=(340*FIXAMT/1024);
+					goodguy->dy+=(340*FIXAMT/smlFactor);
+					goodguy->dx-=(340*FIXAMT/bigFactor);
 				}
 				Clamp(&goodguy->dx,FIXAMT*7);
 				Clamp(&goodguy->dy,FIXAMT*7);

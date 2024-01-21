@@ -3074,7 +3074,7 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,0,1,1,2,2,3,3,255},	// A2 = wake up
 			}},
 		{"The Lookey-Loo",255,255,0,AI_Lookeyloo,
-		 64,7,1000,2000,"mystic/graphics/lookyloo.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_SPRITEBOX,
+		 64,7,1000,2000,"mystic/graphics/lookyloo.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_SPRITEBOX|MF_INVINCIBLE,
 		 MT_EVIL|MT_BOSS|MT_MYSTIC,
 			{
 				{0,255},	// idle
@@ -4707,5 +4707,28 @@ monsterType_t monsType[NUM_MONSTERS]=
 				{0,255},	// move
 				{0,255},	// attack (shove)
 				{0,255},	// die
+			}},
+		{"Starey Bat (Strong)",2,1,-3,AI_StareyBat,
+		 8,27,15,25,"!3",0,MF_FLYING|MF_NOMOVE,
+		 MT_SPOOKY|MT_FLYING|MT_EVIL|MT_ANIMAL|MT_TRAP|MT_SLEEPLESS,
+			{
+				{1,2,3,2,1,0,4,5,6,5,4,0,255},	// idle
+				{0,255},	// move
+				{7,8,9,9,9,9,9,8,7,255},	// attack
+				{17,18,19,20,21,22,23,24,25,26,255},		// die
+				{7,8,9,9,9,9,9,8,7,255},	// attack
+				{7,8,9,9,9,9,9,8,7,255},	// attack
+				{7,8,9,9,9,9,9,8,7,255},	// attack
+				{7,8,9,9,9,9,9,8,7,255},	// attack
+				{7,8,9,9,9,9,9,8,7,255},	// attack
+			}},
+		{"The Lookey-Loo",255,255,0,AI_Lookeyloo,
+		 64,7,1000,2000,"mystic/graphics/lookyloo.jsp",0,MF_NOMOVE|MF_ONEFACE|MF_SPRITEBOX,
+		 MT_NONE,
+			{
+				{0,255},	// idle
+				{0,255},	// move
+				{1,2,3,4,5,6,6,6,6,6,6,6,6,6,6,5,4,3,2,1,255},	// eye-beam (frm 9 is shoot)
+				{1,3,5,6,6,6,6,255},	// die
 			}},
 	};

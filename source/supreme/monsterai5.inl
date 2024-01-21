@@ -1018,6 +1018,7 @@ void AI_Peeper(Guy *me,Map *map,world_t *world,Guy *goodguy)
 
 void AI_Lookeyloo(Guy *me,Map *map,world_t *world,Guy *goodguy)
 {
+	int x, y;
 	if(me->reload)
 		me->reload--;
 
@@ -1035,20 +1036,26 @@ void AI_Lookeyloo(Guy *me,Map *map,world_t *world,Guy *goodguy)
 	{
 		if(me->seq==ANIM_DIE)
 		{
-			FireBullet(me->x-128*FIXAMT+MGL_randoml(256*FIXAMT),me->y-64*FIXAMT+MGL_randoml(128*FIXAMT),
-				(byte)MGL_random(256),BLT_BOOM,me->friendly);
+			x=me->x>>FIXSHIFT;
+			y=me->y>>FIXSHIFT;
+			BlowUpGuy(x+me->rectx,y+me->recty,x+me->rectx2,y+me->recty2,me->z,1);
 			ShakeScreen(20);
 			//if(me->frm==4)
 			//KillPinkeyes();
 		}
 		if(me->seq==ANIM_ATTACK)
 		{
+			if(me->frm==1)
+				me->type=MONS_LOOKEYLOO2;
 			if(me->frm==9 && me->frmTimer<32)
 			{
 				LaunchMegabeam(me->x,me->y+FIXAMT*40,me->ID);
 			}
 			if(me->frm==18)
+			{
+				me->type=MONS_LOOKEYLOO;
 				me->reload=150;
+			}
 		}
 		return;	// can't do nothin' right now
 	}
