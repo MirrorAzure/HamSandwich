@@ -2078,9 +2078,16 @@ char monsNotes[NUM_MONSTERS][512]={
 	"two Loonyland games could shed more light "
 	"on her nefarious schemes. (SWE)",
 	//Larry
-	"(awaiting rework for full commantary) ",
-	//Larry
-	"(awaiting rework for full commantary) ",
+	"He became a vicious werewolf and hid in "
+	"a werewolf den just to hide from his wife! "
+	"Not only that, but he kept the Pumpkin key "
+	"all to himself! Loony was sent on a quest "
+	"to defeat this selfish man and retrieve "
+	"the key to continue his quest. This time "
+	"around won't be any easier since he's "
+	"immune to your attacks. (SWE)",
+	//Human Larry
+	"",
 	//Harry
 	"Similar to Larry, except he can take "
 	"damage. He's part of the elite class of "
@@ -2280,21 +2287,21 @@ char monsNotes[NUM_MONSTERS][512]={
 	//Junk Barrel
 	"DANGER: Do not use unless you know what "
 	"you are doing! This is the Junk weilded by "
-	"Polterguy. Included in SWE are three items "
+	"Polterguy. Included in SWE are several items "
 	"that resemble Junk. They're hardcoded to "
 	"gradually turn into Junk if a Polterguy "
 	"is present. (SWE)",
 	//Junk Chair
 	"DANGER: Do not use unless you know what "
 	"you are doing! This is the Junk weilded by "
-	"Polterguy. Included in SWE are three items "
+	"Polterguy. Included in SWE are several items "
 	"that resemble Junk. They're hardcoded to "
 	"gradually turn into Junk if a Polterguy "
 	"is present. (SWE)",
 	//Junk Table
 	"DANGER: Do not use unless you know what "
 	"you are doing! This is the Junk weilded by "
-	"Polterguy. Included in SWE are three items "
+	"Polterguy. Included in SWE are several items "
 	"that resemble Junk. They're hardcoded to "
 	"gradually turn into Junk if a Polterguy "
 	"is present. (SWE)",
@@ -2351,37 +2358,109 @@ char monsNotes[NUM_MONSTERS][512]={
 	"This is the dummy monster for the playable Kid Mystic with "
 	"Armageddon Sword. (SWE)",
 	//Creepy Crawly
-	"(SWE)",
+	"Almost identical to their Spitter cousins, "
+	"except they're a bit faster. In Sleepless "
+	"Hollow, they call the final dungeon their "
+	"home, and are the one of the main minions "
+	"of the evil Grue. (SWE)",
 	//Deadhead
-	"(SWE)",
+	"These immortal denizens of the Tomb of "
+	"Darkness can NEVER be killed! Use these "
+	"guys when a few Crazybones simply won't "
+	"cut it. Be careful when designing a level "
+	"around them, though. (SWE)",
 	//Vulnerable Evilizer
 	"",
 	//Dumble
-	"(SWE)",
+	"These Thingie variants lived in an "
+	"alternate dimension known as \"The Dumb "
+	"Side\", which can only be accessed with the "
+	"Planetsmasher hammer. While they have "
+	"more HP, they're the same as a Thingie in "
+	"every other aspect. (SWE)",
 	//Marsh Marrow
-	"(SWE)",
+	"Not to be confused with the similarly "
+	"colored Gangrene. Instead of poison gas, "
+	"these guys shoot out three green bullets. "
+	"In Sleepless, these guys would spawn in "
+	"the later half of the woods that guarded "
+	"the final cave. (SWE)",
 	//Friendly (Bald)
-	"(SWE)",
+	"There were only a few different NPCs in "
+	"Kid Mystic. They just stood still waiting "
+	"for you to talk to them and tell you "
+	"something. Much less complex than "
+	"Loonyland. This particular version was "
+	"unused. Though he DOES look a little "
+	"familiar. (SWE)",
 	//Friendly (Blonde)
-	"(SWE)",
+	"I love the hastily scribbled on hair. He's "
+	"completely unrecognizable, don't you "
+	"think? This guy was waiting for you at the "
+	"start of chapter one and told you how to "
+	"play. (SWE)",
 	//Friendly (Girl)
+	"Only the most dedicated Hamumu fans know "
+	"what game this girl is originally "
+	"from. It's a shame she isn't as popular as "
+	"her older brother is. Maybe she just "
+	"doesn't hate pumpkins as much as him. "
 	"(SWE)",
 	//Friendly (Wizard)
-	"(SWE)",
+	"Who is this mysterious wizard and what "
+	"does he want? You'll have to play Kid "
+	"Mystic to find out! These four entities "
+	"won't actually *DO* anything on their own "
+	"in this game, but it's nice to finally "
+	"have something besides Pygmies to put in "
+	"urban levels. (SWE)",
 	//Smashball
-	"(SWE)",
+	"One particular level of Kid Mystic had you "
+	"bouncing around a ball in order to break "
+	"bricks, Arkanoid style! It was kind of "
+	"clunky and I don't even remember how to "
+	"get there, but we couldn't leave out such "
+	"a novel idea so we brought it over here. "
+	"What sort of wacky things can YOU do with "
+	"it? (SWE)",
 	//Happy Stick Dancer
-	"(SWE)",
+	"From the Super Ultra Mega Secret Reward "
+	"Level hidden in Kid Mystic. In the "
+	"original, they dropped a ton of cash so "
+	"you could buy a bunch of stuff in the next "
+	"loop, but this time around it looks like "
+	"they're just here to have a good time. (SWE)",
 	//Lightball2.5
-	"(SWE)",
+	"These types of Lightballs switch on and "
+	"off at a specific rate. Very usefull for "
+	"when you want to have the player slowly "
+	"make their way through a gauntlet or "
+	"something. See Loonyland's Mystery Lake "
+	"for a good reference. (SWE)",
 	//Lightball5.2
-	"(SWE)",
+	"This version switches on and off at a "
+	"slower rate. It's not much of a gauntlet "
+	"if the obstacles behave the same way! By "
+	"the way, Lightballs will only activate "
+	"if a foe is nearby. It probably saves "
+	"on their electric bill that way. (SWE)",
 	//Lightball
-	"(SWE)",
+	"Lightballs were a unique addition to "
+	"Loonyland. Alone, they are useless, but "
+	"when you connect two or more, they form a "
+	"barrier of lightning between them! They're "
+	"actually slightly more dangerous in this "
+	"game though, as you can't rely on "
+	"invincibility frames to protect you. This "
+	"is the only Lightball variant in Loonyland "
+	"that can take damage. (SWE)",
 	//LightballOn
-	"(SWE)",
+	"The strongest Lightball variant. It's "
+	"ALWAYS on, hence the name. If you want "
+	"this version to turn off, you'll have to "
+	"utilize specials for that. (SWE)",
 	//LightballOff
-	"(SWE)",
+	"It's a Lightball that's been turned off. (SWE)",
 };
 
 char *MonsterNotes(dword type)
